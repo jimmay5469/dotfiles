@@ -4,12 +4,10 @@ My Environment Settings
 1. Install everything on [Nitrous.io](http://help.nitrous.io/box-interpreters-and-tools/) and more (sublime, macvim, git, [nvm](https://github.com/creationix/nvm), rvm/[rbenv](https://github.com/sstephenson/rbenv), heroku, etc.)
 2. Run: `git clone https://github.com/jimmay5469/dotfiles.git`
 3. Run: `cd dotfiles`
-4. Run: `ln -s "$PWD/.bash_profile" ~/.bash_profile`
-5. Run: `ln -s "$PWD/.vimrc" ~/.vimrc`
-6. Run: `ln -s "$PWD/.gitignore" ~/.gitignore`
-7. Remap caps lock to esc using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) (don't forget to edit modifier keys in _System Preferences_ -> _Keyboard_)
-8. Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
-
+4. Run: `node setup.js`
+5. Remap caps lock to esc using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) (don't forget to edit modifier keys in _System Preferences_ -> _Keyboard_)
+6. Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
+ 
 Git Setup
 ---------
 ```
