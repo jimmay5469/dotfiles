@@ -27,6 +27,11 @@ au BufReadPost *.hbs set syntax=html
 set hlsearch
 set incsearch
 
+"don't create swap files
+set nobackup
+set nowritebackup
+set noswapfile
+
 "auto load when file changed outside vim
 set autoread
 
