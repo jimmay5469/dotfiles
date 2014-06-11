@@ -1,6 +1,10 @@
 var sys = require('sys')
 var exec = require('child_process').exec;
-function puts(error, stdout, stderr) { /*sys.puts(stdout)*/ }
+function puts(error, stdout, stderr) {
+  if(error) {
+    sys.puts(error.toString().trim());
+  }
+}
 
 var dotfiles = [
   '.bash_profile',
