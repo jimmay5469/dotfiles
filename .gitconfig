@@ -1,0 +1,7 @@
+[user]
+	name = jimmay5469
+	email = jimmay5469@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+[mergetool]
+	keepBackup = true

@@ -9,12 +9,13 @@ function puts(error, stdout, stderr) {
 var dotfiles = [
   '.bash_profile',
   '.vimrc',
-  '.gitignore'
+  '.gitconfig',
+  '.gitignore_global'
 ]
 
 for (var index in dotfiles) {
   //remove existing dotfile
-  exec('rm ~/' + dotfiles[index], puts);
+  exec('rm -f ~/' + dotfiles[index], puts);
 
   //create dotfile symlink
   exec('ln -s "$PWD/' + dotfiles[index] + '" ~/' + dotfiles[index], puts);
