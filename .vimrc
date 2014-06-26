@@ -21,6 +21,12 @@ let g:airline#extensions#tabline#tab_min_count = 2
 
 "syntax highlighting
 syntax on
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+set background=dark
+colorscheme solarized
+highlight Normal guibg=black
+highlight LineNr guibg=#222222
 au BufReadPost *.hbs set syntax=html
 
 "search options
@@ -130,10 +136,4 @@ if has("gui_running")
 
   "airline stuff
   let g:airline_powerline_fonts = 1
-
-  "solarized
-  set background=dark
-  colorscheme solarized
-  highlight Normal guibg=black
-  highlight LineNr guibg=black
 endif
