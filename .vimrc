@@ -26,7 +26,7 @@ let g:solarized_termtrans=1
 set background=dark
 colorscheme solarized
 highlight Normal guibg=black
-highlight LineNr guibg=#222222
+highlight LineNr guibg=#111111
 au BufReadPost *.hbs set syntax=html
 
 "search options
