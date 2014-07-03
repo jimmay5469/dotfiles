@@ -156,9 +156,9 @@ endfunction
 
 "git
 nmap ,g :Git<space>
-nmap ,b :Gblame<CR>
-nmap ,s :Gstatus<CR>
-nmap ,d :Gdiff<CR>
+nmap <silent> ,b :Gblame<CR>
+nmap <silent> ,s :Gstatus<CR>
+nmap <silent> ,d :Gdiff<CR>
 
 "function mappings
 nmap <silent> ,w :call ToggleLineWrap()<CR>
@@ -178,10 +178,10 @@ nmap ,k <C-W>k
 nmap ,j <C-W>j
 
 "pane creation (with fuzzy file search)
-nmap <L :vsp<CR>,l,t
-nmap <H :vsp<CR>,t
-nmap <K :sp<CR>,t
-nmap <J :sp<CR>,j,t
+nmap <silent> <L :vsp<CR>,l,t
+nmap <silent> <H :vsp<CR>,t
+nmap <silent> <K :sp<CR>,t
+nmap <silent> <J :sp<CR>,j,t
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
