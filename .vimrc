@@ -66,8 +66,8 @@ set backspace=2
 set autoread
 
 "auto save changes
-au FocusLost * :update
-autocmd! BufLeave * :update
+au! FocusLost * :update
+au! BufLeave * :update
 set autowrite
 set autowriteall
 
