@@ -183,6 +183,10 @@ nmap <silent> <H :vsp<CR>,t
 nmap <silent> <K :sp<CR>,t
 nmap <silent> <J :sp<CR>,j,t
 
+"convert between camelCase and snake_case
+nmap <silent> ,cc :s/<c-r>=expand("<cword>")<cr>/<c-r>=substitute(substitute(expand("<cword>"), "_\\w", "\\U\\0", "g"), "_", "", "g")<cr><cr>:noh<cr>
+nmap <silent> ,cs :s/<c-r>=expand("<cword>")<cr>/<c-r>=substitute(expand("<cword>"), "[A-Z]", "_\\L\\0", "g")<cr><cr>:noh<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto-reload this file
