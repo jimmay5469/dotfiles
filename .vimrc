@@ -137,3 +137,9 @@ if has("gui_running")
   "airline stuff
   let g:airline_powerline_fonts = 1
 endif
+
+augroup AutoReloadVimRC
+  au!
+  " automatically reload vimrc when it's saved
+  au BufWritePost $MYVIMRC so $MYVIMRC
+augroup END
