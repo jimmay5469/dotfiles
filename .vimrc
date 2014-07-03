@@ -59,6 +59,15 @@ function! NumberToggle()
 endfunc
 map <silent> <C-N> :call NumberToggle()<CR>
 
+"line wrapping
+function! WrapToggle()
+  if(&wrap == 1)
+    set nowrap
+  else
+    set wrap
+  endif
+endfunc
+
 "Show command in bottom right portion of the screen
 set showcmd
 
@@ -84,6 +93,7 @@ nmap ,g :Git<space>
 nmap ,b :Gblame<CR>
 nmap ,s :Gstatus<CR>
 nmap ,d :Gdiff<CR>
+nmap <silent> ,w :call WrapToggle()<CR>
 nmap ,n <C-N>
 nmap ,f :Ag<space>
 nmap ,e <C-E>
