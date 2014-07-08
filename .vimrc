@@ -14,6 +14,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'heartsentwined/vim-emblem'
+Plugin 'wavded/vim-stylus'
 call vundle#end()
 filetype plugin indent on
 
