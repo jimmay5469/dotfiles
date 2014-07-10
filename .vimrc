@@ -62,12 +62,10 @@ endfunction
 function! SetBackground()
   if strftime("%H") == 12 || (strftime("%H") >= 18 && strftime("%H") < 22)
     set background=dark
-    let g:airline_theme='solarized'
     set transparency=10
   else
     highlight Normal guibg=black
     highlight LineNr guibg=#111111
-    let g:airline_theme='laederon'
     set transparency=15
   endif
 endfunction
