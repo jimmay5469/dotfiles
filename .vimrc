@@ -112,6 +112,9 @@ set smartindent
 "backspace key
 set backspace=2
 
+"don't auto wrap lines
+set tw=0
+
 "auto load when file changed outside vim
 set autoread
 
@@ -156,6 +159,10 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"j and k shouldn't skip over wrapped lines
+nnoremap j gj
+nnoremap k gk
 
 "git
 nmap ,g :Git<space>
