@@ -61,12 +61,9 @@ endfunction
 
 function! SetBackground()
   if strftime("%H") == 12 || (strftime("%H") >= 18 && strftime("%H") < 22)
-    set background=dark
-    set transparency=10
+    set background=light
   else
-    highlight Normal guibg=black
-    highlight LineNr guibg=#111111
-    set transparency=15
+    set background=dark
   endif
 endfunction
 
@@ -149,6 +146,7 @@ if has("gui_running")
   "set fonts and background
   set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline
   call SetBackground()
+  set transparency=5
 
   "airline stuff
   let g:airline_powerline_fonts = 1
