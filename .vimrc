@@ -59,8 +59,8 @@ function! ToggleFileTree()
   endif
 endfunction
 
-function! SetBackground()
-  if strftime("%H") == 12 || (strftime("%H") >= 18 && strftime("%H") < 22)
+function! ToggleBackground()
+  if(&background == 'dark')
     set background=light
   else
     set background=dark
@@ -148,7 +148,7 @@ if has("gui_running")
 
   "set fonts and background
   set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline
-  call SetBackground()
+  set background=dark
   set transparency=5
 
   "airline stuff
@@ -165,15 +165,16 @@ nnoremap j gj
 nnoremap k gk
 
 "git
-nmap ,g :Git<space>
-nmap <silent> ,b :Gblame<CR>
-nmap <silent> ,s :Gstatus<CR>
-nmap <silent> ,d :Gdiff<CR>
+nmap ,gg :Git<space>
+nmap <silent> ,gb :Gblame<CR>
+nmap <silent> ,gs :Gstatus<CR>
+nmap <silent> ,gd :Gdiff<CR>
 
 "function mappings
 nmap <silent> ,w :call ToggleLineWrap()<CR>
 nmap <silent> ,n :call ToggleLineNumbers()<CR>
 nmap <silent> ,e :call ToggleFileTree()<CR>
+nmap <silent> ,b :call ToggleBackground()<CR>
 
 "text search
 nmap ,f :Ag<space>
@@ -222,22 +223,4 @@ augroup AutoReloadVimrc
   au BufLeave $MYVIMRC so $MYVIMRC
   au BufLeave $MYVIMRC :AirlineRefresh
   au BufLeave $MYVIMRC :AirlineRefresh
-augroup END
-
-augroup AutoSetBackground
-  if has("gui_running")
-    au!
-    " set background
-    au BufWritePost * call SetBackground()
-    au BufWritePost * :AirlineRefresh
-    au BufWritePost * :AirlineRefresh
-
-    au FocusLost * call SetBackground()
-    au FocusLost * :AirlineRefresh
-    au FocusLost * :AirlineRefresh
-
-    au BufLeave * call SetBackground()
-    au BufLeave * :AirlineRefresh
-    au BufLeave * :AirlineRefresh
-  endif
 augroup END
