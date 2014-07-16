@@ -67,12 +67,15 @@ function! ToggleBackground()
   endif
 endfunction
 
-function! ToCamelCase()
-  execute "normal! ciw" . substitute(substitute(expand("<cword>"), "_\\w", "\\U\\0", "g"), "_", "", "g") . "\<esc>b"
-endfunction
-
-function! ToSnakeCase()
-  execute "normal! ciw" . substitute(expand("<cword>"), "[A-Z]", "_\\L\\0", "g") . "\<esc>b"
+function! ToggleCase()
+  let current_word = expand("<cword>")
+  let snake_case_word = substitute(current_word, "[A-Z]", "_\\L\\0", "g")
+  if(current_word != snake_case_word)
+    exec "normal! ciw" . snake_case_word . "\<esc>b"
+  else
+    let camel_case_word = substitute(substitute(current_word, "_\\w", "\\U\\0", "g"), "_", "", "g")
+    exec "normal! ciw" . camel_case_word . "\<esc>b"
+  endif
 endfunction
 
 
@@ -183,8 +186,7 @@ nmap <silent> ,w :call ToggleLineWrap()<CR>
 nmap <silent> ,n :call ToggleLineNumbers()<CR>
 nmap <silent> ,e :call ToggleFileTree()<CR>
 nmap <silent> ,b :call ToggleBackground()<CR>
-nmap <silent> ,cc :call ToCamelCase()<CR>
-nmap <silent> ,cs :call ToSnakeCase()<CR>
+nmap <silent> ,c :call ToggleCase()<CR>
 
 "text search
 nmap ,f :Ag<space>
