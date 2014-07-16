@@ -67,6 +67,14 @@ function! ToggleBackground()
   endif
 endfunction
 
+function! ToCamelCase()
+  execute "normal! ciw" . substitute(substitute(expand("<cword>"), "_\\w", "\\U\\0", "g"), "_", "", "g") . "\<esc>b"
+endfunction
+
+function! ToSnakeCase()
+  execute "normal! ciw" . substitute(expand("<cword>"), "[A-Z]", "_\\L\\0", "g") . "\<esc>b"
+endfunction
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
@@ -175,6 +183,8 @@ nmap <silent> ,w :call ToggleLineWrap()<CR>
 nmap <silent> ,n :call ToggleLineNumbers()<CR>
 nmap <silent> ,e :call ToggleFileTree()<CR>
 nmap <silent> ,b :call ToggleBackground()<CR>
+nmap <silent> ,cc :call ToCamelCase()<CR>
+nmap <silent> ,cs :call ToSnakeCase()<CR>
 
 "text search
 nmap ,f :Ag<space>
@@ -193,10 +203,6 @@ nmap <silent> <L :vsp<CR>,l,t
 nmap <silent> <H :vsp<CR>,t
 nmap <silent> <K :sp<CR>,t
 nmap <silent> <J :sp<CR>,j,t
-
-"convert between camelCase and snake_case
-nmap <silent> ,cc :s/<c-r>=expand("<cword>")<cr>/<c-r>=substitute(substitute(expand("<cword>"), "_\\w", "\\U\\0", "g"), "_", "", "g")<cr><cr>:noh<cr>
-nmap <silent> ,cs :s/<c-r>=expand("<cword>")<cr>/<c-r>=substitute(expand("<cword>"), "[A-Z]", "_\\L\\0", "g")<cr><cr>:noh<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
