@@ -9,6 +9,7 @@ function puts(error, stdout, stderr) {
 var dotfiles = [
   '.bash_profile',
   '.vimrc',
+  '.zshrc',
   '.gitconfig',
   '.gitignore_global'
 ]

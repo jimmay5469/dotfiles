@@ -1,13 +1,21 @@
 My Environment Settings
 =======================
 
-1. Install everything on [Nitrous.io](http://help.nitrous.io/box-interpreters-and-tools/) and more (sublime, macvim, git, [nvm](https://github.com/creationix/nvm), rvm/[rbenv](https://github.com/sstephenson/rbenv), heroku, etc.)
+1. Install things:
+  - [homebrew](http://brew.sh/)
+    - macvim (via homebrew)
+    - git (via homebrew)
+  - [iTerm2](http://iterm2.com/)
+    - [Solarized theme](http://ethanschoonover.com/solarized)
+  - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+  - [nvm](https://github.com/creationix/nvm)
+  - [rbenv](https://github.com/sstephenson/rbenv)
 2. Run: `git clone https://github.com/jimmay5469/dotfiles.git`
 3. Run: `cd dotfiles`
 4. Run: `node setup.js` (note: this sets up git to my username)
 5. Remap caps lock to esc using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) (don't forget to edit modifier keys in _System Preferences_ -> _Keyboard_)
 6. Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
- 
+
 Vim Setup
 ---------
 1. Install [Vundle](https://github.com/gmarik/Vundle.vim)
@@ -20,11 +28,11 @@ Sublime Text 2 Setup
 1. Install [Package Control](https://sublime.wbond.net/installation)
 2. Install [Origami](https://github.com/SublimeText/Origami)
 3. _Sublime Text 2_ -> _Preferences_ -> _Settings - Default_
-   
+
    `"ignored_packages": []//["Vintage"]`
 
 4. Optional: _Sublime Text 2_ -> _Preferences_ -> _Settings - User_
-   
+
    ```
    {
      "vintage_start_in_command_mode": true

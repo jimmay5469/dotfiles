@@ -142,6 +142,7 @@ set autowriteall
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline_powerline_fonts = 1
 
 "syntax highlighting
 let g:solarized_termcolors=256
@@ -158,12 +159,9 @@ if has("gui_running")
   set guioptions-=b
 
   "set fonts and background
-  set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline
+  set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
   set background=dark
   set transparency=5
-
-  "airline stuff
-  let g:airline_powerline_fonts = 1
 endif
 
 
