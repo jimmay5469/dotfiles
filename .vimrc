@@ -59,6 +59,27 @@ function! ToggleFileTree()
   endif
 endfunction
 
+function! Wipeout()
+  " figure out which buffers are visible in any tab
+  let visible = {}
+  for t in range(1, tabpagenr('$'))
+    for b in tabpagebuflist(t)
+      let visible[b] = 1
+    endfor
+  endfor
+  " close any buffer that are loaded and not visible
+  let l:cmd = 'bw'
+  for b in range(1, bufnr('$'))
+    "if buflisted(b) && !has_key(visible, b)
+    if !has_key(visible, b)
+      if getbufvar(b, "&mod")
+        continue
+      endif
+      exe l:cmd . ' ' . b
+    endif
+  endfor
+endfun
+
 function! ToggleBackground()
   if(&background == 'dark')
     set background=light
@@ -209,6 +230,11 @@ nmap <silent> <J :sp<CR>,j,t
 augroup AutoSave
   au!
   au FocusLost,BufLeave * :update
+augroup END
+
+augroup AutoWipeoutUnusedBuffers
+  au!
+  au FocusLost * silent! :call Wipeout()
 augroup END
 
 augroup AutoReloadVimrc
