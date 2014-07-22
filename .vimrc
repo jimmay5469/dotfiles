@@ -211,22 +211,13 @@ nmap <silent> <J :sp<CR>,j,t
 
 augroup AutoSave
   au!
-  au FocusLost * :update
-  au BufLeave * :update
+  au FocusLost,BufLeave * :update
 augroup END
 
 augroup AutoReloadVimrc
   au!
   " automatically reload vimrc when it's saved
-  au BufWritePost $MYVIMRC so $MYVIMRC
-  au BufWritePost $MYVIMRC :AirlineRefresh
-  au BufWritePost $MYVIMRC :AirlineRefresh
-
-  au FocusLost $MYVIMRC so $MYVIMRC
-  au FocusLost $MYVIMRC :AirlineRefresh
-  au FocusLost $MYVIMRC :AirlineRefresh
-
-  au BufLeave $MYVIMRC so $MYVIMRC
-  au BufLeave $MYVIMRC :AirlineRefresh
-  au BufLeave $MYVIMRC :AirlineRefresh
+  au BufWritePost,FocusLost,BufLeave $MYVIMRC so $MYVIMRC
+  au BufWritePost,FocusLost,BufLeave $MYVIMRC :AirlineRefresh
+  au BufWritePost,FocusLost,BufLeave $MYVIMRC :AirlineRefresh
 augroup END
