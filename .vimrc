@@ -174,16 +174,13 @@ nnoremap j gj
 nnoremap k gk
 
 "git
-nmap ,gg :Git<space>
-nmap <silent> ,gb :Gblame<CR>
-nmap <silent> ,gs :Gstatus<CR>
-nmap <silent> ,gd :Gdiff<CR>
+nmap ,g :Git<space>
+nmap <silent> ,b :Gblame<CR>
+nmap <silent> ,s :Gstatus<CR>
+nmap <silent> ,d :Gdiff<CR>
 
 "function mappings
-nmap <silent> ,w :call ToggleLineWrap()<CR>
-nmap <silent> ,n :call ToggleLineNumbers()<CR>
 nmap <silent> ,e :call ToggleFileTree()<CR>
-nmap <silent> ,b :call ToggleBackground()<CR>
 nmap <silent> ,c :call ToggleCase()<CR>
 
 "text search
