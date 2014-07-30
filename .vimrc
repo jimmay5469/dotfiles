@@ -232,11 +232,6 @@ augroup AutoSave
   au FocusLost,BufLeave * :update
 augroup END
 
-augroup AutoWipeoutUnusedBuffers
-  au!
-  au FocusLost * silent! :call Wipeout()
-augroup END
-
 augroup AutoReloadVimrc
   au!
   " automatically reload vimrc when it's saved
