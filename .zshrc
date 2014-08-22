@@ -100,8 +100,8 @@ zle -N zle-keymap-select
 
 # define right prompt
 function precmd() {
-  NORMAL_MODE="%{$fg[blue]%}%{$bg[blue]%}%{$fg_bold[black]%} $(date) %{$reset_color%}"
-  INSERT_MODE="%{$fg[yellow]%}%{$bg[yellow]%}%{$fg_bold[black]%} $(date) %{$reset_color%}"
+  NORMAL_MODE="%{$fg[black]%}%{$bg[black]%}%{$fg[blue]%} $(date) %{$reset_color%}"
+  INSERT_MODE="%{$fg[blue]%}%{$bg[blue]%}%{$fg[black]%} $(date) %{$reset_color%}"
   RPS1='${${KEYMAP/vicmd/$NORMAL_MODE}/(main|viins)/$INSERT_MODE}'
 }
 
