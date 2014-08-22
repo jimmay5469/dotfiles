@@ -109,8 +109,8 @@ zle -N zle-keymap-select
 
 # define right prompt, if it wasn't defined by a theme
 if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
-  NORMAL_MODE="%{$fg[blue]%}%{$bg[blue]%}%{$fg_bold[black]%} NORMAL %{$reset_color%}"
-  INSERT_MODE="%{$fg[green]%}%{$bg[green]%}%{$fg_bold[black]%} INSERT %{$reset_color%}"
+  NORMAL_MODE="%{$FG[244]%}%{$BG[244]%}%{$fg_bold[white]%} NORMAL %{$reset_color%}"
+  INSERT_MODE="%{$fg[yellow]%}%{$bg[yellow]%}%{$fg_bold[white]%} INSERT %{$reset_color%}"
   RPS1='${${KEYMAP/vicmd/$NORMAL_MODE}/(main|viins)/$INSERT_MODE}'
 fi
 
