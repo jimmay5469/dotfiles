@@ -134,6 +134,9 @@ set autowriteall
 "ignores
 set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
 
+"NERDTree settings
+let NERDTreeShowHidden=1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Style
