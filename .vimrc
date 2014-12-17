@@ -154,6 +154,9 @@ set autoread
 set autowrite
 set autowriteall
 
+"ignores
+set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Style
