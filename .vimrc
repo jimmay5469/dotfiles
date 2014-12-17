@@ -7,6 +7,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -39,25 +40,6 @@ function! ToggleLineNumbers()
     set relativenumber
   endif
 endfunc
-
-function! ToggleFileTree()
-  if exists("t:expl_buf_num")
-    let expl_win_num = bufwinnr(t:expl_buf_num)
-    if expl_win_num != -1
-      let cur_win_nr = winnr()
-      exec expl_win_num . 'wincmd w'
-      close
-      exec cur_win_nr . 'wincmd w'
-      unlet t:expl_buf_num
-    else
-      unlet t:expl_buf_num
-    endif
-  else
-    exec '1wincmd w'
-    Vexplore
-    let t:expl_buf_num = bufnr("%")
-  endif
-endfunction
 
 function! Wipeout()
   " figure out which buffers are visible in any tab
@@ -120,11 +102,6 @@ set showcmd
 ":e autocomplete settings
 set wildmenu
 set wildmode=longest:list,full
-
-"file tree settings
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_liststyle = 3
 
 "format the statusline
 set laststatus=2
@@ -204,11 +181,13 @@ nmap <silent> ,s :Gstatus<CR>
 nmap <silent> ,d :Gdiff<CR>
 
 "function mappings
-nmap <silent> ,e :call ToggleFileTree()<CR>
 nmap <silent> ,c :call ToggleCase()<CR>
 
 "text search
 nmap ,f :Ag<space>
+
+"NERDTree
+nmap <silent> ,e :NERDTreeToggle<CR>
 
 "fuzzy file search
 nmap ,t <C-P>
