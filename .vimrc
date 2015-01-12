@@ -16,6 +16,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'heartsentwined/vim-emblem'
 Plugin 'wavded/vim-stylus'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'wting/rust.vim'
 call vundle#end()
 filetype plugin indent on
 
