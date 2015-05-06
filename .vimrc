@@ -211,10 +211,10 @@ nmap ,k <C-W>k
 nmap ,j <C-W>j
 
 "pane creation (with fuzzy file search)
-nmap <silent> <L :vsp<CR>,l,t
-nmap <silent> <H :vsp<CR>,t
-nmap <silent> <K :sp<CR>,t
-nmap <silent> <J :sp<CR>,j,t
+nmap <silent> <L :vsp<CR>,l
+nmap <silent> <H :vsp<CR>
+nmap <silent> <K :sp<CR>
+nmap <silent> <J :sp<CR>,j
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
