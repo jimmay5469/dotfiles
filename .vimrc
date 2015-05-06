@@ -198,6 +198,9 @@ nmap ,f :Ag<space>
 "NERDTree
 nmap <silent> ,e :NERDTreeToggle<CR>
 
+"CoffeeCompile
+map <silent> ,5 :CoffeeCompile vertical<CR>
+
 "fuzzy file search
 nmap ,t <C-P>
 
