@@ -134,6 +134,9 @@ set smartindent
 set backspace=2
 
 "don't auto wrap lines
+set nowrap
+
+"don't auto wrap lines when editing
 set tw=0
 
 "auto load when file changed outside vim
@@ -198,6 +201,7 @@ nmap <silent> ,d :Gdiff<CR>
 "function mappings
 nmap <silent> ,c :call ToggleCase()<CR>
 nmap <silent> ,p :call TogglePresenterMode()<CR>
+nmap <silent> ,w :call ToggleLineWrap()<CR>
 
 "text search
 nmap ,f :Ag<space>
