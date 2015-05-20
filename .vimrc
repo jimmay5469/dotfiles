@@ -181,6 +181,8 @@ if has("gui_running")
   set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
   set background=dark
   set transparency=5
+  set lines=50
+  set columns=180
 endif
 
 
