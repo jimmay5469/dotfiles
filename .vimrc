@@ -68,11 +68,17 @@ function! Wipeout()
   endfor
 endfun
 
-function! ToggleBackground()
+function! TogglePresenterMode()
   if(&background == 'dark')
+    set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h20
     set background=light
+    set transparency=0
   else
+    set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
     set background=dark
+    set transparency=5
+    set lines=50
+    set columns=180
   endif
 endfunction
 
@@ -191,6 +197,7 @@ nmap <silent> ,d :Gdiff<CR>
 
 "function mappings
 nmap <silent> ,c :call ToggleCase()<CR>
+nmap <silent> ,p :call TogglePresenterMode()<CR>
 
 "text search
 nmap ,f :Ag<space>
