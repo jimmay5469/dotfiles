@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'romainl/Apprentice'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'PreserveNoEOL' "required for editorconfig-vim
@@ -69,16 +70,20 @@ function! Wipeout()
 endfun
 
 function! TogglePresenterMode()
-  if(&background == 'dark')
-    set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h20
-    set background=light
-    set transparency=0
-  else
-    set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
-    set background=dark
-    set transparency=5
-    set lines=70
-    set columns=250
+  if has("gui_running")
+    if(&background == 'dark')
+      set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h20
+      colorscheme solarized
+      set background=light
+      set transparency=0
+    else
+      set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
+      colorscheme apprentice
+      set background=dark
+      set transparency=5
+      set lines=70
+      set columns=250
+    endif
   endif
 endfunction
 
@@ -164,10 +169,8 @@ let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline_powerline_fonts = 1
 
 "syntax highlighting
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 set background=dark
-colorscheme solarized
+colorscheme apprentice
 
 "gvim options
 if has("gui_running")
