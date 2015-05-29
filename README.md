@@ -6,6 +6,7 @@ My Environment Settings
     - macvim (via homebrew)
     - git (via homebrew)
   - [iTerm2](http://iterm2.com/)
+    - [Apprentice theme](https://github.com/romainl/iterm2-colorschemes)
     - [Solarized theme](http://ethanschoonover.com/solarized)
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
   - [nvm](https://github.com/creationix/nvm)
