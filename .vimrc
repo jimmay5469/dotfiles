@@ -45,11 +45,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! ToggleLineWrap()
-  if(&wrap == 1)
-    set nowrap
-  else
-    set wrap
-  endif
+  set wrap!
 endfunc
 
 function! ToggleLineNumbers()
@@ -212,7 +208,7 @@ nnoremap j gj
 nnoremap k gk
 
 "saving
-nmap <silent> ,s :wa<CR>
+nmap <silent> ,s :w<CR>:wa<CR>
 
 "git
 nmap ,g :Git<space>
