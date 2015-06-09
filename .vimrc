@@ -160,10 +160,6 @@ set tw=0
 "auto load when file changed outside vim
 set autoread
 
-"auto save changes
-set autowrite
-set autowriteall
-
 "ignores
 set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
 
@@ -215,10 +211,12 @@ endif
 nnoremap j gj
 nnoremap k gk
 
+"saving
+nmap <silent> ,s :wa<CR>
+
 "git
 nmap ,g :Git<space>
 nmap <silent> ,b :Gblame<CR>
-nmap <silent> ,s :Gstatus<CR>
 nmap <silent> ,d :Gdiff<CR>
 
 "function mappings
@@ -244,26 +242,8 @@ nmap ,h <C-W>h
 nmap ,k <C-W>k
 nmap ,j <C-W>j
 
-"pane creation (with fuzzy file search)
+"pane creation
 nmap <silent> <L :vsp<CR>,l
 nmap <silent> <H :vsp<CR>
 nmap <silent> <K :sp<CR>
 nmap <silent> <J :sp<CR>,j
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto commands
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-augroup AutoSave
-  au!
-  au FocusLost,BufLeave * :update
-augroup END
-
-augroup AutoReloadVimrc
-  au!
-  " automatically reload vimrc when it's saved
-  au BufWritePost,FocusLost,BufLeave $MYVIMRC so $MYVIMRC
-  au BufWritePost,FocusLost,BufLeave $MYVIMRC :AirlineRefresh
-  au BufWritePost,FocusLost,BufLeave $MYVIMRC :AirlineRefresh
-augroup END
