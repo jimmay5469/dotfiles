@@ -6,16 +6,28 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'gmarik/Vundle.vim'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
+
+Plugin 'matchit.zip'
+Plugin 'ap/vim-css-color'
+
+Plugin 'scrooloose/syntastic'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'romainl/Apprentice'
+
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'PreserveNoEOL' "required for editorconfig-vim
 Plugin 'editorconfig/editorconfig-vim'
+
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -23,6 +35,7 @@ Plugin 'heartsentwined/vim-emblem'
 Plugin 'wavded/vim-stylus'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'wting/rust.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -156,6 +169,11 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
 
 "NERDTree settings
 let NERDTreeShowHidden=1
+
+"Syntastic settings
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_html_checkers=['']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
