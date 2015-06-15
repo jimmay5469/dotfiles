@@ -162,6 +162,9 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
 "NERDTree settings
 let NERDTreeShowHidden=1
 
+"EditorConfig settings
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 "Syntastic settings
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
