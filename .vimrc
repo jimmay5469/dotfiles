@@ -118,6 +118,9 @@ syntax on
 "turn on line numbers
 set number
 
+"allow switching buffers with unsaved files
+set hidden
+
 "search options
 set hlsearch
 set incsearch
