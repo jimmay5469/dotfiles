@@ -79,7 +79,7 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ereboot="rm -rf node_modules bower_components && npm install && bower install"
-alias eupgrades="print '\nnpm' && npm outdated --depth=0 && print '\nbower' && bower list | grep '├─' | grep 'latest' && print ''"
+alias eupgrades="print '\nnpm' && npm outdated --depth=0 && print '\nbower' && bower list | grep -v '│' | grep 'latest' && print ''"
 
 
 # Vim keybindings
