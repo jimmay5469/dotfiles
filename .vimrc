@@ -21,6 +21,7 @@ Plugin 'rking/ag.vim'
 
 "Theme
 Plugin 'romainl/Apprentice'
+Plugin 'endel/vim-github-colorscheme'
 Plugin 'ap/vim-css-color'
 
 "Gutter
