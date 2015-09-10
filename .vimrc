@@ -54,6 +54,10 @@ set shiftwidth=2
 "highlight search
 set hlsearch
 
+":e autocomplete settings
+set wildmenu
+set wildmode=longest:list,full
+
 "don't create swap files
 set nobackup
 set nowritebackup
