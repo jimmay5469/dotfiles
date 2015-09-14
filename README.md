@@ -17,6 +17,12 @@ My Environment Settings
 5. Remap caps lock to esc using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) (don't forget to edit modifier keys in _System Preferences_ -> _Keyboard_)
 6. Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
 
+Spacemacs Setup
+---------------
+1. Install [Spacemacs](https://github.com/syl20bnr/spacemacs)
+2. Install JSHint `npm install jshint -g`
+2. Install editorconfig `brew install editorconfig`
+
 Vim Setup
 ---------
 1. Install [Vundle](https://github.com/gmarik/Vundle.vim)
