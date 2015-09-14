@@ -27,15 +27,20 @@
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; syntax-checking
-     version-control
+     osx
+     git
+     syntax-checking
+     javascript
+     html
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(editorconfig)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(company-tern
+                                    tern)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
@@ -66,8 +71,8 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
-                         solarized-dark
+   dotspacemacs-themes '(solarized-dark
+                         solarized-light
                          spacemacs-light
                          spacemacs-dark
                          leuven
@@ -160,6 +165,15 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+
+  ;; vim-vinegar inspired file navigation
+  (require 'dired)
+  (define-key evil-normal-state-map (kbd "-") 'dired-jump)
+  (define-key dired-mode-map (kbd "-") 'dired-up-directory)
+
+  ;; disable js2-mode syntax checking
+  (setq js2-mode-show-parse-errors nil)
+  (setq js2-mode-show-strict-warnings nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
