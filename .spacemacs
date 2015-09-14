@@ -29,6 +29,7 @@
      ;; syntax-checking
      osx
      git
+     version-control
      syntax-checking
      javascript
      html
