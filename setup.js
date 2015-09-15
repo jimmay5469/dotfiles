@@ -1,4 +1,4 @@
-var sys = require('sys')
+var sys = require('sys');
 var exec = require('child_process').exec;
 function puts(error, stdout, stderr) {
   if(error) {
@@ -13,7 +13,7 @@ var dotfiles = [
   '.zshrc',
   '.gitconfig',
   '.gitignore_global'
-]
+];
 
 for (var index in dotfiles) {
   //remove existing dotfile
