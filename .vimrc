@@ -9,6 +9,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+"Spacemacs
+Plugin 'jimmay5469/vim-spacemacs'
+
 "Good defaults
 Plugin 'tpope/vim-sensible'
 Plugin 'PreserveNoEOL' "required for editorconfig-vim
