@@ -161,6 +161,10 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
+  (add-to-list 'default-frame-alist '(height . 60))
+  (add-to-list 'default-frame-alist '(width . 200))
+  (add-to-list 'default-frame-alist '(top . 30))
+  (add-to-list 'default-frame-alist '(left . 10))
   )
 
 (defun dotspacemacs/config ()
