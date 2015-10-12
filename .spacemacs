@@ -34,6 +34,7 @@ values."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
+     vinegar
      osx
      git
      version-control
@@ -206,11 +207,6 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-
-  ;; vim-vinegar inspired file navigation
-  (require 'dired)
-  (define-key evil-normal-state-map (kbd "-") 'dired-jump)
-  (define-key dired-mode-map (kbd "-") 'dired-up-directory)
 
   ;; disable js2-mode syntax checking
   (setq js2-mode-show-parse-errors nil)
