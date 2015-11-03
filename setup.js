@@ -11,6 +11,7 @@ var dotfiles = [
   '.spacemacs',
   '.editorconfig',
   '.vimrc',
+  '.nvimrc',
   '.zshrc',
   '.gitconfig',
   '.gitignore_global'
