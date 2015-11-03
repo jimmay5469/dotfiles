@@ -12,6 +12,7 @@ var dotfiles = [
   '.editorconfig',
   '.vimrc',
   '.nvimrc',
+  '.tmux.conf',
   '.zshrc',
   '.gitconfig',
   '.gitignore_global'
