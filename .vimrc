@@ -69,6 +69,9 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
 "EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+"don't timeout commands so quickly
+set timeoutlen=10000
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Style
