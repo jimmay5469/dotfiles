@@ -4,16 +4,18 @@ eval "$(rbenv init -)"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-DEFAULT_USER=`whoami`
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -50,19 +52,25 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(git nvm)
 
 # User configuration
 
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -80,34 +88,3 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ereboot="rm -rf node_modules bower_components && npm install && bower install"
 alias eupgrades="print '\nnpm' && npm outdated --depth=0 && print '\nbower' && bower list | grep -v '│' | grep 'latest' && print ''"
-
-
-# Vim keybindings
-bindkey -v
-
-# incremental search with /
-bindkey -M vicmd '/' history-incremental-search-backward
-
-# allow v to edit the command line (standard behaviour)
-bindkey -M vicmd v edit-command-line
-
-# Update the prompt when the keymap changes.
-function zle-line-init zle-line-finish zle-keymap-select {
-  zle reset-prompt
-  zle -R
-}
-zle -N zle-line-init
-zle -N zle-line-finish
-zle -N zle-keymap-select
-
-# define right prompt
-function precmd() {
-  NORMAL_MODE="%{$fg[black]%}%{$bg[black]%}%{$fg[blue]%} $(date) %{$reset_color%}"
-  INSERT_MODE="%{$fg[blue]%}%{$bg[blue]%}%{$fg[black]%} $(date) %{$reset_color%}"
-  RPS1='${${KEYMAP/vicmd/$NORMAL_MODE}/(main|viins)/$INSERT_MODE}'
-}
-
-export KEYTIMEOUT=1
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
