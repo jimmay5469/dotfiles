@@ -24,20 +24,17 @@ Plugin 'rking/ag.vim'
 
 "Theme
 Plugin 'romainl/Apprentice'
-Plugin 'endel/vim-github-colorscheme'
 Plugin 'ap/vim-css-color'
-
-"Gutter
-Plugin 'scrooloose/syntastic'
-Plugin 'airblade/vim-gitgutter'
 
 "Git
 Plugin 'tpope/vim-fugitive'
 
 "Syntax hightlighting
 Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
+
+"Tmux
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
@@ -72,11 +69,6 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
 "EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-"Syntastic settings
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_html_checkers=['']
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Style
@@ -102,26 +94,9 @@ endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
+" Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<SPACE>"
 
-"saving
-nmap <silent> ,s :w<CR>:wa<CR>
-
-"text search
-nmap ,f :Ag<space>
-
-"fuzzy file search
-nmap <silent> ,t <C-P>
-
-"pane navigation
-nmap <silent> ,l <C-W>l
-nmap <silent> ,h <C-W>h
-nmap <silent> ,k <C-W>k
-nmap <silent> ,j <C-W>j
-
-"pane creation
-nmap <silent> <L :vsp<CR>,l
-nmap <silent> <H :vsp<CR>
-nmap <silent> <K :sp<CR>
-nmap <silent> <J :sp<CR>,j
+"reloading
+nmap <LEADER>mr :checktime<CR>
