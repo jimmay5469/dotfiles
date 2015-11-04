@@ -33,9 +33,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mustache/vim-mustache-handlebars'
 
-"Tmux
-Plugin 'christoomey/vim-tmux-navigator'
-
 call vundle#end()
 filetype plugin indent on
 
