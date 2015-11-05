@@ -5,11 +5,16 @@ My Environment Settings
 2. `cd dotfiles`
 3. `./install.sh`
 4. OSX setup
-  - Enable tap click
-  - Endable 3 finger drag
-  - Remap caps lock to esc using [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
-  - Edit modifier keys in _System Preferences_ -> _Keyboard_
+  - Trackpad
+    - Enable tap click
+    - Endable 3 finger drag
+    - Disable swipe between pages
+    - Enable 3 finger lookup
+  - Keyboard
     - `Caps Lock` -> `No Action` (for all keyboards)
+    - Key repeat: fastest
+    - Delay until repeat: next to slowest
+  - Remap caps lock to esc using [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
   - Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
 5. Install things:
   - [iTerm2](http://iterm2.com/)
