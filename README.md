@@ -5,6 +5,7 @@ My Environment Settings
   - [homebrew](http://brew.sh/)
     - macvim (via homebrew)
     - git (via homebrew)
+    - tmux (via homebrew)
   - [iTerm2](http://iterm2.com/)
     - [Apprentice theme](https://github.com/romainl/iterm2-colorschemes)
     - [Solarized theme](http://ethanschoonover.com/solarized)
@@ -29,27 +30,3 @@ Vim Setup
 2. Install [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 3. Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
 4. Start Vim and run: `:PluginInstall`
-
-Sublime Text 2 Setup
---------------------
-1. Install [Package Control](https://sublime.wbond.net/installation)
-2. Install [Origami](https://github.com/SublimeText/Origami)
-3. _Sublime Text 2_ -> _Preferences_ -> _Settings - Default_
-
-   `"ignored_packages": []//["Vintage"]`
-
-4. Optional: _Sublime Text 2_ -> _Preferences_ -> _Settings - User_
-
-   ```
-   {
-     "vintage_start_in_command_mode": true
-   }
-   ```
-
-Sublime Text 3 Setup
---------------------
-1. Install [Package Control](https://sublime.wbond.net/installation)
-2. Install [Origami](https://github.com/SublimeText/Origami)
-3. Install [Vintageous](https://sublime.wbond.net/packages/Vintageous)
-4. Install [VintageousOrigami](https://sublime.wbond.net/packages/VintageousOrigami)
-5. Enable Vintageous to use ctrl keys in your preferences: `"vintageous_use_ctrl_keys": true`
