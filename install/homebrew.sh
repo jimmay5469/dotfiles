@@ -14,3 +14,4 @@ brew install git
 brew install tmux
 brew install macvim
 brew install the_silver_searcher
+brew install editorconfig
