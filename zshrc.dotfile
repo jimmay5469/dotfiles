@@ -90,3 +90,31 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ereboot="rm -rf node_modules bower_components && npm install && bower install"
 alias eupgrades="print '\nnpm' && npm outdated --depth=0 && print '\nbower' && bower list | grep -v '│' | grep 'latest' && print ''"
+
+
+# Vim keybindings
+bindkey -v
+
+# incremental search with /
+bindkey -M vicmd '/' history-incremental-search-backward
+
+# allow v to edit the command line (standard behaviour)
+bindkey -M vicmd v edit-command-line
+
+# Update the prompt when the keymap changes.
+function zle-line-init zle-line-finish zle-keymap-select {
+  zle reset-prompt
+  zle -R
+}
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+
+# define right prompt
+function precmd() {
+  NORMAL_MODE="%{$fg[black]%}%{$bg[black]%}%{$fg[blue]%} $(date) %{$reset_color%}"
+  INSERT_MODE="%{$fg[blue]%}%{$bg[blue]%}%{$fg[black]%} $(date) %{$reset_color%}"
+  RPS1='${${KEYMAP/vicmd/$NORMAL_MODE}/(main|viins)/$INSERT_MODE}'
+}
+
+export KEYTIMEOUT=1
