@@ -13,7 +13,7 @@ My Environment Settings
   - [rbenv](https://github.com/sstephenson/rbenv)
 2. Run: `git clone https://github.com/jimmay5469/dotfiles.git`
 3. Run: `cd dotfiles`
-4. Run: `node setup.js` (note: this sets up git to my username)
+4. Run: `sh install.sh` (note: this sets up git to my username)
 5. Remap caps lock to esc using [PCKeyboardHack](https://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html.en) (don't forget to edit modifier keys in _System Preferences_ -> _Keyboard_)
 6. Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
 
