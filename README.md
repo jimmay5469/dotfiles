@@ -8,6 +8,15 @@ My Environment Settings
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
   - [nvm](https://github.com/creationix/nvm)
   - [rbenv](https://github.com/sstephenson/rbenv)
+  - Alfred
+  - Dropbox
+  - 1Password
+  - Dash
+  - Slack
+  - Tower
+  - Flux
+  - Monosnap
+  - GifGrabber
 2. Run: `git clone https://github.com/jimmay5469/dotfiles.git`
 3. Run: `cd dotfiles`
 4. Run: `./install.sh` (note: this sets up git to my username)
