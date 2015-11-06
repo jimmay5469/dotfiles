@@ -1,6 +1,6 @@
 #!/bin/bash
 
-printf "\nCommon installation\n"
+printf "\n\nCommon installation\n"
 echo "=============================="
 
 source install/dotfiles.sh 
@@ -8,7 +8,7 @@ source install/symlinks.sh
 
 if [ "$(uname)" == "Darwin" ]; then
 
-  printf "\nOSX installation\n"
+  printf "\n\nOSX installation\n"
   echo "=============================="
 
   source install/homebrew.sh 
