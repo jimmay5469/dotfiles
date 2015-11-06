@@ -4,6 +4,7 @@ echo "\nCommon installation"
 echo "=============================="
 
 source install/dotfiles.sh 
+source install/symlinks.sh
 
 if [ "$(uname)" == "Darwin" ]; then
 
