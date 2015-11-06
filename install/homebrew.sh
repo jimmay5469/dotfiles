@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\nHomebrew"
+printf "\nHomebrew\n"
 echo "------------------------------"
 
 if test ! $(which brew); then

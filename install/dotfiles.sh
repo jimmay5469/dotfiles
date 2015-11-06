@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\nCreating dotfile symlinks"
+printf "\nCreating dotfile symlinks\n"
 echo "------------------------------"
 dotfiles=$( find $PWD -name '*.dotfile' )
 for file in $dotfiles ; do

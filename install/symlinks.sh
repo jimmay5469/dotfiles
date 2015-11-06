@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\nCreating symlinks"
+printf "\nCreating symlinks\n"
 echo "------------------------------"
 symlinks=$( find $PWD -name '*.symlink' )
 for file in $symlinks ; do
