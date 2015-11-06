@@ -1,10 +1,8 @@
 My Environment Settings
 =======================
 
-1. `git clone https://github.com/jimmay5469/dotfiles.git`
-2. `cd dotfiles`
-3. `./install.sh`
-4. OSX setup
+1. `curl https://raw.githubusercontent.com/jimmay5469/dotfiles/master/install.sh | bash`
+2. OSX setup
   - Trackpad
     - Enable tap click
     - Endable 3 finger drag
@@ -16,7 +14,7 @@ My Environment Settings
     - Delay until repeat: next to slowest
   - Remap caps lock to esc using [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
   - Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
-5. Install things:
+3. Install things:
   - [iTerm2](http://iterm2.com/)
     - [Apprentice theme](https://github.com/romainl/iterm2-colorschemes)
     - [Solarized theme](http://ethanschoonover.com/solarized)
