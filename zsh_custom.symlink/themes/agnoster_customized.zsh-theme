@@ -163,7 +163,10 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black '%~'
+  #prompt_segment blue black '%~'
+  local dir=${PWD/$HOME/\~}
+  local repos_dir='~/repos/'
+  prompt_segment blue black ${dir/$repos_dir}
 }
 
 # Virtualenv: current working virtualenv
