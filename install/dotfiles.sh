@@ -7,7 +7,7 @@ for file in $dotfiles ; do
   symlink="$HOME/.$( basename $file ".dotfile" )"
   echo "~${symlink#$HOME}"
   if [ $symlink ]; then
-    rm -f $symlink
+    rm -rf $symlink
   fi
   ln -s $file $symlink
 done
