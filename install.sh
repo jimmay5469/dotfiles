@@ -8,7 +8,7 @@ cd ~/repos
 
 if [ ! -d "$HOME/repos/dotfiles" ]; then
   echo 'Cloning jimmay5469/dotfiles'
-  git clone https://github.com/jimmay5469/dotfiles.git --origin jimmay5469
+  git clone git@github.com:jimmay5469/dotfiles.git --origin jimmay5469
 fi
 cd dotfiles
 

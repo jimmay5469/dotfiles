@@ -30,6 +30,7 @@ My Environment Settings
   - Flux
   - Monosnap
   - GifGrabber
+  - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/))
 
 Spacemacs Setup
 ---------------
