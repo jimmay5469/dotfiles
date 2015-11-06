@@ -188,10 +188,20 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+# what vim mode are we in?
+prompt_mode() {
+  if [[ $KEYMAP == vicmd ]]; then
+    prompt_segment red black 'N'
+  #else
+  #  prompt_segment black red 'I'
+  fi
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_status
+  prompt_mode
+  #prompt_status
   prompt_virtualenv
   prompt_context
   prompt_dir
@@ -201,3 +211,21 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
+
+# Update the prompt when the keymap changes.
+function zle-line-init zle-line-finish zle-keymap-select {
+  zle reset-prompt
+  zle -R
+}
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+
+# define right prompt
+#function precmd() {
+#  NORMAL="%{$fg[blue]%}%{$bg[blue]%}%{$fg[black]%} $(date) %{$reset_color%}"
+#  INVERTED="%{$fg[black]%}%{$bg[black]%}%{$fg[blue]%} $(date) %{$reset_color%}"
+#  RPS1='${${KEYMAP/vicmd/$NORMAL}/(main|viins)/$NORMAL}'
+#}
+
+export KEYTIMEOUT=1
