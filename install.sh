@@ -8,8 +8,11 @@ cd ~/repos
 
 if [ ! -d "$HOME/repos/dotfiles" ]; then
   echo 'Cloning jimmay5469/dotfiles'
-  git clone git@github.com:jimmay5469/dotfiles.git --origin jimmay5469
+  git clone https://github.com/jimmay5469/dotfiles.git --origin jimmay5469
+  cd dotfiles
+  git remote set-url --push jimmay5469 git@github.com:jimmay5469/dotfiles.git
+else
+  cd dotfiles
 fi
-cd dotfiles
 
 source install/everything.sh 
