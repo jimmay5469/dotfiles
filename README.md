@@ -17,6 +17,8 @@ My Environment Settings
   - Remap caps lock to esc using [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
   - Disable spotlight shortcut in favor of using it for Alfred
   - Put dock on the left
+  - run `brew cask alfred link`?
+  - which git?
 3. Install things:
   - [iTerm2](http://iterm2.com/)
     - [Apprentice theme](https://github.com/romainl/iterm2-colorschemes)
