@@ -35,3 +35,6 @@ if [ ! "$(brew ls --versions editorconfig)" ]; then
   echo "Installing editorconfig"
   brew install editorconfig
 fi
+
+echo "Linking homebrew pakcages"
+brew linkapps
