@@ -28,7 +28,7 @@ My Environment Settings
   - Flux
   - Monosnap
   - GifGrabber
-  - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/))
+  - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
   - Chrome
   - Firefox
 
