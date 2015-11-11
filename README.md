@@ -4,16 +4,14 @@ My Environment Settings
 1. `curl https://raw.githubusercontent.com/jimmay5469/dotfiles/master/install.sh | bash`
 2. OSX setup
   - Trackpad
-    - Enable tap click
-    - Endable 3 finger drag
+    - Enable 3 finger drag (in accessability settings now)
     - Disable swipe between pages
     - Enable 3 finger lookup
   - Keyboard
     - `Caps Lock` -> `No Action` (for all keyboards)
-    - Key repeat: fastest
-    - Delay until repeat: next to slowest
   - Remap caps lock to esc using [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
-  - Allow key auto repeat: `$ defaults write -g ApplePressAndHoldEnabled -bool false`
+  - Disable spotlight shortcut in favor of using it for Alfred
+  - Put dock on the left
 3. Install things:
   - [iTerm2](http://iterm2.com/)
     - [Apprentice theme](https://github.com/romainl/iterm2-colorschemes)
@@ -31,6 +29,8 @@ My Environment Settings
   - Monosnap
   - GifGrabber
   - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/))
+  - Chrome
+  - Firefox
 
 Spacemacs Setup
 ---------------

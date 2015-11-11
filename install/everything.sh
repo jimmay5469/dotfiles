@@ -11,5 +11,6 @@ if [ "$(uname)" == "Darwin" ]; then
   printf "\n\nOSX installation\n"
   echo "=============================="
 
+  source install/osx_settings.sh 
   source install/homebrew.sh 
 fi
