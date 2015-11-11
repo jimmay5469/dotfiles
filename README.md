@@ -1,6 +1,11 @@
 My Environment Settings
 =======================
 
+0. Prerequisites
+  - Xcode requirements for homebrew? `xcode-select --install`?
+  - Curl?
+  - Git?
+  - Ruby?
 1. `curl https://raw.githubusercontent.com/jimmay5469/dotfiles/master/install.sh | bash`
 2. OSX setup
   - Trackpad
@@ -19,6 +24,8 @@ My Environment Settings
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
   - [nvm](https://github.com/creationix/nvm)
   - [rbenv](https://github.com/sstephenson/rbenv)
+  - Neovim
+  - Ember-cli and it's requirements
   - Alfred
   - Dropbox
   - 1Password
@@ -31,6 +38,16 @@ My Environment Settings
   - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
   - Chrome
   - Firefox
+  - Screenhero
+  - Day One
+  - Picturelife
+  - Fitbit Sync
+  - Zoom
+  - Garmin Express
+  - Sonos
+  - Atom
+  - Skype
+  - Bulkr (Flickr downloader)
 
 Spacemacs Setup
 ---------------
