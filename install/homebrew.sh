@@ -11,6 +11,11 @@ fi
 
 echo "Installing homebrew packages"
 
+if [ ! "$(brew ls --versions brew-cask)" ]; then
+  echo "Installing brew-cask"
+  brew install caskroom/cask/brew-cask
+fi
+
 if [ ! "$(brew ls --versions git)" ]; then
   echo "Installing git"
   brew install git

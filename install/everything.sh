@@ -13,4 +13,5 @@ if [ "$(uname)" == "Darwin" ]; then
 
   source install/osx_settings.sh 
   source install/homebrew.sh 
+  source install/homebrew_cask.sh 
 fi

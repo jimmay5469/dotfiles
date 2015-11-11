@@ -17,39 +17,20 @@ My Environment Settings
   - Remap caps lock to esc using [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
   - Disable spotlight shortcut in favor of using it for Alfred
   - Put dock on the left
-  - run `brew cask alfred link`?
   - which git?
 3. Install things:
-  - [iTerm2](http://iterm2.com/)
-    - [Apprentice theme](https://github.com/romainl/iterm2-colorschemes)
-    - [Solarized theme](http://ethanschoonover.com/solarized)
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
   - [nvm](https://github.com/creationix/nvm)
   - [rbenv](https://github.com/sstephenson/rbenv)
-  - Neovim
   - Ember-cli and it's requirements
-  - Alfred
-  - Dropbox
-  - 1Password
-  - Dash
-  - Slack
-  - Tower
-  - Flux
-  - Monosnap
-  - GifGrabber
   - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
-  - Chrome
-  - Firefox
-  - Screenhero
+  - [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
   - Day One
-  - Picturelife
-  - Fitbit Sync
-  - Zoom
-  - Garmin Express
-  - Sonos
-  - Atom
-  - Skype
+  - GifGrabber
+  - Monosnap
   - Bulkr (Flickr downloader)
+  - Neovim
+
 
 Spacemacs Setup
 ---------------
