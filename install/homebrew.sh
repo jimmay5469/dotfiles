@@ -42,6 +42,11 @@ if [ ! "$(brew ls --versions neovim)" ]; then
   brew install neovim/neovim/neovim
 fi
 
+if [ ! "$(brew ls --versions rbenv)" ]; then
+  echo "Installing rbenv"
+  brew install rbenv ruby-build
+fi
+
 if [ ! "$(brew ls --versions the_silver_searcher)" ]; then
   echo "Installing the_silver_searcher"
   brew install the_silver_searcher

@@ -1,7 +1,6 @@
 Manual Installation Steps
 =========================
 1. Install things:
-  - [rbenv](https://github.com/sstephenson/rbenv)
   - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
   - [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
   - Bulkr (Flickr downloader)
