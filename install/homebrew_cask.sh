@@ -65,6 +65,11 @@ if [ "$(brew cask info screenhero | grep 'Not installed')" ]; then
   brew cask install screenhero
 fi
 
+if [ "$(brew cask info seil | grep 'Not installed')" ]; then
+  echo "Installing seil"
+  brew cask install seil
+fi
+
 if [ "$(brew cask info skype | grep 'Not installed')" ]; then
   echo "Installing skype"
   brew cask install skype

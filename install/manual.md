@@ -8,7 +8,6 @@ Manual Installation
     - Enable 3 finger lookup
   - Keyboard
     - `Caps Lock` -> `No Action` (for all keyboards)
-  - Remap caps lock to esc using [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
   - Disable spotlight shortcut in favor of using it for Alfred
   - Put dock on the left
   - which git?
@@ -27,6 +26,9 @@ Manual Installation
   - GifGrabber
   - Monosnap
 
+Seil Setup
+---------------
+1. Remap caps lock to esc (53)
 
 Spacemacs Setup
 ---------------
