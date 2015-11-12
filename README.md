@@ -7,9 +7,6 @@ Prerequisites
 -------------
 
   - Xcode requirements for homebrew? `xcode-select --install`?
-  - Curl?
-  - Git?
-  - Ruby?
 
 Installation
 ------------
