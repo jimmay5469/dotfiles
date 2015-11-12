@@ -6,6 +6,7 @@ Manual Installation Steps
   - [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
   - Bulkr (Flickr downloader)
   - Neovim
+  - [Spacemacs](https://github.com/syl20bnr/spacemacs)
 2. App store installs
   - Dash
   - Day One
@@ -28,10 +29,6 @@ OSX Setup
 Seil Setup
 ----------
 - Remap caps lock to esc (53)
-
-Spacemacs Setup
----------------
-- Install [Spacemacs](https://github.com/syl20bnr/spacemacs)
 
 Vim Setup
 ---------
