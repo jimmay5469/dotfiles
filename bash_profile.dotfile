@@ -1,6 +1,8 @@
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 eval "$(rbenv init -)"
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # get current branch in git repo
 function parse_git_branch() {
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
