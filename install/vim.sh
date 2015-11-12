@@ -10,7 +10,7 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
 fi
 
 echo "Installing vim plugins"
-vim +PluginInstall +qall
+vim +PluginInstall +qall &> /dev/null
 
 echo "Installing neovim plugins"
-nvim +PluginInstall +qall
+nvim +PluginInstall +qall &> /dev/null
