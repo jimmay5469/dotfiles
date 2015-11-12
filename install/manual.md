@@ -1,14 +1,12 @@
 Manual Installation Steps
 =========================
-1. Install things:
-  - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
-  - [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
-  - Bulkr (Flickr downloader)
-2. App store installs
+1. App store installs:
   - Dash
   - Day One
   - GifGrabber
   - Monosnap
+2. Other installs:
+  - Bulkr (Flickr downloader)
 3. Clone my repos
 
 OSX Setup
@@ -27,8 +25,16 @@ Seil Setup
 ----------
 - Remap caps lock to esc (53)
 
+iTerm Setup
+-----------
+- [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
+
 Vim Setup
 ---------
 - Install [Vundle](https://github.com/gmarik/Vundle.vim)
 - Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
 - Start Vim and run: `:PluginInstall`
+
+GitHub Setup
+------------
+- GitHub SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
