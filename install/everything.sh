@@ -1,20 +1,24 @@
 #!/bin/bash
 
-printf "\n\nCommon installation\n"
+printf "\n\nInstalling Everything\n"
 echo "=============================="
 
-source install/oh_my_zsh.sh
-source install/node.sh
-source install/dotfiles.sh 
-source install/symlinks.sh
-
 if [ "$(uname)" == "Darwin" ]; then
-
-  printf "\n\nOSX installation\n"
-  echo "=============================="
 
   source install/osx_settings.sh 
   source install/homebrew.sh 
   source install/homebrew_cask.sh 
+
+  source install/oh_my_zsh.sh
+  source install/node.sh
   source install/spacemacs.sh 
+
+  source install/dotfiles.sh 
+  source install/symlinks.sh
+
+else
+
+  echo 'You are not running OSX.  Please visit ~/repos/dotfiles/install/ and manually run the necessary install scripts.'
+
 fi
+

@@ -14,4 +14,5 @@ done
 
 echo "~/.config/nvim/init.vim"
 mkdir -p ~/.config/nvim
+rm -f ~/.config/nvim/init.vim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
