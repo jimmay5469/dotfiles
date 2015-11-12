@@ -23,18 +23,16 @@ OSX Setup
 
 Seil Setup
 ----------
-- Remap caps lock to esc (53)
+- Remap caps lock to esc (`53`)
 
 iTerm Setup
 -----------
-- Install [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
-- Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
+- Install [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes), and use it in _Preferences_ > _Profiles_ > _Colors_
+- Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font, and use it in _Preferences_ > _Profiles_ > _Text_
 
 Vim Setup
 ---------
-- Install [Vundle](https://github.com/gmarik/Vundle.vim)
 - Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
-- Start Vim and run: `:PluginInstall`
 
 GitHub Setup
 ------------

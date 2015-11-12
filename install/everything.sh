@@ -11,6 +11,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
   source install/oh_my_zsh.sh
   source install/node.sh
+  source install/vim.sh 
   source install/spacemacs.sh 
 
   source install/dotfiles.sh 
