@@ -12,7 +12,6 @@ Manual Installation
   - Put dock on the left
   - which git?
 2. Install things:
-  - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
   - [nvm](https://github.com/creationix/nvm)
   - [rbenv](https://github.com/sstephenson/rbenv)
   - Ember-cli and it's requirements
