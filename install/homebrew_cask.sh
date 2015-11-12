@@ -7,17 +7,17 @@ echo "Installing homebrew casks"
 
 if [ "$(brew cask info 1password | grep 'Not installed')" ]; then
   echo "Installing 1password"
-  #brew cask install 1password
+  brew cask install 1password
 fi
 
 if [ "$(brew cask info alfred | grep 'Not installed')" ]; then
   echo "Installing alfred"
-  #brew cask install alfred
+  brew cask install alfred
 fi
 
 if [ "$(brew cask info atom | grep 'Not installed')" ]; then
   echo "Installing atom"
-  #brew cask install atom
+  brew cask install atom
 fi
 
 if [ "$(brew cask info dash | grep 'Not installed')" ]; then
@@ -27,12 +27,12 @@ fi
 
 if [ "$(brew cask info dropbox | grep 'Not installed')" ]; then
   echo "Installing dropbox"
-  #brew cask install dropbox
+  brew cask install dropbox
 fi
 
 if [ "$(brew cask info firefox | grep 'Not installed')" ]; then
   echo "Installing firefox"
-  #brew cask install firefox
+  brew cask install firefox
 fi
 
 if [ "$(brew cask info fitbit-connect | grep 'Not installed')" ]; then
@@ -42,7 +42,7 @@ fi
 
 if [ "$(brew cask info flux | grep 'Not installed')" ]; then
   echo "Installing flux"
-  #brew cask install flux
+  brew cask install flux
 fi
 
 if [ "$(brew cask info garmin-express | grep 'Not installed')" ]; then
