@@ -10,6 +10,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then #oh-my-zsh is not installed
   fi
 fi
 
+source install/nvm.sh
 source install/dotfiles.sh 
 source install/symlinks.sh
 

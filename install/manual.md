@@ -12,7 +12,6 @@ Manual Installation
   - Put dock on the left
   - which git?
 2. Install things:
-  - [nvm](https://github.com/creationix/nvm)
   - [rbenv](https://github.com/sstephenson/rbenv)
   - Ember-cli and it's requirements
   - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
