@@ -22,6 +22,7 @@ Manual Installation
   - Day One
   - GifGrabber
   - Monosnap
+4. Clone my repos
 
 Seil Setup
 ---------------
