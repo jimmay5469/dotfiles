@@ -27,7 +27,8 @@ Seil Setup
 
 iTerm Setup
 -----------
-- [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
+- Install [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
+- Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
 
 Vim Setup
 ---------
