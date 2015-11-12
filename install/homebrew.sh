@@ -16,14 +16,14 @@ if [ ! "$(brew ls --versions brew-cask)" ]; then
   brew install caskroom/cask/brew-cask
 fi
 
+if [ ! "$(brew ls --versions editorconfig)" ]; then
+  echo "Installing editorconfig"
+  brew install editorconfig
+fi
+
 if [ ! "$(brew ls --versions git)" ]; then
   echo "Installing git"
   brew install git
-fi
-
-if [ ! "$(brew ls --versions tmux)" ]; then
-  echo "Installing tmux"
-  brew install tmux
 fi
 
 if [ ! "$(brew ls --versions macvim)" ]; then
@@ -36,9 +36,14 @@ if [ ! "$(brew ls --versions the_silver_searcher)" ]; then
   brew install the_silver_searcher
 fi
 
-if [ ! "$(brew ls --versions editorconfig)" ]; then
-  echo "Installing editorconfig"
-  brew install editorconfig
+if [ ! "$(brew ls --versions tmux)" ]; then
+  echo "Installing tmux"
+  brew install tmux
+fi
+
+if [ ! "$(brew ls --versions watchman)" ]; then
+  echo "Installing watchman"
+  brew install watchman
 fi
 
 echo "Linking homebrew pakcages"

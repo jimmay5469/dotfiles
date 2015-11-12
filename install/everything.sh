@@ -4,7 +4,7 @@ printf "\n\nCommon installation\n"
 echo "=============================="
 
 source install/oh_my_zsh.sh
-source install/nvm.sh
+source install/node.sh
 source install/dotfiles.sh 
 source install/symlinks.sh
 

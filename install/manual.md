@@ -13,7 +13,6 @@ Manual Installation
   - which git?
 2. Install things:
   - [rbenv](https://github.com/sstephenson/rbenv)
-  - Ember-cli and it's requirements
   - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
   - [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
   - Bulkr (Flickr downloader)
@@ -31,7 +30,6 @@ Seil Setup
 Spacemacs Setup
 ---------------
 1. Install [Spacemacs](https://github.com/syl20bnr/spacemacs)
-2. Install JSHint `npm install jshint -g`
 
 Vim Setup
 ---------
