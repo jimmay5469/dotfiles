@@ -6,7 +6,7 @@ Included are all my environment settings.  They can be installed easily by runni
 Prerequisites
 -------------
 
-  - Xcode requirements for homebrew? `xcode-select --install`?
+  - `xcode-select --install`
 
 Installation
 ------------
