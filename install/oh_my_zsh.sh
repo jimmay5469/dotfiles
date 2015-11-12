@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/repos/dotfiles
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then #oh-my-zsh is not installed
   if test $(which zsh); then #zsh prerequisite is installed

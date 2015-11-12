@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/repos/dotfiles
 
 printf "\n\nInstalling Everything\n"
 echo "=============================="

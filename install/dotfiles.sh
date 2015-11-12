@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/repos/dotfiles
 
 printf "\nCreating dotfile symlinks\n"
 echo "------------------------------"

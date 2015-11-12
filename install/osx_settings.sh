@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/repos/dotfiles
 
 printf "\nOSX Settings (requires restart to take effect)\n"
 echo "------------------------------"

@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/repos/dotfiles
 
 if [ ! -d "$HOME/.emacs.d/.git" ]; then
   printf "\nSpacemacs\n"

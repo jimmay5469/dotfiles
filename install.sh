@@ -5,8 +5,6 @@ if [ ! -d "$HOME/repos/dotfiles" ]; then
   git clone https://github.com/jimmay5469/dotfiles.git ~/repos/dotfiles --origin jimmay5469
   cd ~/repos/dotfiles
   git remote set-url --push jimmay5469 git@github.com:jimmay5469/dotfiles.git
-else
-  cd ~/repos/dotfiles
 fi
 
-source install/everything.sh 
+source ~/repos/dotfiles/install/everything.sh 

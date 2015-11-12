@@ -7,7 +7,7 @@ Manual Installation Steps
   - Monosnap
 2. Other installs:
   - Bulkr (Flickr downloader)
-3. Clone my repos
+  - Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
 
 OSX Setup
 ---------
@@ -28,11 +28,7 @@ Seil Setup
 iTerm Setup
 -----------
 - Install [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes), and use it in _Preferences_ > _Profiles_ > _Colors_
-- Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font, and use it in _Preferences_ > _Profiles_ > _Text_
-
-Vim Setup
----------
-- Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
+- Set font to `Meslo LG S Regular for Powerline` in _Preferences_ > _Profiles_ > _Text_
 
 GitHub Setup
 ------------
