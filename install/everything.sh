@@ -3,13 +3,7 @@
 printf "\n\nCommon installation\n"
 echo "=============================="
 
-if [ ! -d "$HOME/.oh-my-zsh" ]; then #oh-my-zsh is not installed
-  if test $(which zsh); then #zsh prerequisite is installed
-    echo "Installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  fi
-fi
-
+source install/oh_my_zsh.sh
 source install/nvm.sh
 source install/dotfiles.sh 
 source install/symlinks.sh
