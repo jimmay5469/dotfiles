@@ -32,7 +32,7 @@ fi
 
 if [ "$(brew cask info fitbit-connect | grep 'Not installed')" ]; then
   echo "Installing fitbit-connect"
-  #brew cask install fitbit-connect
+  brew cask install fitbit-connect
 fi
 
 if [ "$(brew cask info flux | grep 'Not installed')" ]; then
@@ -42,52 +42,52 @@ fi
 
 if [ "$(brew cask info garmin-express | grep 'Not installed')" ]; then
   echo "Installing garmin-express"
-  #brew cask install garmin-express
+  brew cask install garmin-express
 fi
 
 if [ "$(brew cask info google-chrome | grep 'Not installed')" ]; then
   echo "Installing google-chrome"
-  #brew cask install google-chrome
+  brew cask install google-chrome
 fi
 
 if [ "$(brew cask info iterm2 | grep 'Not installed')" ]; then
   echo "Installing iterm2"
-  #brew cask install iterm2
+  brew cask install iterm2
 fi
 
 if [ "$(brew cask info picturelife | grep 'Not installed')" ]; then
   echo "Installing picturelife"
-  #brew cask install picturelife
+  brew cask install picturelife
 fi
 
 if [ "$(brew cask info screenhero | grep 'Not installed')" ]; then
   echo "Installing screenhero"
-  #brew cask install screenhero
+  brew cask install screenhero
 fi
 
 if [ "$(brew cask info skype | grep 'Not installed')" ]; then
   echo "Installing skype"
-  #brew cask install skype
+  brew cask install skype
 fi
 
 if [ "$(brew cask info slack | grep 'Not installed')" ]; then
   echo "Installing slack"
-  #brew cask install slack
+  brew cask install slack
 fi
 
 if [ "$(brew cask info sonos | grep 'Not installed')" ]; then
   echo "Installing sonos"
-  #brew cask install sonos
+  brew cask install sonos
 fi
 
 if [ "$(brew cask info tower | grep 'Not installed')" ]; then
   echo "Installing tower"
-  #brew cask install tower
+  brew cask install tower
 fi
 
 if [ "$(brew cask info zoomus | grep 'Not installed')" ]; then
   echo "Installing zoomus"
-  #brew cask install zoomus
+  brew cask install zoomus
 fi
 
 #no longer required
