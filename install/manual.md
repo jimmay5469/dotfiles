@@ -6,7 +6,6 @@ Manual Installation Steps
   - [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
   - Bulkr (Flickr downloader)
   - Neovim
-  - [Spacemacs](https://github.com/syl20bnr/spacemacs)
 2. App store installs
   - Dash
   - Day One

@@ -21,6 +21,12 @@ if [ ! "$(brew ls --versions editorconfig)" ]; then
   brew install editorconfig
 fi
 
+if [ ! "$(brew ls --versions emacs-mac)" ]; then
+  echo "Installing emacs-mac"
+  brew tap railwaycat/emacsmacport
+  brew install emacs-mac --with-spacemacs-icon
+fi
+
 if [ ! "$(brew ls --versions git)" ]; then
   echo "Installing git"
   brew install git
