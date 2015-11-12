@@ -11,3 +11,7 @@ for file in $dotfiles ; do
   fi
   ln -s $file $symlink
 done
+
+echo "~/.config/nvim/init.vim"
+mkdir -p ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvim/init.vim

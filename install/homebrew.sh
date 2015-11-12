@@ -37,6 +37,11 @@ if [ ! "$(brew ls --versions macvim)" ]; then
   brew install macvim
 fi
 
+if [ ! "$(brew ls --versions neovim)" ]; then
+  echo "Installing neovim"
+  brew install neovim/neovim/neovim
+fi
+
 if [ ! "$(brew ls --versions the_silver_searcher)" ]; then
   echo "Installing the_silver_searcher"
   brew install the_silver_searcher

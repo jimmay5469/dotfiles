@@ -5,7 +5,6 @@ Manual Installation Steps
   - Git SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
   - [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes)
   - Bulkr (Flickr downloader)
-  - Neovim
 2. App store installs
   - Dash
   - Day One
