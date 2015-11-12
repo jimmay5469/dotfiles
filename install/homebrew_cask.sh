@@ -20,11 +20,6 @@ if [ "$(brew cask info atom | grep 'Not installed')" ]; then
   brew cask install atom
 fi
 
-if [ "$(brew cask info dash | grep 'Not installed')" ]; then
-  echo "Installing dash"
-  #brew cask install dash
-fi
-
 if [ "$(brew cask info dropbox | grep 'Not installed')" ]; then
   echo "Installing dropbox"
   brew cask install dropbox
