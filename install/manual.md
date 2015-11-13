@@ -7,7 +7,6 @@ Manual Installation Steps
   - Monosnap
 2. Other installs:
   - Bulkr (Flickr downloader)
-  - Install [Meslo LG S Regular for Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf) font
 
 OSX Setup
 ---------
