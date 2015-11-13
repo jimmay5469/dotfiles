@@ -21,6 +21,11 @@ if [ ! "$(brew cask ls | grep atom)" ]; then
   brew cask install atom
 fi
 
+if [ ! "$(brew cask ls | grep dash)" ]; then
+  echo "Installing dash"
+  brew cask install dash
+fi
+
 if [ ! "$(brew cask ls | grep dropbox)" ]; then
   echo "Installing dropbox"
   brew cask install dropbox

@@ -1,7 +1,6 @@
 Manual Installation Steps
 =========================
 1. App store installs:
-  - Dash
   - Day One
   - GifGrabber
   - Monosnap
