@@ -2,7 +2,6 @@ Manual Installation Steps
 =========================
 1. App store installs:
   - Day One
-  - GifGrabber
   - Monosnap
 2. Other installs:
   - Bulkr (Flickr downloader)
