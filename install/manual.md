@@ -6,6 +6,7 @@ Manual Installation Steps
   - Monosnap
 2. Other installs:
   - Bulkr (Flickr downloader)
+3. Setup Dropbox
 
 OSX Setup
 ---------
