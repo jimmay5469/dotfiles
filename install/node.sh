@@ -35,5 +35,5 @@ fi
 
 if test ! $(which phantomjs); then
   echo "Installing phantomjs"
-  npm install -g phantomjs
+  npm install -g phantomjs2
 fi
