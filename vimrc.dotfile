@@ -98,5 +98,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
 
-"reloading
-nmap <LEADER>mr :checktime<CR>
+nnoremap <LEADER>br :checktime<CR>
+nnoremap <LEADER>feR :source ~/.vimrc<CR>:source ~/.vim/bundle/vim-spacemacs/plugin/spacemacs.vim<CR>
+nnoremap <LEADER>pp :e ~/repos/
