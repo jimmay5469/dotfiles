@@ -3,8 +3,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-"Spacemacs
-Plug 'jimmay5469/vim-spacemacs'
+"Spacemacs (use local vim-spacemacs if possible)
+if !empty(glob("~/repos/vim-spacemacs"))
+  Plug '~/repos/vim-spacemacs'
+else
+  Plug 'jimmay5469/vim-spacemacs'
+endif
 
 "Good defaults
 Plug 'tpope/vim-sensible'
@@ -92,5 +96,9 @@ endif
 let mapleader = "\<SPACE>"
 
 nnoremap <LEADER>br :checktime<CR>
-nnoremap <LEADER>feR :source ~/.vimrc<CR>:source ~/.vim/bundle/vim-spacemacs/plugin/spacemacs.vim<CR>
 nnoremap <LEADER>pp :e ~/repos/
+
+"Reload vim-spacemacs if it is local
+if !empty(glob("~/repos/vim-spacemacs"))
+  nnoremap <LEADER>feR :source ~/.vimrc<CR>:source ~/repos/vim-spacemacs/plugin/spacemacs.vim<CR>
+endif
