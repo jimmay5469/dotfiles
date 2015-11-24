@@ -14,6 +14,7 @@ for file in $dotfiles ; do
 done
 
 echo "~/.config/nvim/init.vim"
-mkdir -p ~/.config/nvim
-rm -f ~/.config/nvim/init.vim
+mkdir -p ~/.config
+rm -f ~/.config/nvim
+ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim

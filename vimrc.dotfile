@@ -1,40 +1,33 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle
+" vim-plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 "Spacemacs
-Plugin 'jimmay5469/vim-spacemacs'
+Plug 'jimmay5469/vim-spacemacs'
 
 "Good defaults
-Plugin 'tpope/vim-sensible'
-Plugin 'PreserveNoEOL' "required for editorconfig-vim
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-sensible'
+Plug 'PreserveNoEOL' "required for editorconfig-vim
+Plug 'editorconfig/editorconfig-vim'
 
 "Navigation
-Plugin 'tpope/vim-vinegar'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
 
 "Theme
-Plugin 'romainl/Apprentice'
-Plugin 'ap/vim-css-color'
+Plug 'romainl/Apprentice'
+Plug 'ap/vim-css-color'
 
 "Git
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 "Syntax hightlighting
-Plugin 'pangloss/vim-javascript'
-Plugin 'mustache/vim-mustache-handlebars'
+Plug 'pangloss/vim-javascript'
+Plug 'mustache/vim-mustache-handlebars'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
