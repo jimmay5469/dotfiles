@@ -72,6 +72,29 @@ set timeoutlen=10000
 "better autochdir
 let g:rooter_silent_chdir = 1
 
+"statusline
+function! ConditionalCWD()
+  if expand("%f") =~ $HOME && expand("%f") != getcwd()
+    return ""
+  else
+    let cwd = substitute(getcwd(), $HOME, "~", "")
+    return "[" . substitute(cwd, "\\~/repos/", "", "") . "]"
+  endif
+endfunction
+function! ConditionalPath()
+  if expand("%f") != getcwd()
+    return substitute(expand("%f"), $HOME, "~", "")
+  else
+    return ""
+  endif
+endfunction
+set statusline=%{ConditionalCWD()}
+set statusline+=%{ConditionalPath()}
+set statusline+=%= "Switch to the right side
+set statusline+=%l "Current line
+set statusline+=/ "Separator
+set statusline+=%L "Total lines
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Style
