@@ -31,6 +31,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'mustache/vim-mustache-handlebars'
 
+"better autochdir
+Plug 'airblade/vim-rooter'
+
 call plug#end()
 
 
@@ -65,6 +68,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 "don't timeout commands so quickly
 set timeoutlen=10000
+
+"better autochdir
+let g:rooter_silent_chdir = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
