@@ -73,27 +73,26 @@ set timeoutlen=10000
 let g:rooter_silent_chdir = 1
 
 "statusline
-function! ConditionalCWD()
-  if expand("%f") =~ $HOME && expand("%f") != getcwd()
-    return ""
-  else
-    let cwd = substitute(getcwd(), $HOME, "~", "")
-    return "[" . substitute(cwd, "\\~/repos/", "", "") . "]"
-  endif
+function! ShortPath(path)
+  let cwd = substitute(a:path, $HOME, "~", "")
+  return substitute(cwd, "\\~/repos/", "", "")
 endfunction
-function! ConditionalPath()
-  if expand("%f") != getcwd()
-    return substitute(expand("%f"), $HOME, "~", "")
-  else
-    return ""
-  endif
+function! ShortFilepath()
+  return ShortPath(expand("%:p"))
 endfunction
-set statusline=%{ConditionalCWD()}
-set statusline+=%{ConditionalPath()}
+function! ShortCWD()
+  return ShortPath(getcwd())
+endfunction
+function! IsModified()
+  return &modified?"[+]":""
+endfunction
+set statusline=%{IsModified()}%r "File status
+set statusline+=\ %{ShortFilepath()}
 set statusline+=%= "Switch to the right side
 set statusline+=%l "Current line
 set statusline+=/ "Separator
 set statusline+=%L "Total lines
+set statusline+=\ [%{ShortCWD()}]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
