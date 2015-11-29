@@ -72,7 +72,10 @@ set timeoutlen=10000
 "better autochdir
 let g:rooter_silent_chdir = 1
 
-"statusline
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Statusline/Tabline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ShortPath(path)
   let cwd = substitute(a:path, $HOME, "~", "")
   return substitute(cwd, "\\~/repos/", "", "")
@@ -86,6 +89,8 @@ endfunction
 function! IsModified()
   return &modified?"[+]":""
 endfunction
+
+"Statusline
 set statusline=%{IsModified()}%r "File status
 set statusline+=\ %{ShortFilepath()}
 set statusline+=%= "Switch to the right side
@@ -93,6 +98,7 @@ set statusline+=%l "Current line
 set statusline+=/ "Separator
 set statusline+=%L\  "Total lines
 
+"Tabline
 set showtabline=2
 function! MyTabLabel(n)
   let buflist = tabpagebuflist(a:n)
