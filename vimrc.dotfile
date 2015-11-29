@@ -102,7 +102,7 @@ set statusline+=%L "Total lines
 
 "Syntax highlighting
 set background=dark
-colorscheme apprentice
+silent! colorscheme apprentice
 
 "gvim options
 if has("gui_running")
