@@ -81,7 +81,7 @@ function! ShortPath(path)
   return substitute(cwd, "\\~/repos/", "", "")
 endfunction
 function! ShortFilepath()
-  return ShortPath(expand("%:p"))
+  return ShortPath(expand("%f"))
 endfunction
 function! ShortCWD()
   return ShortPath(getcwd())
