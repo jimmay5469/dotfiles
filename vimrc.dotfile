@@ -103,7 +103,7 @@ set showtabline=2
 function! MyTabLabel(n)
   let buflist = tabpagebuflist(a:n)
   let winnr = tabpagewinnr(a:n)
-  return '[ ' . a:n . '. ' . ShortPath(bufname(buflist[winnr - 2])) . ' ]'
+  return '[ ' . a:n . '. ' . ShortPath(bufname(buflist[winnr - 1])) . ' ]'
 endfunction
 function! MyTabLine()
   let s = ''
