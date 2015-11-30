@@ -99,38 +99,28 @@ set statusline+=/ "Separator
 set statusline+=%L\  "Total lines
 
 "Tabline
-set showtabline=2
-function! MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  return '[ ' . a:n . '. ' . ShortPath(bufname(buflist[winnr - 1])) . ' ]'
-endfunction
-function! MyTabLine()
+function! Tabline()
   let s = ''
   for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
-    endif
+    let tab = i + 1
+    let winnr = tabpagewinnr(tab)
+    let buflist = tabpagebuflist(tab)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
 
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-    " the label is made by MyTabLabel()
-    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+    let s .= '%' . tab . 'T'
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . ']' : '[No Name]')
   endfor
 
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#TabLineFill#%T'
+  let s .= '%#TabLineFill#'
 
   " right-align the CWD
   let s .= '%=%#TabLineSel#[%{ShortCWD()}]'
 
   return s
 endfunction
-set tabline=%!MyTabLine()
+set tabline=%!Tabline()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
