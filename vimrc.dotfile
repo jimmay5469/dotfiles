@@ -95,7 +95,7 @@ function! StatusLine()
   let s = ''
   let s .= '%{IsModified()}%r' "File status
   let s .= ' %{ShortFilepath()}'
-  let s .= '%=%l/%L ' "Right align line numbers
+  let s .= '%=%L ' "Right align line numbers
   return s
 endfunction
 set statusline=%!StatusLine()
