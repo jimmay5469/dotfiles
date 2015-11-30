@@ -101,6 +101,7 @@ endfunction
 set statusline=%!StatusLine()
 
 "Tabline
+set showtabline=2
 function! Tabline()
   let s = ''
   for i in range(tabpagenr('$'))
