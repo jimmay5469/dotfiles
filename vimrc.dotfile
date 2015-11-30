@@ -91,12 +91,14 @@ function! IsModified()
 endfunction
 
 "Statusline
-set statusline=%{IsModified()}%r "File status
-set statusline+=\ %{ShortFilepath()}
-set statusline+=%= "Switch to the right side
-set statusline+=%l "Current line
-set statusline+=/ "Separator
-set statusline+=%L\  "Total lines
+function! StatusLine()
+  let s = ''
+  let s .= '%{IsModified()}%r' "File status
+  let s .= ' %{ShortFilepath()}'
+  let s .= '%=%l/%L ' "Right align line numbers
+  return s
+endfunction
+set statusline=%!StatusLine()
 
 "Tabline
 function! Tabline()
