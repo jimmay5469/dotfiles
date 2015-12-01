@@ -35,12 +35,27 @@ fi
 
 if [ ! "$(brew ls --versions macvim)" ]; then
   echo "Installing macvim"
-  brew install macvim
+  brew install macvim --with-override-system-vim
 fi
 
 if [ ! "$(brew ls --versions neovim)" ]; then
   echo "Installing neovim"
   brew install neovim/neovim/neovim
+fi
+
+if [ ! "$(brew ls --versions python)" ]; then
+  echo "Installing python"
+  brew install python
+  sudo easy_install-2.7 pip
+  sudo easy_install-2.7 greenlet
+  sudo pip2 install neovim
+fi
+
+if [ ! "$(brew ls --versions python3)" ]; then
+  echo "Installing python3"
+  brew install python3
+  sudo easy_install-3.5 pip
+  sudo pip3 install neovim
 fi
 
 if [ ! "$(brew ls --versions rbenv)" ]; then

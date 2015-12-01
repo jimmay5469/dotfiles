@@ -34,6 +34,10 @@ Plug 'mustache/vim-mustache-handlebars'
 "better autochdir
 Plug 'airblade/vim-rooter'
 
+"autocomplete
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+
 call plug#end()
 
 
@@ -75,6 +79,9 @@ let g:rooter_silent_chdir = 1
 "folding
 set foldmethod=indent
 set nofoldenable
+
+"autocomplete
+autocmd CompleteDone * pclose "close docs preview after autocomplete
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
