@@ -72,6 +72,10 @@ set timeoutlen=10000
 "better autochdir
 let g:rooter_silent_chdir = 1
 
+"folding
+set foldmethod=indent
+set nofoldenable
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline/Tabline
