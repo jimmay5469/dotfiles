@@ -61,6 +61,11 @@ if [ ! "$(brew cask ls | grep iterm2)" ]; then
   brew cask install iterm2
 fi
 
+if [ ! "$(brew cask ls | grep karabiner)" ]; then
+  echo "Installing karabiner"
+  brew cask install karabiner
+fi
+
 if [ ! "$(brew cask ls | grep picturelife)" ]; then
   echo "Installing picturelife"
   brew cask install picturelife
