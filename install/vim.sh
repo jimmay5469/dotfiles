@@ -9,7 +9,7 @@ if [ ! -e ~/.vim/autoload/plug.vim ]; then
 fi
 
 echo "Installing vim plugins"
-gvim +PlugInstall +qall #&> /dev/null
+nvim +PlugInstall +qall #&> /dev/null
 
 #should happen automatically since nvim and vim configs are symlinked
 #echo "Installing neovim plugins"
