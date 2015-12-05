@@ -12,7 +12,7 @@ endif
 
 "Good defaults
 Plug 'tpope/vim-sensible'
-Plug 'PreserveNoEOL' "required for editorconfig-vim
+"Plug 'PreserveNoEOL' "required for editorconfig-vim
 Plug 'editorconfig/editorconfig-vim'
 
 "Navigation

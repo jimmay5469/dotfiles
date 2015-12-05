@@ -3,9 +3,9 @@ set -g default-terminal "screen-256color"
 set -g status-utf8 on
 
 # unbind default prefix and set it to Ctrl+a
-unbind C-b
-set -g prefix C-a
-bind C-a send-prefix
+# unbind C-b
+# set -g prefix C-a
+# bind C-a send-prefix
 
 # make delay shorter
 set -sg escape-time 0
