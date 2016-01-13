@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 
 "Syntax hightlighting
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 
 "better autochdir
