@@ -28,11 +28,6 @@ if [ ! "$(brew ls --versions emacs-mac)" ]; then
   brew install emacs-mac --with-spacemacs-icon
 fi
 
-if [ ! "$(brew ls --versions git)" ]; then
-  echo "Installing git"
-  brew install git
-fi
-
 if [ ! "$(brew ls --versions macvim)" ]; then
   echo "Installing macvim"
   brew install macvim --with-override-system-vim
