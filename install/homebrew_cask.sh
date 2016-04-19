@@ -66,11 +66,6 @@ if [ ! "$(brew cask ls | grep karabiner)" ]; then
   brew cask install karabiner
 fi
 
-if [ ! "$(brew cask ls | grep picturelife)" ]; then
-  echo "Installing picturelife"
-  brew cask install picturelife
-fi
-
 if [ ! "$(brew cask ls | grep screenhero)" ]; then
   echo "Installing screenhero"
   brew cask install screenhero
