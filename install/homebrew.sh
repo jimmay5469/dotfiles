@@ -68,6 +68,11 @@ if [ ! "$(brew ls --versions tmux)" ]; then
   brew install tmux
 fi
 
+if [ ! "$(brew ls --versions vim)" ]; then
+  echo "Installing vim"
+  brew install vim
+fi
+
 if [ ! "$(brew ls --versions watchman)" ]; then
   echo "Installing watchman"
   brew install watchman
