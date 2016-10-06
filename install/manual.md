@@ -15,14 +15,10 @@ OSX Setup
   - Disable swipe between pages
   - Enable 3 finger lookup
 - Keyboard
-  - `Caps Lock` -> `No Action` (for all keyboards)
+  - `Caps Lock` -> `Control` (for all keyboards)
 - Disable spotlight shortcut in favor of using it for Alfred
 - Put dock on the left
 - which git?
-
-Seil Setup
-----------
-- Remap caps lock to esc (`53`)
 
 iTerm Setup
 -----------

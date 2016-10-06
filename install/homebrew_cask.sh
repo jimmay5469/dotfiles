@@ -61,19 +61,9 @@ if [ ! "$(brew cask ls | grep iterm2)" ]; then
   brew cask install iterm2
 fi
 
-if [ ! "$(brew cask ls | grep karabiner)" ]; then
-  echo "Installing karabiner"
-  brew cask install karabiner
-fi
-
 if [ ! "$(brew cask ls | grep screenhero)" ]; then
   echo "Installing screenhero"
   brew cask install screenhero
-fi
-
-if [ ! "$(brew cask ls | grep seil)" ]; then
-  echo "Installing seil"
-  brew cask install seil
 fi
 
 if [ ! "$(brew cask ls | grep skype)" ]; then
