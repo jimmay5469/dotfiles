@@ -20,6 +20,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 
+"Pane navigation
+Plug 'christoomey/vim-tmux-navigator'
+
 "Theme
 Plug 'romainl/Apprentice'
 Plug 'ap/vim-css-color'
