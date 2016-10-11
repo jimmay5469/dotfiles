@@ -1,6 +1,10 @@
 # tmux display things in 256 colors
 set -g default-terminal "screen-256color"
 
+#fix copy paste error in osx sierra
+set -g default-shell $SHELL 
+set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+
 # unbind default prefix and set it to Ctrl+a
 unbind C-b
 set -g prefix C-a

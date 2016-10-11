@@ -49,6 +49,9 @@ call plug#end()
 " Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"fix copy paste error in osx sierra
+set clipboard=unnamed
+
 "line numbers
 set number
 
