@@ -81,6 +81,11 @@ if [ ! "$(brew cask ls | grep sonos)" ]; then
   brew cask install sonos
 fi
 
+if [ ! "$(brew cask ls | grep spotify)" ]; then
+  echo "Installing spotify"
+  brew cask install spotify
+fi
+
 if [ ! "$(brew cask ls | grep tower)" ]; then
   echo "Installing tower"
   brew cask install tower
