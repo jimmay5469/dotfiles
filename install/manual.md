@@ -15,7 +15,7 @@ OSX Setup
   - Disable swipe between pages
   - Enable 3 finger lookup
 - Keyboard
-  - `Caps Lock` -> `Control` (for all keyboards)
+  - `Caps Lock` -> `Escape` (for all keyboards)
 - Disable spotlight shortcut in favor of using it for Alfred
 - Put dock on the left
 - which git?
