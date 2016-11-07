@@ -10,7 +10,7 @@ for file in $symlinks ; do
   symlinkFileName=$( basename $file ".symlink" )
   symlink="$symlinkDirectoryName/$symlinkFileName"
 
-  echo "~${symlink#$HOME} -> ~${file#$HOME}"
+  echo "~${symlink#$HOME}"
   if [ $symlink ]; then
     rm -rf $symlink
   fi
@@ -18,12 +18,14 @@ for file in $symlinks ; do
   ln -s $file $symlink
 done
 
-echo "~/.config/nvim -> ~/.vim"
+echo "Special Cases"
+
+echo "  ~/.config/nvim -> ~/.vim"
 rm -rf ~/.config/nvim
 mkdir -p ~/.config
 ln -s ~/.vim ~/.config/nvim
 
-echo "~/.config/nvim/init.vim -> ~/.vimrc"
+echo "  ~/.config/nvim/init.vim ~/.vimrc"
 rm -rf ~/.config/nvim/init.vim
 mkdir -p ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
