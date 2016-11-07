@@ -17,4 +17,10 @@ echo "~/.config/nvim/init.vim"
 mkdir -p ~/.config
 rm -rf ~/.config/nvim
 ln -s ~/.vim ~/.config/nvim
+rm -rf ~/.config/nvim/init.vim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
+
+echo "~/.karabiner.d/configuration/karabiner.json"
+mkdir -p ~/.karabiner.d/configuration
+rm -rf ~/.karabiner.d/configuration/karabiner.json
+ln -s ~/.karabiner ~/.karabiner.d/configuration/karabiner.json
