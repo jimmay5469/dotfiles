@@ -22,11 +22,11 @@ if [ ! "$(brew ls --versions editorconfig)" ]; then
   brew install editorconfig
 fi
 
-if [ ! "$(brew ls --versions emacs-mac)" ]; then
-  echo "Installing emacs-mac"
-  brew tap railwaycat/emacsmacport
-  brew install emacs-mac --with-spacemacs-icon
-fi
+#if [ ! "$(brew ls --versions emacs-mac)" ]; then
+#  echo "Installing emacs-mac"
+#  brew tap railwaycat/emacsmacport
+#  brew install emacs-mac --with-spacemacs-icon
+#fi
 
 if [ ! "$(brew ls --versions macvim)" ]; then
   echo "Installing macvim"
@@ -53,10 +53,10 @@ if [ ! "$(brew ls --versions python3)" ]; then
   sudo pip3 install neovim
 fi
 
-if [ ! "$(brew ls --versions rbenv)" ]; then
-  echo "Installing rbenv"
-  brew install rbenv ruby-build
-fi
+#if [ ! "$(brew ls --versions rbenv)" ]; then
+#  echo "Installing rbenv"
+#  brew install rbenv ruby-build
+#fi
 
 if [ ! "$(brew ls --versions the_silver_searcher)" ]; then
   echo "Installing the_silver_searcher"

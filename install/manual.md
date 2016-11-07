@@ -4,9 +4,7 @@ Manual Installation Steps
   - Day One
   - Monosnap
   - iA Writer
-2. Other installs:
-  - Bulkr (Flickr downloader)
-3. Setup Dropbox
+2. Setup Dropbox
 
 OSX Setup
 ---------

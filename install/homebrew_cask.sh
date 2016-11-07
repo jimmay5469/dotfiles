@@ -16,10 +16,10 @@ if [ ! "$(brew cask ls | grep alfred)" ]; then
   brew cask install alfred
 fi
 
-if [ ! "$(brew cask ls | grep atom)" ]; then
-  echo "Installing atom"
-  brew cask install atom
-fi
+#if [ ! "$(brew cask ls | grep atom)" ]; then
+#  echo "Installing atom"
+#  brew cask install atom
+#fi
 
 if [ ! "$(brew cask ls | grep dash)" ]; then
   echo "Installing dash"
@@ -36,10 +36,10 @@ if [ ! "$(brew cask ls | grep firefox)" ]; then
   brew cask install firefox
 fi
 
-if [ ! "$(brew cask ls | grep fitbit-connect)" ]; then
-  echo "Installing fitbit-connect"
-  brew cask install fitbit-connect
-fi
+#if [ ! "$(brew cask ls | grep fitbit-connect)" ]; then
+#  echo "Installing fitbit-connect"
+#  brew cask install fitbit-connect
+#fi
 
 if [ ! "$(brew cask ls | grep flux)" ]; then
   echo "Installing flux"
