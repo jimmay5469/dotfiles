@@ -16,7 +16,6 @@ if [ "$(uname)" == "Darwin" ]; then
   source install/node.sh
   #source install/spacemacs.sh
 
-  source install/dotfiles.sh 
   source install/symlinks.sh
 
   source install/vim.sh
