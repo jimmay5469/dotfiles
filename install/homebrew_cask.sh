@@ -56,9 +56,19 @@ if [ ! "$(brew cask ls | grep google-chrome)" ]; then
   brew cask install google-chrome
 fi
 
+if [ ! "$(brew cask ls | grep hammerspoon)" ]; then
+  echo "Installing hammerspoon"
+  brew cask install hammerspoon
+fi
+
 if [ ! "$(brew cask ls | grep iterm2)" ]; then
   echo "Installing iterm2"
   brew cask install iterm2
+fi
+
+if [ ! "$(brew cask ls | grep karabiner-elements)" ]; then
+  echo "Installing karabiner-elements"
+  brew cask install karabiner-elements
 fi
 
 if [ ! "$(brew cask ls | grep screenhero)" ]; then
