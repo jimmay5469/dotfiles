@@ -3,7 +3,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
 end)
 
 ctrlMode = hs.hotkey.modal.new()
-ctrlBindings = {'a','h','j','k','l','r'}
+ctrlBindings = {'a','c','h','j','k','l','r'}
 for i,key in ipairs(ctrlBindings) do
   keyPassthrough = function()
     hs.eventtap.keyStroke({'ctrl'}, key)
