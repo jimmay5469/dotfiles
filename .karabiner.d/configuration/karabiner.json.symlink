@@ -19,7 +19,7 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
-                "caps_lock": "escape"
+                "caps_lock": "f19"
             }
         }
     ]
