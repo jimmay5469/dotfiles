@@ -64,3 +64,4 @@ Latest Install Steps
   - launch at login
   - configure icons
 - launch flux and set to classic
+- launch slack and log into teams
