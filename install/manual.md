@@ -68,3 +68,6 @@ Latest Install Steps
 - add /User/jimmay5469 and Mackintosh HD directories to finder favorites
 - log in to google photos uploader and choose originals in preferences and add Apple Photos Library to folders
 - in bluetooth settings choose show bluetooth in menu bar
+- log into all internet accounts on system preferences
+  - sync everything but messages for google accounts
+  - icloud sync everything but: photos, mail, contacts, notes, back to my mac
