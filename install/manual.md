@@ -60,3 +60,7 @@ Latest Install Steps
 - put the dock on the left, autohide it, make it small, and remove everythign from it except finder and settings
 - launch dash and activate license
 - launch tower and activate license
+- launch bartender
+  - launch at login
+  - configure icons
+- launch flux and set to classic
