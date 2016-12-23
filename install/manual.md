@@ -67,3 +67,4 @@ Latest Install Steps
 - launch slack and log into teams
 - add /User/jimmay5469 and Mackintosh HD directories to finder favorites
 - log in to google photos uploader and choose originals in preferences and add Apple Photos Library to folders
+- in bluetooth settings choose show bluetooth in menu bar
