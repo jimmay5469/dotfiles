@@ -61,6 +61,11 @@ if [ ! "$(brew cask ls | grep google-chrome)" ]; then
   brew cask install google-chrome
 fi
 
+if [ ! "$(brew cask ls | grep google-photos-backup)" ]; then
+  echo "Installing google-photos-backup"
+  brew cask install google-photos-backup
+fi
+
 if [ ! "$(brew cask ls | grep hammerspoon)" ]; then
   echo "Installing hammerspoon"
   brew cask install hammerspoon

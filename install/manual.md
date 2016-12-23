@@ -65,3 +65,5 @@ Latest Install Steps
   - configure icons
 - launch flux and set to classic
 - launch slack and log into teams
+- add /User/jimmay5469 and Mackintosh HD directories to finder favorites
+- log in to google photos uploader and choose originals in preferences and add Apple Photos Library to folders
