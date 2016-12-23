@@ -58,6 +58,11 @@ fi
 #  brew install rbenv ruby-build
 #fi
 
+if [ ! "$(brew ls --versions reattach-to-user-namespace)" ]; then
+  echo "Installing reattach-to-user-namespace"
+  brew install reattach-to-user-namespace
+fi
+
 if [ ! "$(brew ls --versions the_silver_searcher)" ]; then
   echo "Installing the_silver_searcher"
   brew install the_silver_searcher
