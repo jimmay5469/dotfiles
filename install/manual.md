@@ -26,3 +26,34 @@ iTerm Setup
 GitHub Setup
 ------------
 - GitHub SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
+
+
+Latest Install Steps
+--------------------
+- enable 3 finger drag in accessability settings
+- launch hammerspoon
+  - set hammerspoon launch at login
+  - hide dock icon
+- launch karabiner elements
+- setup dropbox
+- launch and setup 1 password
+  - my vault from dropbox
+  - lauren's vault from dropbox
+  - license key
+- launch chrome
+  - install 1password extension
+  - login
+- disable swipe between pages in trackpad settings
+- launch alfred
+  - activate powerpack
+  - set sync folder to dropbox folder in advanced settings
+- disable spotlight shortcut
+- install monosnap from app store and launch
+- install ia writer from app store, launch, and add dropbox library folder
+- launch iterm
+  - set iterm default location in preferences profiles general working directory advanced configuration (/Uwers/:username/repos, reuse, reuse)
+  - set iterm font in preferences profiles text
+  - set iterm transparency in preferences profiles window
+  - set iterm columns to 235 and rows to 65 in preferences profiles window
+  - install iterm theme
+- create ssh key and add to github
