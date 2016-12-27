@@ -71,3 +71,8 @@ Latest Install Steps
 - log into all internet accounts on system preferences
   - sync everything but messages for google accounts
   - icloud sync everything but: photos, mail, contacts, notes, back to my mac
+
+What's Missing
+--------------
+- dash syncing
+- env variables
