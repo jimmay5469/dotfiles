@@ -58,7 +58,9 @@ Latest Install Steps
   - install iterm theme
 - create ssh key and add to github
 - put the dock on the left, autohide it, make it small, and remove everythign from it except finder and settings
-- launch dash and activate license
+- launch dash
+  - activate license
+  - set syncing folder to dropbox
 - launch tower and activate license
 - launch bartender
   - launch at login
@@ -71,8 +73,3 @@ Latest Install Steps
 - log into all internet accounts on system preferences
   - sync everything but messages for google accounts
   - icloud sync everything but: photos, mail, contacts, notes, back to my mac
-
-What's Missing
---------------
-- dash syncing
-- env variables
