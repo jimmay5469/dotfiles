@@ -14,6 +14,7 @@ OSX Setup
   - Enable 3 finger lookup
 - Keyboard
   - `Caps Lock` -> `Escape` (for all keyboards)
+- Disable spaces rearangement in settings mission control 
 - Disable spotlight shortcut in favor of using it for Alfred
 - Put dock on the left
 - which git?
