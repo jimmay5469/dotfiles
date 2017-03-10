@@ -16,11 +16,6 @@ if [ ! "$(brew cask ls | grep alfred)" ]; then
   brew cask install alfred
 fi
 
-if [ ! "$(brew cask ls | grep bartender)" ]; then
-  echo "Installing bartender"
-  brew cask install bartender
-fi
-
 #if [ ! "$(brew cask ls | grep atom)" ]; then
 #  echo "Installing atom"
 #  brew cask install atom
