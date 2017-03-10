@@ -101,15 +101,15 @@ if [ ! "$(brew cask ls | grep spotify)" ]; then
   brew cask install spotify
 fi
 
-if [ ! "$(brew cask ls | grep tower)" ]; then
-  echo "Installing tower"
-  brew cask install tower
-fi
+#if [ ! "$(brew cask ls | grep tower)" ]; then
+#  echo "Installing tower"
+#  brew cask install tower
+#fi
 
-if [ ! "$(brew cask ls | grep zoomus)" ]; then
-  echo "Installing zoomus"
-  brew cask install zoomus
-fi
+#if [ ! "$(brew cask ls | grep zoomus)" ]; then
+#  echo "Installing zoomus"
+#  brew cask install zoomus
+#fi
 
 #no longer required
 #echo "Linking homebrew casks in alfred"
