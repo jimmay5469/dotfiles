@@ -14,7 +14,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
   source install/oh_my_zsh.sh
   source install/node.sh
-  #source install/spacemacs.sh
+  source install/spacemacs.sh
 
   source install/symlinks.sh
 
