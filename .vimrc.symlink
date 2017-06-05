@@ -39,8 +39,9 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'airblade/vim-rooter'
 
 "autocomplete
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-"Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 
 call plug#end()
 
@@ -77,6 +78,9 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
 "EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+"JSX settings
+let g:jsx_ext_required = 0 "enable jsx mode on .js files
+
 "don't timeout commands so quickly
 set timeoutlen=10000
 
@@ -88,7 +92,12 @@ set foldmethod=indent
 set nofoldenable
 
 "autocomplete
-autocmd CompleteDone * pclose "close docs preview after autocomplete
+if has('nvim')
+  " Use deoplete.
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_ignore_case = 1
+  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
