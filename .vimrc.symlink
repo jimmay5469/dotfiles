@@ -73,7 +73,7 @@ set nowritebackup
 set noswapfile
 
 "Ignores
-set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*
+set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*,*.pyc,*lib/python*
 
 "EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -82,7 +82,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:jsx_ext_required = 0 "enable jsx mode on .js files
 
 "don't timeout commands so quickly
-set timeoutlen=10000
+set timeoutlen=2000
 
 "better autochdir
 let g:rooter_silent_chdir = 1
