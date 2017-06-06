@@ -10,6 +10,9 @@ else
   Plug 'jimmay5469/vim-spacemacs'
 endif
 
+"Key binding menues
+Plug 'hecal3/vim-leader-guide'
+
 "Good defaults
 Plug 'tpope/vim-sensible'
 "Plug 'PreserveNoEOL' "required for editorconfig-vim
@@ -35,10 +38,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 
-"better autochdir
+"Better autochdir
 Plug 'airblade/vim-rooter'
 
-"autocomplete
+"Autocomplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
@@ -81,8 +84,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "JSX settings
 let g:jsx_ext_required = 0 "enable jsx mode on .js files
 
-"don't timeout commands so quickly
-set timeoutlen=2000
+"timeout a little faster because we have vim-leader-guide
+set timeoutlen=300
 
 "better autochdir
 let g:rooter_silent_chdir = 1
@@ -184,6 +187,10 @@ let mapleader = "\<SPACE>"
 nnoremap <LEADER>br :checktime<CR>
 nnoremap <LEADER>pp :e ~/repos/
 nnoremap <LEADER>fs :wa<CR>
+
+"Key binding menues
+nnoremap <silent> <LEADER> :<C-U>LeaderGuide '<SPACE>'<CR>
+vnoremap <silent> <LEADER> :<C-U>LeaderGuideVisual '<SPACE>'<CR>
 
 "Reload vim-spacemacs if it is local
 if !empty(glob("~/repos/vim-spacemacs"))
