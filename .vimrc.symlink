@@ -183,6 +183,7 @@ let mapleader = "\<SPACE>"
 
 nnoremap <LEADER>br :checktime<CR>
 nnoremap <LEADER>pp :e ~/repos/
+nnoremap <LEADER>fs :wa<CR>
 
 "Reload vim-spacemacs if it is local
 if !empty(glob("~/repos/vim-spacemacs"))
