@@ -26,6 +26,11 @@ if [ ! "$(brew cask ls | grep dash)" ]; then
   brew cask install dash
 fi
 
+if [ ! "$(brew cask ls | grep discord)" ]; then
+  echo "Installing discord"
+  brew cask install discord
+fi
+
 if [ ! "$(brew cask ls | grep dropbox)" ]; then
   echo "Installing dropbox"
   brew cask install dropbox
