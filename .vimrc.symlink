@@ -184,7 +184,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
 
-let g:spacemacs#bindingOverrides = {
+let g:spacemacs#keybindingOverrides = {
   \ 'nmap': {
     \ 'br': ':checktime<CR>',
     \ 'pp': ':e ~/repos/',
@@ -198,5 +198,5 @@ vnoremap <silent> <LEADER> :<C-U>LeaderGuideVisual '<SPACE>'<CR>
 
 "Reload vim-spacemacs if it is local
 if !empty(glob("~/repos/vim-spacemacs"))
-  let g:spacemacs#bindingOverrides['nmap']['feR'] = ':source ~/.vimrc<CR>:source ~/repos/vim-spacemacs/plugin/spacemacs.vim<CR>'
+  let g:spacemacs#keybindingOverrides['nmap']['feR'] = ':source ~/.vimrc<CR>:source ~/repos/vim-spacemacs/plugin/spacemacs.vim<CR>'
 endif
