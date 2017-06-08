@@ -184,16 +184,18 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
 
-let g:spacemacs#keybindingOverrides = {
-  \ 'nnoremap': {
-    \ 'fs': ':wa<CR>',
-  \ },
-\ }
 let g:spacemacs#plugins = [
   \ 'kien/ctrlp.vim',
   \ 'rking/ag.vim',
   \ 'tpope/vim-fugitive',
 \ ]
+let g:spacemacs#excludes = [
+  \ '^fs',
+  \ '^br',
+  \ '^pp',
+\ ]
+
+nnoremap <LEADER>fs :wa<CR>
 nnoremap <LEADER>br :checktime<CR>
 nnoremap <LEADER>pp :e ~/repos/
 
@@ -203,5 +205,6 @@ vnoremap <silent> <LEADER> :<C-U>LeaderGuideVisual '<SPACE>'<CR>
 
 "Reload vim-spacemacs if it is local
 if !empty(glob("~/repos/vim-spacemacs"))
-  let g:spacemacs#keybindingOverrides['nnoremap']['feR'] = ':source ~/.vimrc<CR>:source ~/repos/vim-spacemacs/plugin/spacemacs.vim<CR>'
+  let g:spacemacs#excludes = add(g:spacemacs#excludes, '^feR')
+  nnoremap <LEADER>feR :source ~/.vimrc<CR>:source ~/repos/vim-spacemacs/plugin/spacemacs.vim<CR>
 endif
