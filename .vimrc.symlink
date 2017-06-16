@@ -27,7 +27,7 @@ Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 "Theme
-Plug 'romainl/Apprentice'
+"Plug 'romainl/Apprentice'
 Plug 'ap/vim-css-color'
 
 "Git
@@ -161,8 +161,8 @@ set tabline=%!Tabline()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Syntax highlighting
-set background=dark
-silent! colorscheme apprentice
+"set background=dark
+"silent! colorscheme apprentice
 
 "gvim options
 if has("gui_running")
