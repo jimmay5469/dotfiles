@@ -37,6 +37,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'ElmCast/elm-vim'
 
 "Better autochdir
 Plug 'airblade/vim-rooter'
