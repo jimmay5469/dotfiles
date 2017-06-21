@@ -1,6 +1,8 @@
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 #eval "$(rbenv init -)"
 
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Path to your oh-my-zsh installation.

@@ -163,6 +163,8 @@ set tabline=%!Tabline()
 "Syntax highlighting
 "set background=dark
 "silent! colorscheme apprentice
+hi Statusline ctermbg=yellow ctermfg=white cterm=NONE
+hi MatchParen ctermbg=white ctermfg=red cterm=NONE
 
 "gvim options
 if has("gui_running")
