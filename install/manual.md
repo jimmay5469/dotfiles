@@ -16,7 +16,6 @@ OSX Setup
 - Disable spaces rearangement in settings mission control 
 - Disable spotlight shortcut in favor of using it for Alfred
 - Put dock on the left
-- which git?
 
 iTerm Setup
 -----------
@@ -31,10 +30,6 @@ GitHub Setup
 Latest Install Steps
 --------------------
 - enable 3 finger drag in accessability settings
-- launch hammerspoon
-  - set hammerspoon launch at login
-  - hide dock icon
-- launch karabiner elements
 - setup dropbox
 - launch and setup 1 password
   - my vault from dropbox
@@ -60,15 +55,11 @@ Latest Install Steps
 - launch dash
   - activate license
   - set syncing folder to dropbox
-- launch tower and activate license
-- launch bartender
-  - launch at login
-  - configure icons
 - launch flux and set to classic
 - launch slack and log into teams
 - add /User/jimmay5469 and Mackintosh HD directories to finder favorites
 - log in to google photos uploader and choose originals in preferences and add Apple Photos Library to folders
 - in bluetooth settings choose show bluetooth in menu bar
 - log into all internet accounts on system preferences
-  - sync everything but messages for google accounts
+  - sync contacts and calendars
   - icloud sync everything but: photos, mail, contacts, notes, back to my mac
