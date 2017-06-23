@@ -28,6 +28,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 "Theme
 "Plug 'romainl/Apprentice'
+Plug 'chriskempson/base16-vim'
 Plug 'ap/vim-css-color'
 
 "Git
@@ -162,10 +163,10 @@ set tabline=%!Tabline()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Syntax highlighting
-"set background=dark
-"silent! colorscheme apprentice
-hi Statusline ctermbg=yellow ctermfg=white cterm=NONE
-hi MatchParen ctermbg=white ctermfg=red cterm=NONE
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 "gvim options
 if has("gui_running")

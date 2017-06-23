@@ -1,7 +1,6 @@
 Manual Installation Steps
 =========================
 1. App store installs:
-  - Day One
   - Monosnap
   - iA Writer
 2. Setup Dropbox
@@ -21,8 +20,8 @@ OSX Setup
 
 iTerm Setup
 -----------
-- Install [Apprentice iTerm theme](https://github.com/romainl/iterm2-colorschemes), and use it in _Preferences_ > _Profiles_ > _Colors_
 - Set font to `Meslo LG S Regular for Powerline` in _Preferences_ > _Profiles_ > _Text_
+- Run `base16_mexico-light`
 
 GitHub Setup
 ------------
@@ -56,7 +55,6 @@ Latest Install Steps
   - set iterm font in preferences profiles text
   - set iterm transparency in preferences profiles window
   - set iterm columns to 235 and rows to 65 in preferences profiles window
-  - install iterm theme
 - create ssh key and add to github
 - put the dock on the left, autohide it, make it small, and remove everythign from it except finder and settings
 - launch dash
