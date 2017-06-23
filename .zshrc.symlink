@@ -94,11 +94,6 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias emreboot="rm -rf node_modules bower_components && npm install && bower install"
-alias emupgrades="print '\nnpm' && npm outdated --depth=0 && print '\nbower' && bower list | grep -v '│' | grep 'latest' && print ''"
-alias ahaminor="g fetch --all --prune && gco develop && g merge Ahalogy/develop && gco master && g merge Ahalogy/master && npm version minor && gco develop && g merge master"
-alias ahapatch="g fetch --all --prune && gco develop && g merge Ahalogy/develop && gco master && g merge Ahalogy/master && npm version patch && gco develop && g merge master"
-
 
 # Vim keybindings
 bindkey -v
