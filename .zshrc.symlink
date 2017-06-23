@@ -1,5 +1,5 @@
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
