@@ -6,7 +6,7 @@ echo "------------------------------"
 
 echo "Installing homebrew cask fonts"
 
-if [ ! "$(brew cask ls | grep font-meslo-lg-for-powerline)" ]; then
-  echo "Installing font-meslo-lg-for-powerline"
-  brew cask install caskroom/fonts/font-meslo-lg-for-powerline
+if [ ! "$(brew cask ls | grep font-hack)" ]; then
+  echo "Installing font-hack"
+  brew cask install caskroom/fonts/font-hack
 fi

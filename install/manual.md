@@ -19,7 +19,8 @@ OSX Setup
 
 iTerm Setup
 -----------
-- Set font to `Meslo LG S Regular for Powerline` in _Preferences_ > _Profiles_ > _Text_
+- Set font to `12pt Hack Regular` in _Preferences_ > _Profiles_ > _Text_
+- Set non-ascii font to `11pt Hack Regular` in _Preferences_ > _Profiles_ > _Text_
 - Run `base16_mexico-light`
 
 GitHub Setup
@@ -49,7 +50,7 @@ Latest Install Steps
   - set iterm default location in preferences profiles general working directory advanced configuration (/Uwers/:username/repos, reuse, reuse)
   - set iterm font in preferences profiles text
   - set iterm transparency in preferences profiles window
-  - set iterm columns to 235 and rows to 65 in preferences profiles window
+  - set iterm columns to 200 and rows to 65 in preferences profiles window
 - create ssh key and add to github
 - put the dock on the left, autohide it, make it small, and remove everythign from it except finder and settings
 - launch dash
