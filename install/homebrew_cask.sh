@@ -46,11 +46,6 @@ fi
 #  brew cask install fitbit-connect
 #fi
 
-if [ ! "$(brew cask ls | grep flux)" ]; then
-  echo "Installing flux"
-  brew cask install flux
-fi
-
 if [ ! "$(brew cask ls | grep garmin-express)" ]; then
   echo "Installing garmin-express"
   brew cask install garmin-express

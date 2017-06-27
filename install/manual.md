@@ -56,7 +56,7 @@ Latest Install Steps
 - launch dash
   - activate license
   - set syncing folder to dropbox
-- launch flux and set to classic
+- turn on osx night shift in _Settings_ > _Displays_ > _Night Shift_ > `Custom` : `9:30 PM - 6:00 AM` (match iPhone)
 - launch slack and log into teams
 - add /User/jimmay5469 and Mackintosh HD directories to finder favorites
 - log in to google photos uploader and choose originals in preferences and add Apple Photos Library to folders
