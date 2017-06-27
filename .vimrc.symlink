@@ -47,6 +47,8 @@ Plug 'airblade/vim-rooter'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
 
 call plug#end()
 
@@ -103,6 +105,7 @@ if has('nvim')
   let g:deoplete#enable_ignore_case = 1
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 endif
+let g:closetag_filenames = "*.html,*.js,*.jsx"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
