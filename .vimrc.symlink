@@ -35,10 +35,7 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-fugitive'
 
 "Syntax hightlighting
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'ElmCast/elm-vim'
+Plug 'sheerun/vim-polyglot'
 
 "Better autochdir
 Plug 'airblade/vim-rooter'
@@ -85,9 +82,6 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*,*.pyc,*lib/py
 
 "EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-"JSX settings
-let g:jsx_ext_required = 0 "enable jsx mode on .js files
 
 "timeout a little faster because we have vim-leader-guide
 set timeoutlen=300
