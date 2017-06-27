@@ -192,13 +192,15 @@ let g:spacemacs#plugins = [
   \ 'tpope/vim-fugitive',
 \ ]
 let g:spacemacs#excludes = [
-  \ '^fs',
   \ '^br',
+  \ '^fed',
+  \ '^fs',
   \ '^pp',
 \ ]
 
-nnoremap <LEADER>fs :wa<CR>
 nnoremap <LEADER>br :checktime<CR>
+nnoremap <LEADER>fs :wa<CR>
+nnoremap <LEADER>fed :e ~/repos/dotfiles/.vimrc.symlink<CR>
 nnoremap <LEADER>pp :e ~/repos/
 
 "Key binding menues
