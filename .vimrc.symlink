@@ -49,6 +49,7 @@ if has('nvim')
 endif
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
