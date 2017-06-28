@@ -58,6 +58,9 @@ call plug#end()
 "fix copy paste error in osx sierra
 set clipboard=unnamed
 
+"enable mouse click/scroll
+set mouse=a
+
 "line numbers
 set number
 
