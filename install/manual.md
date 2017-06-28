@@ -19,6 +19,7 @@ OSX Setup
 
 iTerm Setup
 -----------
+- Try _Preferences_ > _General_ > `Load preferences from a custom folder or URL`: `Dropbox/iTerm2`
 - Set font to `12pt Hack Regular` in _Preferences_ > _Profiles_ > _Text_
 - Set non-ascii font to `11pt Hack Regular` in _Preferences_ > _Profiles_ > _Text_
 - Run `base16_mexico-light`
@@ -47,6 +48,7 @@ Latest Install Steps
 - install monosnap from app store and launch
 - install ia writer from app store, launch, and add dropbox library folder
 - launch iterm
+  - try _Preferences_ > _General_ > `Load preferences from a custom folder or URL`: `Dropbox/iTerm2`
   - set iterm default location in preferences profiles general working directory advanced configuration (/Uwers/:username/repos, reuse, reuse)
   - set iterm font in preferences profiles text
   - set iterm transparency in preferences profiles window
