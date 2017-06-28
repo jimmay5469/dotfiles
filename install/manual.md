@@ -1,68 +1,81 @@
 Manual Installation Steps
 =========================
-1. App store installs:
-  - Monosnap
-  - iA Writer
-2. Setup Dropbox
+
+App store installs:
+-------------------
+- Monosnap
+- iA Writer
 
 OSX Setup
 ---------
+- Accessability Settings
+  - Enable 3 finger drag
 - Trackpad
-  - Enable 3 finger drag (in accessability settings now)
   - Disable swipe between pages
   - Enable 3 finger lookup
 - Keyboard
   - `Caps Lock` -> `Escape` (for all keyboards)
-- Disable spaces rearangement in settings mission control 
-- Disable spotlight shortcut in favor of using it for Alfred
-- Put dock on the left
+  - `Shortcuts` -> `Spotlight` -> Uncheck `Show Spotlight search` shortcut
+- Displays
+  - `Night Shift` > `Custom` : `9:30 PM - 6:00 AM` (match iPhone)
+- Bluetooth
+  - Show bluetooth in menu bar
+- Dock
+  - Position on screen: left
+  - Automatically hide and show the Dock
+  - Make it small
+  - Remove everythign from it except Finder and Settings
+- Mission Control 
+  - Disable spaces rearangement in settings mission control 
+- Internet accounts
+  - Log into all
+  - Sync contacts and calendars
+  - iCloud sync everything but: photos, mail, contacts, notes, back to my mac
+- Add `/User/jimmay5469` and `Mackintosh HD` directories to Finder favorites
+
+Dropbox Setup
+-------------
+- Open Dropbox and log in
+
+1Password Setup
+---------------
+- Sync `~/Dropbox/AppData/1Password/Jimmy's 1Password/1Password.agilekeychain` with `Primary` vault.
+- Double click `~/Dropbox/AppData/1Password/Lauren's 1Password/1Password.agilekeychain` to add `Lauren's Vault`.
+- Remove `Lauren's Vault` from `All Vaults`.
+- Find `1Password` in the `Primary` vault and open the `License.onepassword-license` attachment.
 
 iTerm Setup
 -----------
-- Try _Preferences_ > _General_ > `Load preferences from a custom folder or URL`: `Dropbox/iTerm2`
-- Set font to `12pt Hack Regular` in _Preferences_ > _Profiles_ > _Text_
-- Set non-ascii font to `11pt Hack Regular` in _Preferences_ > _Profiles_ > _Text_
+- In iTerm2 `Preferences` > `General` set `Load preferences from a custom folder or URL` to `~/Dropbox/AppData/iTerm2`
+- Check `Save changes to folder when iTerm2 quits`
 - Run `base16_mexico-light`
+
+Alfred Setup
+------------
+- In 1Password, find `Alfred` in the `Primary` vault and use the license key to activate the Alfred Powerpack.
+- In the `Advanced` tab click `Set sync folder...` and choose `~/Dropbox/AppData/Alfred`.
+
+Dash Setup
+----------
+- In 1Password, find `Dash` in the `Primary` vault and open the `license.dash-license` attachment.
+- In the Dash `Preferences` click `Set Up Syncing` > `Set Sync Folder` and choose `~/Dropbox/AppData/Dash`.
+
+Chrome Setup
+------------
+- Install 1password extension
+- Login
 
 GitHub Setup
 ------------
 - GitHub SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
+- Run `ssh-add -K ~/.ssh/id_rsa`
 
+iA Writer Setup
+---------------
+- Add Dropbox library folder
 
-Latest Install Steps
---------------------
-- enable 3 finger drag in accessability settings
-- setup dropbox
-- launch and setup 1 password
-  - my vault from dropbox
-  - lauren's vault from dropbox
-  - license key
-- launch chrome
-  - install 1password extension
-  - login
-- disable swipe between pages in trackpad settings
-- launch alfred
-  - activate powerpack
-  - set sync folder to dropbox folder in advanced settings
-- disable spotlight shortcut
-- install monosnap from app store and launch
-- install ia writer from app store, launch, and add dropbox library folder
-- launch iterm
-  - try _Preferences_ > _General_ > `Load preferences from a custom folder or URL`: `Dropbox/iTerm2`
-  - set iterm default location in preferences profiles general working directory advanced configuration (/Uwers/:username/repos, reuse, reuse)
-  - set iterm font in preferences profiles text
-  - set iterm transparency in preferences profiles window
-  - set iterm columns to 200 and rows to 65 in preferences profiles window
-- create ssh key and add to github
-- put the dock on the left, autohide it, make it small, and remove everythign from it except finder and settings
-- launch dash
-  - activate license
-  - set syncing folder to dropbox
-- turn on osx night shift in _Settings_ > _Displays_ > _Night Shift_ > `Custom` : `9:30 PM - 6:00 AM` (match iPhone)
-- launch slack and log into teams
-- add /User/jimmay5469 and Mackintosh HD directories to finder favorites
-- log in to google photos uploader and choose originals in preferences and add Apple Photos Library to folders
-- in bluetooth settings choose show bluetooth in menu bar
-- log into all internet accounts on system preferences
-  - sync contacts and calendars
-  - icloud sync everything but: photos, mail, contacts, notes, back to my mac
+Google Photos Uploader
+----------------------
+- Log in
+- Choose originals in preferences
+- Add Apple Photos Library to folders
