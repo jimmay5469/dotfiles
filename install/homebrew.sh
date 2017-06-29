@@ -12,10 +12,11 @@ fi
 
 echo "Installing homebrew packages"
 
-if [ ! "$(brew ls --versions brew-cask)" ]; then
-  echo "Installing brew-cask"
-  brew install caskroom/cask/brew-cask
-fi
+#no longer required
+#if [ ! "$(brew ls --versions brew-cask)" ]; then
+#  echo "Installing brew-cask"
+#  brew install caskroom/cask/brew-cask
+#fi
 
 if [ ! "$(brew ls --versions editorconfig)" ]; then
   echo "Installing editorconfig"
@@ -58,10 +59,10 @@ if [ ! "$(brew ls --versions python3)" ]; then
   sudo pip3 install neovim
 fi
 
-#if [ ! "$(brew ls --versions rbenv)" ]; then
-#  echo "Installing rbenv"
-#  brew install rbenv ruby-build
-#fi
+if [ ! "$(brew ls --versions rbenv)" ]; then
+  echo "Installing rbenv"
+  brew install rbenv ruby-build
+fi
 
 if [ ! "$(brew ls --versions reattach-to-user-namespace)" ]; then
   echo "Installing reattach-to-user-namespace"
@@ -88,5 +89,6 @@ if [ ! "$(brew ls --versions watchman)" ]; then
   brew install watchman
 fi
 
-echo "Linking homebrew pakcages"
-brew linkapps
+#no longer required
+#echo "Linking homebrew pakcages"
+#brew linkapps
