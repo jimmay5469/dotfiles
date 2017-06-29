@@ -31,6 +31,12 @@ OSX Setup
   - Log into all
   - Sync contacts and calendars
   - iCloud sync everything but: photos, mail, contacts, notes, back to my mac
+- Sharing
+  - Check `File Sharing`
+    - Share User's Public Folder
+      - `Read & Write` for me
+      - `No Access` for `Everyone`
+      - Edit `[name].local` so 0.0.0.0 can be accessed from phones on the network at `http://[name].local`
 - Add `/User/jimmay5469` and `Mackintosh HD` directories to Finder favorites
 
 Dropbox Setup
