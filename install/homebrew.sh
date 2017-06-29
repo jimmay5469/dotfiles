@@ -34,10 +34,11 @@ if [ ! "$(brew ls --versions emacs-mac)" ]; then
   brew install emacs-mac --with-spacemacs-icon
 fi
 
-if [ ! "$(brew ls --versions macvim)" ]; then
-  echo "Installing macvim"
-  brew install macvim --with-override-system-vim
-fi
+# this requires a full xcode install
+#if [ ! "$(brew ls --versions macvim)" ]; then
+#  echo "Installing macvim"
+#  brew install macvim --with-override-system-vim
+#fi
 
 if [ ! "$(brew ls --versions neovim)" ]; then
   echo "Installing neovim"
