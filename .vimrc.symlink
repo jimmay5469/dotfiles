@@ -20,8 +20,8 @@ Plug 'editorconfig/editorconfig-vim'
 
 "Navigation
 Plug 'tpope/vim-vinegar'
-Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 "Pane navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -190,9 +190,8 @@ endif
 let mapleader = "\<SPACE>"
 
 let g:spacemacs#plugins = [
-  \ 'kien/ctrlp.vim',
-  \ 'rking/ag.vim',
   \ 'tpope/vim-fugitive',
+  \ 'junegunn/fzf.vim',
 \ ]
 let g:spacemacs#excludes = [
   \ '^br',
