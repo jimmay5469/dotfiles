@@ -103,7 +103,7 @@ if has('nvim')
   let g:deoplete#enable_ignore_case = 1
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 endif
-let g:closetag_filenames = "*.html,*.js,*.jsx"
+let g:closetag_filenames = "*.html,*.js,*.jsx,*.eex"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
