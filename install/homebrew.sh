@@ -18,6 +18,11 @@ echo "Installing homebrew packages"
 #  brew install caskroom/cask/brew-cask
 #fi
 
+if [ ! "$(brew ls --versions ctags)" ]; then
+  echo "Installing ctags"
+  brew install ctags
+fi
+
 if [ ! "$(brew ls --versions editorconfig)" ]; then
   echo "Installing editorconfig"
   brew install editorconfig
