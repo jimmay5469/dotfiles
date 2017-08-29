@@ -1,7 +1,4 @@
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
-eval "$(rbenv init -)"
-
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+source $HOME/.shellrc
 
 # get current branch in git repo
 function parse_git_branch() {

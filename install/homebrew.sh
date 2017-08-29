@@ -29,18 +29,13 @@ if [ ! "$(brew ls --versions editorconfig)" ]; then
   brew install editorconfig
 fi
 
-if [ ! "$(brew ls --versions elm)" ]; then
-  echo "Installing elm"
-  brew install elm
-fi
-
 if [ ! "$(brew ls --versions emacs-mac)" ]; then
   echo "Installing emacs-mac"
   brew tap railwaycat/emacsmacport
   brew install emacs-mac --with-spacemacs-icon
 fi
 
-# this requires a full xcode install
+#this requires a full xcode install
 #if [ ! "$(brew ls --versions macvim)" ]; then
 #  echo "Installing macvim"
 #  brew install macvim --with-override-system-vim
@@ -49,26 +44,6 @@ fi
 if [ ! "$(brew ls --versions neovim)" ]; then
   echo "Installing neovim"
   brew install neovim/neovim/neovim
-fi
-
-if [ ! "$(brew ls --versions python)" ]; then
-  echo "Installing python"
-  brew install python
-  sudo easy_install-2.7 pip
-  sudo easy_install-2.7 greenlet
-  sudo pip2 install neovim
-fi
-
-if [ ! "$(brew ls --versions python3)" ]; then
-  echo "Installing python3"
-  brew install python3
-  sudo easy_install-3.5 pip
-  sudo pip3 install neovim
-fi
-
-if [ ! "$(brew ls --versions rbenv)" ]; then
-  echo "Installing rbenv"
-  brew install rbenv ruby-build
 fi
 
 if [ ! "$(brew ls --versions reattach-to-user-namespace)" ]; then

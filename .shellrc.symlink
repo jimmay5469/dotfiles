@@ -1,0 +1,5 @@
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export NODEJS_CHECK_SIGNATURES="no"
