@@ -8,9 +8,7 @@ if test ! $(which asdf); then
   echo "Installing asdf"
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.3.0
 
-  #launching asdf
-  . $HOME/.asdf/asdf.sh
-  . $HOME/.asdf/completions/asdf.bash
+  source $HOME/.shellrc
 fi
 
 if [ ! "$(asdf plugin-list | grep elixir)" ]; then

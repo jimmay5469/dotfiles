@@ -1,5 +1,3 @@
-source $HOME/.shellrc
-
 # get current branch in git repo
 function parse_git_branch() {
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -48,3 +46,5 @@ function parse_git_dirty {
 }
 
 export PS1="\[\e[31;41m\] \[\e[m\]\[\e[41m\]\w\[\e[m\]\[\e[31;41m\] \[\e[m\]\[\e[44m\]\`parse_git_branch\`\[\e[m\]\[\e[47m\] \[\e[m\]\[\e[31;47m\]\\$\[\e[m\]\[\e[37;47m\] \[\e[m\] "
+
+source $HOME/.shellrc
