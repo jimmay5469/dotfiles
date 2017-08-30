@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh &&
+[ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh
 [ -d "$HOME/.asdf" ] && . $HOME/.asdf/completions/asdf.bash
 
 BASE16_SHELL=$HOME/.config/base16-shell/
