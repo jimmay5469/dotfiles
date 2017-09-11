@@ -31,6 +31,8 @@ Plug 'christoomey/vim-tmux-navigator'
 "Plug 'romainl/Apprentice'
 Plug 'chriskempson/base16-vim'
 Plug 'ap/vim-css-color'
+"Plug 'sjl/vitality.vim' "needed for diminactive focus setting
+Plug 'blueyed/vim-diminactive'
 
 "Git
 Plug 'tpope/vim-fugitive'
