@@ -101,3 +101,5 @@ bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M vicmd v edit-command-line
 
 source $HOME/.shellrc
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
