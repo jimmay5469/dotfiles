@@ -207,7 +207,6 @@ let g:spacemacs#excludes = [
   \ '^pp',
 \ ]
 
-inoremap jj <ESC>
 nnoremap <LEADER>br :checktime<CR>:e<CR>
 nnoremap <LEADER>fs :wa<CR>
 nnoremap <LEADER>fed :e ~/repos/dotfiles/.vimrc.symlink<CR>
