@@ -3,6 +3,6 @@
 	email = jimmay5469@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim
+	editor = nvim
 [mergetool]
 	keepBackup = true
