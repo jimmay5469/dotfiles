@@ -7,6 +7,9 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then #oh-my-zsh is not installed
     echo "------------------------------"
     echo "Installing oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/zsh_custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/zsh_custom/plugins/zsh-syntax-highlighting
   fi
 fi
 

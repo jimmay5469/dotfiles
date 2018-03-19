@@ -55,7 +55,14 @@ ZSH_THEME="agnoster_customized"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm tmux)
+plugins=(
+  git
+  nvm
+  tmux
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  history-substring-search
+)
 
 # User configuration
 
@@ -101,5 +108,12 @@ bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M vicmd v edit-command-line
 
 source $HOME/.shellrc
+
+# up/down searching
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+setopt HIST_FIND_NO_DUPS
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
