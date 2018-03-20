@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ssh-add -A &> /dev/null
+
 [ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh
 [ -d "$HOME/.asdf" ] && . $HOME/.asdf/completions/asdf.bash
 
