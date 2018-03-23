@@ -26,6 +26,11 @@ if [ ! "$(asdf plugin-list | grep erlang)" ]; then
   asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
 fi
 
+if [ ! "$(asdf plugin-list | grep java)" ]; then
+  echo "Installing node plugin"
+  asdf plugin-add java https://github.com/skotchpine/asdf-java
+fi
+
 if [ ! "$(asdf plugin-list | grep nodejs)" ]; then
   echo "Installing node plugin"
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git

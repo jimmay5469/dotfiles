@@ -10,7 +10,3 @@ fi
 
 echo "Installing vim plugins"
 nvim +PlugInstall +qall #&> /dev/null
-
-#should happen automatically since nvim and vim configs are symlinked
-#echo "Installing neovim plugins"
-#nvim +PlugInstall +qall &> /dev/null

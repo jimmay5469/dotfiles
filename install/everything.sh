@@ -13,7 +13,6 @@ if [ "$(uname)" == "Darwin" ]; then
   source install/homebrew_cask_fonts.sh
 
   source install/oh_my_zsh.sh
-  source install/spacemacs.sh
 
   source install/symlinks.sh
 

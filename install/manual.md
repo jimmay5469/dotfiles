@@ -76,10 +76,6 @@ GitHub Setup
 - GitHub SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
 - Run `ssh-add -K ~/.ssh/id_rsa`
 
-iA Writer Setup
----------------
-- Add Dropbox library folder
-
 Google Photos Uploader
 ----------------------
 - Log in
