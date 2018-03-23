@@ -4,7 +4,7 @@ Manual Installation Steps
 App store installs:
 -------------------
 - Monosnap
-- iA Writer
+- Bear
 
 OSX Setup
 ---------
