@@ -54,7 +54,7 @@ iTerm Setup
 -----------
 - In iTerm2 `Preferences` > `General` set `Load preferences from a custom folder or URL` to `~/Dropbox/AppData/iTerm2`
 - Check `Save changes to folder when iTerm2 quits`
-- Run `base16_mexico-light`
+- Run `base16_tomorrow`
 
 Alfred Setup
 ------------
