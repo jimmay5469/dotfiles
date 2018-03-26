@@ -10,6 +10,11 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then #oh-my-zsh is not installed
   fi
 fi
 
+if [ ! -d "$HOME/zsh_custom/plugins/alias-tips" ]; then
+  echo 'Cloning djui/alias-tips'
+  git clone https://github.com/djui/alias-tips.git $HOME/zsh_custom/plugins/alias-tips
+fi
+
 if [ ! -d "$HOME/zsh_custom/plugins/zsh-autosuggestions" ]; then
   echo 'Cloning zsh-users/zsh-autosuggestions'
   git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/zsh_custom/plugins/zsh-autosuggestions
