@@ -62,7 +62,6 @@ plugins=(
   git
   nvm
   tmux
-  globalias
   alias-tips
   zsh-autosuggestions
   zsh-syntax-highlighting
