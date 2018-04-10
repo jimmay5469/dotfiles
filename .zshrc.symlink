@@ -101,6 +101,7 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias poatest="cd apps/explorer_web/assets && npm run build && cd - && mix format && mix credo --strict && mix dialyzer --halt-exit-status && cd apps/explorer && mix sobelow --config && cd - && cd apps/explorer_web && mix sobelow --config && cd - && cd apps/explorer_web/assets && npm run eslint && cd - && mix coveralls.html --umbrella"
 
 # Vim keybindings
 bindkey -v
