@@ -89,9 +89,6 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*,*.pyc,*lib/py
 "EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-"timeout a little faster because we have vim-leader-guide
-set timeoutlen=300
-
 "better autochdir
 let g:rooter_silent_chdir = 1
 
