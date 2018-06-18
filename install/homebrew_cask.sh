@@ -31,9 +31,9 @@ if [ ! "$(brew cask ls | grep google-chrome)" ]; then
   brew cask install google-chrome
 fi
 
-if [ ! "$(brew cask ls | grep google-photos-backup)" ]; then
-  echo "Installing google-photos-backup"
-  brew cask install google-photos-backup
+if [ ! "$(brew cask ls | grep google-backup-and-sync)" ]; then
+  echo "Installing google-backup-and-sync"
+  brew cask install google-backup-and-sync
 fi
 
 if [ ! "$(brew cask ls | grep iterm2)" ]; then
