@@ -5,9 +5,6 @@ export ZSH_CUSTOM=$HOME/zsh_custom
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOCONNECT=false
-
 DEFAULT_USER=`whoami`
 
 # Set name of the theme to load.
