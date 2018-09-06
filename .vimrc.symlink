@@ -17,12 +17,13 @@ Plug 'hecal3/vim-leader-guide'
 Plug 'tpope/vim-sensible'
 "Plug 'PreserveNoEOL' "required for editorconfig-vim
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-repeat'
 
 "Navigation
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
 
 "Pane navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -48,7 +49,9 @@ if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 Plug 'jiangmiao/auto-pairs'
-Plug 'alvan/vim-closetag'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 
 call plug#end()
@@ -220,3 +223,47 @@ if !empty(glob("~/repos/vim-spacemacs"))
   let g:spacemacs#excludes = add(g:spacemacs#excludes, '^feR')
   nnoremap <LEADER>feR :source ~/.vimrc<CR>:source ~/repos/vim-spacemacs/plugin/spacemacs.vim<CR>
 endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Testing new things
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"F1 to see syntax highlight under cursor
+nm <silent> <F1> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+    \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
+    \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
+    \ . ">"<CR>
+
+"italic
+hi Comment cterm=italic
+hi htmlArg cterm=italic
+hi Include cterm=italic
+hi jsReturn cterm=italic
+hi jsThis cterm=italic
+hi StorageClass cterm=italic
+hi xmlAttrib cterm=italic
+
+"bold
+hi jsVariableDef cterm=bold
+
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+nnoremap <LEADER>* :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+  let @/ = ''
+  if exists('#auto_highlight')
+    au! auto_highlight
+    augroup! auto_highlight
+    setl updatetime=4000
+    return 0
+  else
+    augroup auto_highlight
+      au!
+      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=50
+    return 1
+  endif
+endfunction
+hi Search ctermfg=242 ctermbg=222
