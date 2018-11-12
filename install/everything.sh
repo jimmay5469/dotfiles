@@ -20,6 +20,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
   source install/vim.sh
 
+  env zsh -l
+
 else
 
   echo 'You are not running OSX.  Please visit ~/repos/dotfiles/install/ and manually run the necessary install scripts.'
