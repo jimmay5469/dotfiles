@@ -1,2 +1,6 @@
 *~
 .DS_Store
+
+# VS Code
+.vscode
+.elixir_ls
