@@ -1,6 +1,6 @@
-elixir 1.7.3
+elixir 1.7.4
 elm 0.19.0
-erlang 21.0.8
-nodejs 10.10.0
+erlang 21.1.1
+nodejs 11.1.0
 python 3.6.2
 ruby 2.5.1
