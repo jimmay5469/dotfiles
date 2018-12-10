@@ -37,6 +37,7 @@ Plug 'blueyed/vim-diminactive'
 
 "Git
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 
 "Syntax hightlighting
 Plug 'sheerun/vim-polyglot'
@@ -53,6 +54,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
@@ -198,7 +200,6 @@ let mapleader = "\<SPACE>"
 let g:spacemacs#plugins = [
   \ 'tpope/vim-fugitive',
   \ 'junegunn/fzf.vim',
-  \ 'majutsushi/tagbar',
 \ ]
 let g:spacemacs#excludes = [
   \ '^br',
@@ -267,3 +268,15 @@ function! AutoHighlightToggle()
   endif
 endfunction
 hi Search ctermfg=242 ctermbg=222
+
+" automatically reload changed files
+augroup reload
+  au!
+  au FocusGained * :checktime
+augroup end
+
+" auto format on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup end
