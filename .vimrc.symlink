@@ -276,9 +276,21 @@ augroup reload
 augroup end
 
 " auto format on save
+nnoremap <LEADER>taf :call AutoFormatToggle()<CR>
+function! AutoFormatToggle()
+  if get(b:, 'auto_format', 1)
+    let b:auto_format = 0
+    echo 'Auto Format OFF'
+  else
+    let b:auto_format = 1
+    echo 'Auto Format ON'
+  endif
+endfunction
 augroup fmt
   autocmd!
-  autocmd BufWritePre * Neoformat
+  if get(b:, 'auto_format', 1)
+    autocmd BufWritePre * Neoformat
+  endif
 augroup end
 
 " folding
