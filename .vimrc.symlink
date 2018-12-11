@@ -280,3 +280,6 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
 augroup end
+
+" folding
+set foldlevelstart=99
