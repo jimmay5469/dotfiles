@@ -36,6 +36,11 @@ if [ ! "$(brew cask ls | grep google-backup-and-sync)" ]; then
   brew cask install google-backup-and-sync
 fi
 
+if [ ! "$(brew cask ls | grep hammerspoon)" ]; then
+  echo "Installing hammerspoon"
+  brew cask install hammerspoon
+fi
+
 if [ ! "$(brew cask ls | grep iterm2)" ]; then
   echo "Installing iterm2"
   brew cask install iterm2
