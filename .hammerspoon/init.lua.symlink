@@ -1,5 +1,20 @@
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "w", function()
+function hyperBind(key, fn)
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, key, fn)
+  hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, key, fn)
+end
+
+hyperBind("w", function()
   hs.alert.show("Hello World!")
+end)
+
+hs.alert.show("Welcome!")
+hyperBind("r", function()
+  hs.reload()
+end)
+
+hyperBind("d", function()
+  local win = hs.window.focusedWindow()
+  hs.alert.show(win:frame())
 end)
 
 function move(win, yPosition, xPosition)
@@ -32,50 +47,50 @@ function move(win, yPosition, xPosition)
   win:setFrame(winFrame)
 end
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "y", function()
+hyperBind("y", function()
   move(hs.window.focusedWindow(), "TOP", "LEFT")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "u", function()
+hyperBind("u", function()
   move(hs.window.focusedWindow(), "TOP", "CENTER")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "i", function()
+hyperBind("i", function()
   move(hs.window.focusedWindow(), "TOP", "RIGHT")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "h", function()
+hyperBind("h", function()
   move(hs.window.focusedWindow(), "CENTER", "LEFT")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "j", function()
+hyperBind("j", function()
   move(hs.window.focusedWindow(), "CENTER", "CENTER")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "k", function()
+hyperBind("k", function()
   move(hs.window.focusedWindow(), "CENTER", "RIGHT")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "n", function()
+hyperBind("n", function()
   move(hs.window.focusedWindow(), "BOTTOM", "LEFT")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "m", function()
+hyperBind("m", function()
   move(hs.window.focusedWindow(), "BOTTOM", "CENTER")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
+hyperBind(",", function()
   move(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "f", function()
+hyperBind("f", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.w = max.w - 150
-  f.h = max.h - 75
+  f.w = max.w - 150 > 1700 and 1700 or max.w - 150
+  f.h = max.h - 75 > 1100 and 1100 or max.h - 75
 
   win:setFrame(f)
 
