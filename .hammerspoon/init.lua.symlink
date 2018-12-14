@@ -3,39 +3,34 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "w", function()
 end)
 
 function move(win, yPosition, xPosition)
-  local f = win:frame()
+  local margin = 10
+  local winFrame = win:frame()
   local screen = win:screen()
-  local max = screen:frame()
+  local screenFrame = screen:frame()
+  local min = {
+    x = screenFrame.x + margin,
+    y = screenFrame.y + margin
+  }
+  local max = {
+    x = screenFrame.x + screenFrame.w - winFrame.w - margin,
+    y = screenFrame.y + screenFrame.h - winFrame.h - margin
+  }
   local xPositions = {
-    ["LEFT"] = max.x,
-    ["CENTER"] = max.x + (max.w - f.w) / 2,
-    ["RIGHT"] = max.x + max.w - f.w
+    ["LEFT"] = min.x,
+    ["CENTER"] = (min.x + max.x) / 2,
+    ["RIGHT"] = max.x
   }
   local yPositions = {
-    ["TOP"] = max.y,
-    ["CENTER"] = max.y + (max.h - f.h) / 2,
-    ["BOTTOM"] = max.y + max.h - f.h
+    ["TOP"] = min.y,
+    ["CENTER"] = (min.y + max.y) / 2,
+    ["BOTTOM"] = max.y
   }
 
-  f.x = xPositions[xPosition]
-  f.y = yPositions[yPosition]
+  winFrame.x = xPositions[xPosition]
+  winFrame.y = yPositions[yPosition]
 
-  win:setFrame(f)
+  win:setFrame(winFrame)
 end
-
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "f", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.w = max.w - 200
-  f.h = max.h - 100
-
-  win:setFrame(f)
-
-  move(win, "CENTER", "CENTER")
-end)
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "y", function()
   move(hs.window.focusedWindow(), "TOP", "LEFT")
@@ -71,4 +66,18 @@ end)
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
   move(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "f", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.w = max.w - 150
+  f.h = max.h - 75
+
+  win:setFrame(f)
+
+  move(win, "CENTER", "CENTER")
 end)
