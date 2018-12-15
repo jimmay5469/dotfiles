@@ -126,3 +126,12 @@ end)
 hyperBind(",", function()
   moveOrResize(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
 end)
+
+hyperBind("c", function()
+  local win = hs.window.focusedWindow()
+  local status = getWindowStatus(win)
+  local winFrame = win:frame()
+  status.customW = winFrame.w
+  status.customH = winFrame.h
+  status.size = "CUSTOM"
+end)
