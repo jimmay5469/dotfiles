@@ -1,4 +1,20 @@
-local windows = {}
+local margin = 10
+
+local windowStatuses = {}
+function getWindowStatus(win)
+  local id = win:id()
+  local status = windowStatuses[id]
+  if status == nil then
+    local winFrame = win:frame()
+    status = {}
+    windowStatuses[id] = status
+    status.test = "Holla " .. id .. "!"
+    status.customW = winFrame.w
+    status.customH = winFrame.h
+    status.size = "CUSTOM"
+  end
+  return status
+end
 
 function hyperBind(key, fn)
   hs.hotkey.bind({"cmd", "alt", "ctrl"}, key, fn)
@@ -17,17 +33,30 @@ end)
 
 hyperBind("d", function()
   local win = hs.window.focusedWindow()
-  local stuff = windows[win:id()]
-  if stuff == nil then
-    stuff = { test = "Holla " .. win:id() .. "!" }
-    windows[win:id()] = stuff
-  end
-
-  hs.alert.show(stuff.test)
+  local status = getWindowStatus(win)
+  hs.alert.show(status.test)
 end)
 
+function resize(win)
+  local status = getWindowStatus(win)
+  local winFrame = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  if status.size == "CUSTOM" then
+    winFrame.w = max.w - 150 > 1700 and 1700 or max.w - 150
+    winFrame.h = max.h - 75 > 1100 and 1100 or max.h - 75
+    status.size = "GOLDEN"
+  else
+    winFrame.w = status.customW
+    winFrame.h = status.customH
+    status.size = "CUSTOM"
+  end
+
+  win:setFrame(winFrame)
+end
+
 function move(win, yPosition, xPosition)
-  local margin = 10
   local winFrame = win:frame()
   local screen = win:screen()
   local screenFrame = screen:frame()
@@ -93,15 +122,5 @@ hyperBind(",", function()
 end)
 
 hyperBind("f", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.w = max.w - 150 > 1700 and 1700 or max.w - 150
-  f.h = max.h - 75 > 1100 and 1100 or max.h - 75
-
-  win:setFrame(f)
-
-  move(win, "CENTER", "CENTER")
+  resize(hs.window.focusedWindow())
 end)
