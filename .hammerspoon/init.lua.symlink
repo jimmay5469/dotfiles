@@ -1,3 +1,5 @@
+local windows = {}
+
 function hyperBind(key, fn)
   hs.hotkey.bind({"cmd", "alt", "ctrl"}, key, fn)
   hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, key, fn)
@@ -9,12 +11,19 @@ end)
 
 hs.alert.show("Welcome!")
 hyperBind("r", function()
-  hs.reload()
+  hs.alert.show("Reloading config...")
+  hs.timer.doAfter(0.1, hs.reload)
 end)
 
 hyperBind("d", function()
   local win = hs.window.focusedWindow()
-  hs.alert.show(win:frame())
+  local stuff = windows[win:id()]
+  if stuff == nil then
+    stuff = { test = "Holla " .. win:id() .. "!" }
+    windows[win:id()] = stuff
+  end
+
+  hs.alert.show(stuff.test)
 end)
 
 function move(win, yPosition, xPosition)
