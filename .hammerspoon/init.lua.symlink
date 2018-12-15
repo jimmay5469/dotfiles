@@ -8,7 +8,6 @@ function getWindowStatus(win)
     local winFrame = win:frame()
     status = {}
     windowStatuses[id] = status
-    status.test = "Holla " .. id .. "!"
     status.customW = winFrame.w
     status.customH = winFrame.h
     status.size = "CUSTOM"
@@ -31,12 +30,6 @@ hyperBind("r", function()
   hs.timer.doAfter(0.1, hs.reload)
 end)
 
-hyperBind("d", function()
-  local win = hs.window.focusedWindow()
-  local status = getWindowStatus(win)
-  hs.alert.show(status.test)
-end)
-
 function resize(win)
   local status = getWindowStatus(win)
   local winFrame = win:frame()
@@ -57,6 +50,7 @@ function resize(win)
 end
 
 function move(win, yPosition, xPosition)
+  local status = getWindowStatus(win)
   local winFrame = win:frame()
   local screen = win:screen()
   local screenFrame = screen:frame()
@@ -81,46 +75,54 @@ function move(win, yPosition, xPosition)
 
   winFrame.x = xPositions[xPosition]
   winFrame.y = yPositions[yPosition]
+  status.xPosition = xPosition
+  status.yPosition = yPosition
 
   win:setFrame(winFrame)
 end
 
+function moveOrResize(win, yPosition, xPosition)
+  local status = getWindowStatus(win)
+
+  if status.yPosition == yPosition and status.xPosition == xPosition then
+    resize(win)
+  end
+
+  move(win, yPosition, xPosition)
+end
+
 hyperBind("y", function()
-  move(hs.window.focusedWindow(), "TOP", "LEFT")
+  moveOrResize(hs.window.focusedWindow(), "TOP", "LEFT")
 end)
 
 hyperBind("u", function()
-  move(hs.window.focusedWindow(), "TOP", "CENTER")
+  moveOrResize(hs.window.focusedWindow(), "TOP", "CENTER")
 end)
 
 hyperBind("i", function()
-  move(hs.window.focusedWindow(), "TOP", "RIGHT")
+  moveOrResize(hs.window.focusedWindow(), "TOP", "RIGHT")
 end)
 
 hyperBind("h", function()
-  move(hs.window.focusedWindow(), "CENTER", "LEFT")
+  moveOrResize(hs.window.focusedWindow(), "CENTER", "LEFT")
 end)
 
 hyperBind("j", function()
-  move(hs.window.focusedWindow(), "CENTER", "CENTER")
+  moveOrResize(hs.window.focusedWindow(), "CENTER", "CENTER")
 end)
 
 hyperBind("k", function()
-  move(hs.window.focusedWindow(), "CENTER", "RIGHT")
+  moveOrResize(hs.window.focusedWindow(), "CENTER", "RIGHT")
 end)
 
 hyperBind("n", function()
-  move(hs.window.focusedWindow(), "BOTTOM", "LEFT")
+  moveOrResize(hs.window.focusedWindow(), "BOTTOM", "LEFT")
 end)
 
 hyperBind("m", function()
-  move(hs.window.focusedWindow(), "BOTTOM", "CENTER")
+  moveOrResize(hs.window.focusedWindow(), "BOTTOM", "CENTER")
 end)
 
 hyperBind(",", function()
-  move(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
-end)
-
-hyperBind("f", function()
-  resize(hs.window.focusedWindow())
+  moveOrResize(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
 end)
