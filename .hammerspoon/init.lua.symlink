@@ -1,5 +1,6 @@
 local margin = 10
 local stepSize = 40
+hs.window.animationDuration = 0
 
 local windowStatuses = {}
 function getWindowStatus(win)
