@@ -55,7 +55,7 @@ function getY(position, winFrame, screenFrame)
   return positions[position]
 end
 
-function toggleSize(win)
+function toggleSize(win, yPosition, xPosition)
   local winFrame = win:frame()
   local screen = win:screen()
   local screenFrame = screen:frame()
@@ -73,8 +73,8 @@ function toggleSize(win)
     hs.alert.show("Custom")
   end
 
-  winFrame.x = getX(status.xPosition, winFrame, screenFrame)
-  winFrame.y = getY(status.yPosition, winFrame, screenFrame)
+  winFrame.x = getX(xPosition, winFrame, screenFrame)
+  winFrame.y = getY(yPosition, winFrame, screenFrame)
 
   win:setFrame(winFrame, 0)
 end
@@ -87,8 +87,6 @@ function move(win, yPosition, xPosition)
 
   winFrame.x = getX(xPosition, winFrame, screenFrame)
   winFrame.y = getY(yPosition, winFrame, screenFrame)
-  status.xPosition = xPosition
-  status.yPosition = yPosition
 
   win:setFrame(winFrame)
 end
@@ -96,11 +94,15 @@ end
 function moveOrToggleSize(win, yPosition, xPosition)
   local status = getWindowStatus(win)
 
-  if status.yPosition == yPosition and status.xPosition == xPosition then
-    toggleSize(win)
+  if status.inWell or status.yPosition == yPosition and status.xPosition == xPosition then
+    toggleSize(win, yPosition, xPosition)
   else
     move(win, yPosition, xPosition)
   end
+
+  status.inWell = false
+  status.xPosition = xPosition
+  status.yPosition = yPosition
 end
 
 hyperBind("y", function()
@@ -156,6 +158,7 @@ hyperBind("[", function()
   local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
+  status.inWell = true
   status.xPosition = nil
   status.yPosition = nil
 
@@ -174,6 +177,7 @@ hyperBind("]", function()
   local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
+  status.inWell = true
   status.xPosition = nil
   status.yPosition = nil
 
@@ -191,6 +195,10 @@ hyperBind("=", function()
   local screen = win:screen()
   local screenFrame = screen:frame()
   local status = getWindowStatus(win)
+
+  if status.inWell then
+    return
+  end
 
   if winFrame.w > winFrame.h then
     winFrame.h = winFrame.h + stepSize * winFrame.h / winFrame.w
@@ -218,6 +226,10 @@ hyperBind("-", function()
   local screen = win:screen()
   local screenFrame = screen:frame()
   local status = getWindowStatus(win)
+
+  if status.inWell then
+    return
+  end
 
   if winFrame.w > winFrame.h then
     winFrame.h = winFrame.h - stepSize * winFrame.h / winFrame.w
