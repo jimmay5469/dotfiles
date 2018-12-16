@@ -1,6 +1,5 @@
 local margin = 10
-local stepSize = 40
-hs.window.animationDuration = 0
+local stepSize = 50
 
 local windowStatuses = {}
 function getWindowStatus(win)
@@ -34,7 +33,29 @@ hyperBind("r", function()
   hs.timer.doAfter(0.1, hs.reload)
 end)
 
-function resize(win)
+function getX(position, winFrame, screenFrame)
+  local min = screenFrame.x + margin
+  local max = screenFrame.x + screenFrame.w - winFrame.w - margin
+  local positions = {
+    ["LEFT"] = min,
+    ["CENTER"] = (min + max) / 2,
+    ["RIGHT"] = max
+  }
+  return positions[position]
+end
+
+function getY(position, winFrame, screenFrame)
+  local min = screenFrame.y + margin
+  local max = screenFrame.y + screenFrame.h - winFrame.h - margin
+  local positions = {
+    ["TOP"] = min,
+    ["CENTER"] = (min + max) / 2,
+    ["BOTTOM"] = max
+  }
+  return positions[position]
+end
+
+function toggleSize(win)
   local winFrame = win:frame()
   local screen = win:screen()
   local screenFrame = screen:frame()
@@ -52,7 +73,10 @@ function resize(win)
     hs.alert.show("Custom")
   end
 
-  win:setFrame(winFrame)
+  winFrame.x = getX(status.xPosition, winFrame, screenFrame)
+  winFrame.y = getY(status.yPosition, winFrame, screenFrame)
+
+  win:setFrame(winFrame, 0)
 end
 
 function move(win, yPosition, xPosition)
@@ -61,77 +85,58 @@ function move(win, yPosition, xPosition)
   local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
-  local min = {
-    x = screenFrame.x + margin,
-    y = screenFrame.y + margin
-  }
-  local max = {
-    x = screenFrame.x + screenFrame.w - winFrame.w - margin,
-    y = screenFrame.y + screenFrame.h - winFrame.h - margin
-  }
-  local xPositions = {
-    ["LEFT"] = min.x,
-    ["CENTER"] = (min.x + max.x) / 2,
-    ["RIGHT"] = max.x
-  }
-  local yPositions = {
-    ["TOP"] = min.y,
-    ["CENTER"] = (min.y + max.y) / 2,
-    ["BOTTOM"] = max.y
-  }
-
-  winFrame.x = xPositions[xPosition]
-  winFrame.y = yPositions[yPosition]
+  winFrame.x = getX(xPosition, winFrame, screenFrame)
+  winFrame.y = getY(yPosition, winFrame, screenFrame)
   status.xPosition = xPosition
   status.yPosition = yPosition
 
   win:setFrame(winFrame)
 end
 
-function moveOrResize(win, yPosition, xPosition)
+function moveOrToggleSize(win, yPosition, xPosition)
   local status = getWindowStatus(win)
 
   if status.yPosition == yPosition and status.xPosition == xPosition then
-    resize(win)
+    toggleSize(win)
+  else
+    move(win, yPosition, xPosition)
   end
-
-  move(win, yPosition, xPosition)
 end
 
 hyperBind("y", function()
-  moveOrResize(hs.window.focusedWindow(), "TOP", "LEFT")
+  moveOrToggleSize(hs.window.focusedWindow(), "TOP", "LEFT")
 end)
 
 hyperBind("u", function()
-  moveOrResize(hs.window.focusedWindow(), "TOP", "CENTER")
+  moveOrToggleSize(hs.window.focusedWindow(), "TOP", "CENTER")
 end)
 
 hyperBind("i", function()
-  moveOrResize(hs.window.focusedWindow(), "TOP", "RIGHT")
+  moveOrToggleSize(hs.window.focusedWindow(), "TOP", "RIGHT")
 end)
 
 hyperBind("h", function()
-  moveOrResize(hs.window.focusedWindow(), "CENTER", "LEFT")
+  moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "LEFT")
 end)
 
 hyperBind("j", function()
-  moveOrResize(hs.window.focusedWindow(), "CENTER", "CENTER")
+  moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "CENTER")
 end)
 
 hyperBind("k", function()
-  moveOrResize(hs.window.focusedWindow(), "CENTER", "RIGHT")
+  moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "RIGHT")
 end)
 
 hyperBind("n", function()
-  moveOrResize(hs.window.focusedWindow(), "BOTTOM", "LEFT")
+  moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "LEFT")
 end)
 
 hyperBind("m", function()
-  moveOrResize(hs.window.focusedWindow(), "BOTTOM", "CENTER")
+  moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "CENTER")
 end)
 
 hyperBind(",", function()
-  moveOrResize(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
+  moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
 end)
 
 hyperBind("c", function()
@@ -159,7 +164,7 @@ hyperBind("[", function()
   winFrame.w = screenFrame.w / 2 - margin * 1.5
   winFrame.h = screenFrame.h - margin * 2
 
-  win:setFrame(winFrame)
+  win:setFrame(winFrame, 0)
 end)
 
 hyperBind("]", function()
@@ -177,12 +182,14 @@ hyperBind("]", function()
   winFrame.w = screenFrame.w / 2 - margin * 1.5
   winFrame.h = screenFrame.h - margin * 2
 
-  win:setFrame(winFrame)
+  win:setFrame(winFrame, 0)
 end)
 
 hyperBind("=", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
+  local screen = win:screen()
+  local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
   if winFrame.w > winFrame.h then
@@ -197,16 +204,19 @@ hyperBind("=", function()
   status.customH = winFrame.h
   status.size = "CUSTOM"
 
-  win:setFrame(winFrame)
-
   if status.yPosition and status.xPosition then
-    move(win, status.yPosition, status.xPosition)
+    winFrame.x = getX(status.xPosition, winFrame, screenFrame)
+    winFrame.y = getY(status.yPosition, winFrame, screenFrame)
   end
+
+  win:setFrame(winFrame, 0)
 end)
 
 hyperBind("-", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
+  local screen = win:screen()
+  local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
   if winFrame.w > winFrame.h then
@@ -221,9 +231,10 @@ hyperBind("-", function()
   status.customH = winFrame.h
   status.size = "CUSTOM"
 
-  win:setFrame(winFrame)
-
   if status.yPosition and status.xPosition then
-    move(win, status.yPosition, status.xPosition)
+    winFrame.x = getX(status.xPosition, winFrame, screenFrame)
+    winFrame.y = getY(status.yPosition, winFrame, screenFrame)
   end
+
+  win:setFrame(winFrame, 0)
 end)
