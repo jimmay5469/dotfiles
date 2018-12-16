@@ -196,26 +196,21 @@ hyperBind("=", function()
   local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
-  if status.inWell then
-    return
-  end
-
   if winFrame.w > winFrame.h then
+    winFrame.y = winFrame.y - stepSize * winFrame.h / winFrame.w / 2
     winFrame.h = winFrame.h + stepSize * winFrame.h / winFrame.w
+    winFrame.x = winFrame.x - stepSize / 2
     winFrame.w = winFrame.w + stepSize
   else
+    winFrame.x = winFrame.x - stepSize * winFrame.w / winFrame.h / 2
     winFrame.w = winFrame.w + stepSize * winFrame.w / winFrame.h
+    winFrame.y = winFrame.y - stepSize / 2
     winFrame.h = winFrame.h + stepSize
   end
 
   status.customW = winFrame.w
   status.customH = winFrame.h
   status.size = "CUSTOM"
-
-  if status.yPosition and status.xPosition then
-    winFrame.x = getX(status.xPosition, winFrame, screenFrame)
-    winFrame.y = getY(status.yPosition, winFrame, screenFrame)
-  end
 
   win:setFrame(winFrame, 0)
 end)
@@ -227,26 +222,21 @@ hyperBind("-", function()
   local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
-  if status.inWell then
-    return
-  end
-
   if winFrame.w > winFrame.h then
+    winFrame.y = winFrame.y + stepSize * winFrame.h / winFrame.w / 2
     winFrame.h = winFrame.h - stepSize * winFrame.h / winFrame.w
+    winFrame.x = winFrame.x + stepSize / 2
     winFrame.w = winFrame.w - stepSize
   else
+    winFrame.x = winFrame.x + stepSize * winFrame.w / winFrame.h / 2
     winFrame.w = winFrame.w - stepSize * winFrame.w / winFrame.h
+    winFrame.y = winFrame.y + stepSize / 2
     winFrame.h = winFrame.h - stepSize
   end
 
   status.customW = winFrame.w
   status.customH = winFrame.h
   status.size = "CUSTOM"
-
-  if status.yPosition and status.xPosition then
-    winFrame.x = getX(status.xPosition, winFrame, screenFrame)
-    winFrame.y = getY(status.yPosition, winFrame, screenFrame)
-  end
 
   win:setFrame(winFrame, 0)
 end)
