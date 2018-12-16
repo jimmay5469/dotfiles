@@ -186,8 +186,8 @@ hyperBind("=", function()
   local status = getWindowStatus(win)
 
   if winFrame.w > winFrame.h then
-    winFrame.w = winFrame.w + stepSize
     winFrame.h = winFrame.h + stepSize * winFrame.h / winFrame.w
+    winFrame.w = winFrame.w + stepSize
   else
     winFrame.w = winFrame.w + stepSize * winFrame.w / winFrame.h
     winFrame.h = winFrame.h + stepSize
@@ -210,8 +210,8 @@ hyperBind("-", function()
   local status = getWindowStatus(win)
 
   if winFrame.w > winFrame.h then
-    winFrame.w = winFrame.w - stepSize
     winFrame.h = winFrame.h - stepSize * winFrame.h / winFrame.w
+    winFrame.w = winFrame.w - stepSize
   else
     winFrame.w = winFrame.w - stepSize * winFrame.w / winFrame.h
     winFrame.h = winFrame.h - stepSize
