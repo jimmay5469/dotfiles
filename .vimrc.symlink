@@ -297,8 +297,5 @@ augroup end
 set foldlevelstart=99
 
 " testing helpers
-nnoremap <LEADER>cf :let @+= ShortFilepath()<CR>
-nnoremap <LEADER>cl :let @+= ShortFilepath() . ":" . line(".")<CR>
-nnoremap <LEADER>mtp :wa<CR>:! mix test<CR>
-nnoremap <LEADER>mtf :wa<CR>:! mix test <C-R>=ShortFilepath()<CR><CR>
-nnoremap <LEADER>mtl :wa<CR>:! mix test <C-R>=ShortFilepath()<CR>:<C-R>=line(".")<CR><CR>
+nnoremap <LEADER>cp :let @+= ShortFilepath()<CR>
+nnoremap <LEADER>mt :wa<CR>:! mix test <C-R>=ShortFilepath()<CR><CR>
