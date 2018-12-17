@@ -1,5 +1,4 @@
 local margin = 10
-local stepSize = 50
 
 local windowStatuses = {}
 function getWindowStatus(win)
@@ -10,6 +9,7 @@ function getWindowStatus(win)
     local winFrame = win:frame()
     status = {}
     windowStatuses[id] = status
+    status.inWell = false
     status.customW = winFrame.w
     status.customH = winFrame.h
     status.size = "CUSTOM"
@@ -161,6 +161,7 @@ hyperBind("[", function()
   status.inWell = true
   status.xPosition = nil
   status.yPosition = nil
+  status.size = "GOLDEN"
 
   winFrame.x = screenFrame.x + margin
   winFrame.y = screenFrame.y + margin
@@ -180,6 +181,7 @@ hyperBind("]", function()
   status.inWell = true
   status.xPosition = nil
   status.yPosition = nil
+  status.size = "GOLDEN"
 
   winFrame.x = screenFrame.x + (screenFrame.w / 2) + margin / 2
   winFrame.y = screenFrame.y + margin
@@ -192,22 +194,14 @@ end)
 hyperBind("=", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
-  local screen = win:screen()
-  local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
-  if winFrame.w > winFrame.h then
-    winFrame.y = winFrame.y - stepSize * winFrame.h / winFrame.w / 2
-    winFrame.h = winFrame.h + stepSize * winFrame.h / winFrame.w
-    winFrame.x = winFrame.x - stepSize / 2
-    winFrame.w = winFrame.w + stepSize
-  else
-    winFrame.x = winFrame.x - stepSize * winFrame.w / winFrame.h / 2
-    winFrame.w = winFrame.w + stepSize * winFrame.w / winFrame.h
-    winFrame.y = winFrame.y - stepSize / 2
-    winFrame.h = winFrame.h + stepSize
-  end
+  winFrame.x = winFrame.x - 50 / 2
+  winFrame.w = winFrame.w + 50
+  winFrame.y = winFrame.y - 20 / 2
+  winFrame.h = winFrame.h + 20
 
+  status.inWell = false
   status.customW = winFrame.w
   status.customH = winFrame.h
   status.size = "CUSTOM"
@@ -218,22 +212,14 @@ end)
 hyperBind("-", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
-  local screen = win:screen()
-  local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
-  if winFrame.w > winFrame.h then
-    winFrame.y = winFrame.y + stepSize * winFrame.h / winFrame.w / 2
-    winFrame.h = winFrame.h - stepSize * winFrame.h / winFrame.w
-    winFrame.x = winFrame.x + stepSize / 2
-    winFrame.w = winFrame.w - stepSize
-  else
-    winFrame.x = winFrame.x + stepSize * winFrame.w / winFrame.h / 2
-    winFrame.w = winFrame.w - stepSize * winFrame.w / winFrame.h
-    winFrame.y = winFrame.y + stepSize / 2
-    winFrame.h = winFrame.h - stepSize
-  end
+  winFrame.x = winFrame.x + 50 / 2
+  winFrame.w = winFrame.w - 50
+  winFrame.y = winFrame.y + 20 / 2
+  winFrame.h = winFrame.h - 20
 
+  status.inWell = false
   status.customW = winFrame.w
   status.customH = winFrame.h
   status.size = "CUSTOM"
