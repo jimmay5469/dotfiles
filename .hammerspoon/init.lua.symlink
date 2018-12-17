@@ -19,16 +19,16 @@ function getWindowStatus(win)
   return status
 end
 
-function hyperBind(key, fn)
+function bind(key, fn)
   hs.hotkey.bind({"cmd", "alt", "ctrl"}, key, fn)
-  hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, key, fn)
+  hs.hotkey.bind({"alt", "ctrl", "shift"}, key, fn)
 end
 
-hyperBind("w", function()
+bind("w", function()
   hs.alert.show("Hello World!")
 end)
 
-hyperBind("d", function()
+bind("d", function()
   local win = hs.window.focusedWindow()
   local screen = win:screen()
   hs.alert.show(win:frame())
@@ -36,7 +36,7 @@ hyperBind("d", function()
 end)
 
 hs.alert.show("Welcome!")
-hyperBind("r", function()
+bind("r", function()
   hs.alert.show("Reloading config...")
   hs.timer.doAfter(0.1, hs.reload)
 end)
@@ -113,43 +113,43 @@ function moveOrToggleSize(win, yPosition, xPosition)
   status.yPosition = yPosition
 end
 
-hyperBind("y", function()
+bind("y", function()
   moveOrToggleSize(hs.window.focusedWindow(), "TOP", "LEFT")
 end)
 
-hyperBind("u", function()
+bind("u", function()
   moveOrToggleSize(hs.window.focusedWindow(), "TOP", "CENTER")
 end)
 
-hyperBind("i", function()
+bind("i", function()
   moveOrToggleSize(hs.window.focusedWindow(), "TOP", "RIGHT")
 end)
 
-hyperBind("h", function()
+bind("h", function()
   moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "LEFT")
 end)
 
-hyperBind("j", function()
+bind("j", function()
   moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "CENTER")
 end)
 
-hyperBind("k", function()
+bind("k", function()
   moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "RIGHT")
 end)
 
-hyperBind("n", function()
+bind("n", function()
   moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "LEFT")
 end)
 
-hyperBind("m", function()
+bind("m", function()
   moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "CENTER")
 end)
 
-hyperBind(",", function()
+bind(",", function()
   moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
 end)
 
-hyperBind("c", function()
+bind("c", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
   local status = getWindowStatus(win)
@@ -159,7 +159,7 @@ hyperBind("c", function()
   status.size = "CUSTOM"
 end)
 
-hyperBind("[", function()
+bind("[", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
   local screen = win:screen()
@@ -179,7 +179,7 @@ hyperBind("[", function()
   win:setFrame(winFrame, 0)
 end)
 
-hyperBind("]", function()
+bind("]", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
   local screen = win:screen()
@@ -199,7 +199,7 @@ hyperBind("]", function()
   win:setFrame(winFrame, 0)
 end)
 
-hyperBind("=", function()
+bind("=", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
   local screen = win:screen()
@@ -228,7 +228,7 @@ hyperBind("=", function()
   win:setFrame(winFrame, 0)
 end)
 
-hyperBind("-", function()
+bind("-", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
   local screen = win:screen()
