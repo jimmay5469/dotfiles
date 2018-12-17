@@ -1,4 +1,6 @@
 local margin = 10
+local xStepSize = 50
+local yStepSize = 20
 
 local windowStatuses = {}
 function getWindowStatus(win)
@@ -28,7 +30,9 @@ end)
 
 hyperBind("d", function()
   local win = hs.window.focusedWindow()
+  local screen = win:screen()
   hs.alert.show(win:frame())
+  hs.alert.show(screen:frame())
 end)
 
 hs.alert.show("Welcome!")
@@ -66,8 +70,8 @@ function toggleSize(win, yPosition, xPosition)
   local status = getWindowStatus(win)
 
   if status.size == "CUSTOM" then
-    winFrame.w = screenFrame.w - 150 > 1700 and 1700 or screenFrame.w - 150
-    winFrame.h = screenFrame.h - 75 > 1100 and 1100 or screenFrame.h - 75
+    winFrame.w = screenFrame.w - 2 * margin - 5 * xStepSize
+    winFrame.h = screenFrame.h - 2 * margin - 5 * yStepSize
     status.size = "GOLDEN"
     hs.alert.show("Golden")
   else
@@ -206,15 +210,15 @@ hyperBind("=", function()
     return
   end
 
-  winFrame.w = winFrame.w + 50
-  winFrame.h = winFrame.h + 20
+  winFrame.w = winFrame.w + xStepSize
+  winFrame.h = winFrame.h + yStepSize
 
   if status.yPosition and status.xPosition then
     winFrame.x = getX(status.xPosition, winFrame, screenFrame)
     winFrame.y = getY(status.yPosition, winFrame, screenFrame)
   else
-    winFrame.x = winFrame.x - 50 / 2
-    winFrame.y = winFrame.y - 20 / 2
+    winFrame.x = winFrame.x - xStepSize / 2
+    winFrame.y = winFrame.y - yStepSize / 2
   end
 
   status.customW = winFrame.w
@@ -235,15 +239,15 @@ hyperBind("-", function()
     return
   end
 
-  winFrame.w = winFrame.w - 50
-  winFrame.h = winFrame.h - 20
+  winFrame.w = winFrame.w - xStepSize
+  winFrame.h = winFrame.h - yStepSize
 
   if status.yPosition and status.xPosition then
     winFrame.x = getX(status.xPosition, winFrame, screenFrame)
     winFrame.y = getY(status.yPosition, winFrame, screenFrame)
   else
-    winFrame.x = winFrame.x + 50 / 2
-    winFrame.y = winFrame.y + 20 / 2
+    winFrame.x = winFrame.x + xStepSize / 2
+    winFrame.y = winFrame.y + yStepSize / 2
   end
 
   status.customW = winFrame.w
