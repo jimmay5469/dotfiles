@@ -9,7 +9,6 @@ function getWindowStatus(win)
     local winFrame = win:frame()
     status = {}
     windowStatuses[id] = status
-    status.inWell = false
     status.customW = winFrame.w
     status.customH = winFrame.h
     status.size = "CUSTOM"
@@ -194,14 +193,25 @@ end)
 hyperBind("=", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
+  local screen = win:screen()
+  local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
-  winFrame.x = winFrame.x - 50 / 2
+  if status.inWell then
+    return
+  end
+
   winFrame.w = winFrame.w + 50
-  winFrame.y = winFrame.y - 20 / 2
   winFrame.h = winFrame.h + 20
 
-  status.inWell = false
+  if status.yPosition and status.xPosition then
+    winFrame.x = getX(status.xPosition, winFrame, screenFrame)
+    winFrame.y = getY(status.yPosition, winFrame, screenFrame)
+  else
+    winFrame.x = winFrame.x - 50 / 2
+    winFrame.y = winFrame.y - 20 / 2
+  end
+
   status.customW = winFrame.w
   status.customH = winFrame.h
   status.size = "CUSTOM"
@@ -212,14 +222,25 @@ end)
 hyperBind("-", function()
   local win = hs.window.focusedWindow()
   local winFrame = win:frame()
+  local screen = win:screen()
+  local screenFrame = screen:frame()
   local status = getWindowStatus(win)
 
-  winFrame.x = winFrame.x + 50 / 2
+  if status.inWell then
+    return
+  end
+
   winFrame.w = winFrame.w - 50
-  winFrame.y = winFrame.y + 20 / 2
   winFrame.h = winFrame.h - 20
 
-  status.inWell = false
+  if status.yPosition and status.xPosition then
+    winFrame.x = getX(status.xPosition, winFrame, screenFrame)
+    winFrame.y = getY(status.yPosition, winFrame, screenFrame)
+  else
+    winFrame.x = winFrame.x + 50 / 2
+    winFrame.y = winFrame.y + 20 / 2
+  end
+
   status.customW = winFrame.w
   status.customH = winFrame.h
   status.size = "CUSTOM"
