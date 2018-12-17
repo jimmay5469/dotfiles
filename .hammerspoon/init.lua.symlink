@@ -26,6 +26,11 @@ hyperBind("w", function()
   hs.alert.show("Hello World!")
 end)
 
+hyperBind("d", function()
+  local win = hs.window.focusedWindow()
+  hs.alert.show(win:frame())
+end)
+
 hs.alert.show("Welcome!")
 hyperBind("r", function()
   hs.alert.show("Reloading config...")
