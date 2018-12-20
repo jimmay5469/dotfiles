@@ -256,3 +256,21 @@ bind("-", function()
 
   win:setFrame(winFrame, 0)
 end)
+
+bind("s", function()
+  local win = hs.window.focusedWindow()
+  local winFrame = win:frame()
+  local screen = win:screen():next()
+  local screenFrame = screen:frame()
+  local status = getWindowStatus(win)
+
+  if not status.yPosition or not status.xPosition then
+    status.xPosition = "CENTER"
+    status.yPosition = "CENTER"
+  end
+
+  winFrame.x = getX(status.xPosition, winFrame, screenFrame)
+  winFrame.y = getY(status.yPosition, winFrame, screenFrame)
+
+  win:setFrame(winFrame)
+end)
