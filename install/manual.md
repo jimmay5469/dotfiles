@@ -5,6 +5,7 @@ App store installs:
 -------------------
 - Monosnap
 - Bear
+- Space Gremlin
 
 OSX Setup
 ---------
