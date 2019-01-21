@@ -1,6 +1,7 @@
 local margin = 10
 local xStepSize = 50
 local yStepSize = 20
+local stepsBelowFullScreenForGolden = 5
 
 local windowStatuses = {}
 function getWindowStatus(win)
@@ -70,8 +71,8 @@ function toggleSize(win, yPosition, xPosition)
   local status = getWindowStatus(win)
 
   if status.size == "CUSTOM" then
-    winFrame.w = screenFrame.w - 2 * margin - 5 * xStepSize
-    winFrame.h = screenFrame.h - 2 * margin - 5 * yStepSize
+    winFrame.w = screenFrame.w - 2 * margin - stepsBelowFullScreenForGolden * xStepSize
+    winFrame.h = screenFrame.h - 2 * margin - stepsBelowFullScreenForGolden * yStepSize
     status.size = "GOLDEN"
     hs.alert.show("Golden")
   else
