@@ -99,7 +99,14 @@ let g:rooter_silent_chdir = 1
 
 "folding
 set foldmethod=indent
-set nofoldenable
+set foldlevelstart=99
+
+"automatically reload changed files
+augroup reload
+  au!
+  au FocusGained * :checktime
+augroup end
+let g:signify_realtime = 1
 
 "autocomplete
 if has('nvim')
@@ -108,7 +115,23 @@ if has('nvim')
   let g:deoplete#enable_ignore_case = 1
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 endif
-let g:closetag_filenames = "*.html,*.js,*.jsx,*.eex"
+
+" auto format on save
+function! AutoFormatToggle()
+  if get(b:, 'auto_format', 1)
+    let b:auto_format = 0
+    echo 'Auto Format OFF'
+  else
+    let b:auto_format = 1
+    echo 'Auto Format ON'
+  endif
+endfunction
+augroup fmt
+  autocmd!
+  if get(b:, 'auto_format', 1)
+    autocmd BufWritePre * Neoformat
+  endif
+augroup end
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,20 +199,10 @@ if $TERM_PROGRAM == "iTerm.app" && filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+hi Search ctermfg=242 ctermbg=222
 
-"gvim options
-if has("gui_running")
-  "remove scrollbars
-  set guioptions-=l
-  set guioptions-=L
-  set guioptions-=r
-  set guioptions-=b
-
-  "set fonts and background
-  set transparency=5
-  set lines=70
-  set columns=250
-endif
+"italic comments
+hi Comment cterm=italic
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,17 +216,21 @@ let g:spacemacs#plugins = [
 \ ]
 let g:spacemacs#excludes = [
   \ '^br',
+  \ '^cp',
   \ '^fed',
   \ '^ff',
   \ '^fs',
   \ '^pp',
+  \ '^taf',
 \ ]
 
 nnoremap <LEADER>br :checktime<CR>:e<CR>
-nnoremap <LEADER>fs :wa<CR>
+nnoremap <LEADER>cp :let @+= ShortFilepath()<CR>
 nnoremap <LEADER>fed :e ~/repos/dotfiles/.vimrc.symlink<CR>
-nnoremap <LEADER>pp :e ~/repos/
 nnoremap <LEADER>ff :e <C-R>=substitute(expand("%:p:h"), getcwd(), ".", "")<CR>/
+nnoremap <LEADER>fs :wa<CR>
+nnoremap <LEADER>pp :e ~/repos/
+nnoremap <LEADER>taf :call AutoFormatToggle()<CR>
 
 "Key binding menues
 nnoremap <silent> <LEADER> :<C-U>LeaderGuide '<SPACE>'<CR>
@@ -236,18 +253,6 @@ nm <silent> <F1> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
     \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
     \ . ">"<CR>
 
-"italic
-hi Comment cterm=italic
-hi htmlArg cterm=italic
-hi Include cterm=italic
-hi jsReturn cterm=italic
-hi jsThis cterm=italic
-hi StorageClass cterm=italic
-hi xmlAttrib cterm=italic
-
-"bold
-hi jsVariableDef cterm=bold
-
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
 nnoremap <LEADER>* :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
@@ -267,35 +272,3 @@ function! AutoHighlightToggle()
     return 1
   endif
 endfunction
-hi Search ctermfg=242 ctermbg=222
-
-" automatically reload changed files
-augroup reload
-  au!
-  au FocusGained * :checktime
-augroup end
-
-" auto format on save
-nnoremap <LEADER>taf :call AutoFormatToggle()<CR>
-function! AutoFormatToggle()
-  if get(b:, 'auto_format', 1)
-    let b:auto_format = 0
-    echo 'Auto Format OFF'
-  else
-    let b:auto_format = 1
-    echo 'Auto Format ON'
-  endif
-endfunction
-augroup fmt
-  autocmd!
-  if get(b:, 'auto_format', 1)
-    autocmd BufWritePre * Neoformat
-  endif
-augroup end
-
-" folding
-set foldlevelstart=99
-
-" testing helpers
-nnoremap <LEADER>cp :let @+= ShortFilepath()<CR>
-nnoremap <LEADER>mt :wa<CR>:! mix test <C-R>=ShortFilepath()<CR><CR>
