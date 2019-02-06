@@ -106,7 +106,8 @@ augroup reload
   au!
   au FocusGained * :checktime
 augroup end
-let g:signify_realtime = 1
+let g:signify_update_on_bufenter = 1
+let g:signify_update_on_focusgained = 1
 
 "autocomplete
 if has('nvim')
