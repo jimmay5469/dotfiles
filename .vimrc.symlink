@@ -54,7 +54,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-Plug 'sbdchd/neoformat'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -117,21 +117,15 @@ if has('nvim')
 endif
 
 " auto format on save
-function! AutoFormatToggle()
-  if get(b:, 'auto_format', 1)
-    let b:auto_format = 0
-    echo 'Auto Format OFF'
-  else
-    let b:auto_format = 1
-    echo 'Auto Format ON'
-  endif
-endfunction
-augroup fmt
-  autocmd!
-  if get(b:, 'auto_format', 1)
-    autocmd BufWritePre * Neoformat
-  endif
-augroup end
+let g:ale_linters = {
+\   'javascript': ['standard', 'eslint'],
+\}
+let g:ale_fixers = {
+\   'elixir': ['mix_format'],
+\   'javascript': ['standard', 'eslint'],
+\}
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -230,7 +224,6 @@ nnoremap <LEADER>fed :e ~/repos/dotfiles/.vimrc.symlink<CR>
 nnoremap <LEADER>ff :e <C-R>=substitute(expand("%:p:h"), getcwd(), ".", "")<CR>/
 nnoremap <LEADER>fs :wa<CR>
 nnoremap <LEADER>pp :e ~/repos/
-nnoremap <LEADER>taf :call AutoFormatToggle()<CR>
 
 "Key binding menues
 nnoremap <silent> <LEADER> :<C-U>LeaderGuide '<SPACE>'<CR>
