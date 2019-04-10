@@ -1,0 +1,7 @@
+snippet fn "(params) => { ... }" i
+(${1}) => { ${2} }
+endsnippet
+
+snippet log "console.log(value)"
+console.log(${1})
+endsnippet
