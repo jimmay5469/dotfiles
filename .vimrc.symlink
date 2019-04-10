@@ -115,6 +115,7 @@ if has('nvim')
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#enable_ignore_case = 1
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+  inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 endif
 
 " auto format on save
