@@ -113,39 +113,39 @@ function moveOrToggleSize(win, yPosition, xPosition)
   status.yPosition = yPosition
 end
 
-bind("y", function()
+bind("u", function()
   moveOrToggleSize(hs.window.focusedWindow(), "TOP", "LEFT")
 end)
 
-bind("u", function()
+bind("i", function()
   moveOrToggleSize(hs.window.focusedWindow(), "TOP", "CENTER")
 end)
 
-bind("i", function()
+bind("o", function()
   moveOrToggleSize(hs.window.focusedWindow(), "TOP", "RIGHT")
 end)
 
-bind("h", function()
+bind("j", function()
   moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "LEFT")
 end)
 
-bind("j", function()
+bind("k", function()
   moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "CENTER")
 end)
 
-bind("k", function()
+bind("l", function()
   moveOrToggleSize(hs.window.focusedWindow(), "CENTER", "RIGHT")
 end)
 
-bind("n", function()
+bind("m", function()
   moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "LEFT")
 end)
 
-bind("m", function()
+bind(",", function()
   moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "CENTER")
 end)
 
-bind(",", function()
+bind(".", function()
   moveOrToggleSize(hs.window.focusedWindow(), "BOTTOM", "RIGHT")
 end)
 
