@@ -24,6 +24,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
 
 "Pane navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -100,6 +101,9 @@ let g:rooter_silent_chdir = 1
 "folding
 set foldmethod=indent
 set foldlevelstart=99
+
+"navigation
+let g:EasyMotion_smartcase = 1
 
 "automatically reload changed files
 augroup reload
@@ -216,8 +220,9 @@ hi Comment cterm=italic
 let mapleader = "\<SPACE>"
 
 let g:spacemacs#plugins = [
-  \ 'tpope/vim-fugitive',
+  \ 'easymotion/vim-easymotion',
   \ 'junegunn/fzf.vim',
+  \ 'tpope/vim-fugitive',
 \ ]
 let g:spacemacs#excludes = [
   \ '^br',
