@@ -74,7 +74,8 @@ ZSH_THEME="agnoster_customized"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  nvm
+  docker
+  docker-compose
   tmux
   alias-tips
   zsh-autosuggestions
