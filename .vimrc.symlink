@@ -240,6 +240,8 @@ nnoremap <LEADER>fed :e ~/repos/dotfiles/.vimrc.symlink<CR>
 nnoremap <LEADER>ff :e <C-R>=substitute(expand("%:p:h"), getcwd(), ".", "")<CR>/
 nnoremap <LEADER>fs :wa<CR>
 nnoremap <LEADER>pp :e ~/repos/
+nnoremap <UP> <C-Y>
+nnoremap <DOWN> <C-E>
 
 "Key binding menues
 nnoremap <silent> <LEADER> :<C-U>LeaderGuide '<SPACE>'<CR>
