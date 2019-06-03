@@ -73,14 +73,15 @@ ZSH_THEME="agnoster_customized"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  alias-tips
   git
   docker
   docker-compose
   tmux
-  alias-tips
   zsh-autosuggestions
   zsh-syntax-highlighting
   history-substring-search
+  # globalias
 )
 
 source $ZSH/oh-my-zsh.sh
