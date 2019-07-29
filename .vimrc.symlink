@@ -47,9 +47,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 
 "Autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
@@ -114,13 +112,8 @@ let g:signify_update_on_bufenter = 1
 let g:signify_update_on_focusgained = 1
 
 "autocomplete
-if has('nvim')
-  " Use deoplete.
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#enable_ignore_case = 1
-  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-  inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-endif
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 let g:user_emmet_settings = {
 \  'javascript' : {
 \      'extends' : 'jsx',
