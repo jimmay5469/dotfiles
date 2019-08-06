@@ -38,7 +38,7 @@ OSX Setup
       - `Read & Write` for me
       - `No Access` for `Everyone`
       - Edit `[name].local` so 0.0.0.0 can be accessed from phones on the network at `http://[name].local`
-- Add `/User/jimmay5469` and `Mackintosh HD` directories to Finder favorites
+- Add `~/` and `Mackintosh HD` directories to Finder favorites
 
 Dropbox Setup
 -------------
