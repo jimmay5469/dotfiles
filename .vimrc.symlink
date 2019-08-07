@@ -122,18 +122,17 @@ let g:user_emmet_settings = {
 
 " auto format on save
 let g:ale_linters = {
-\   'javascript': ['standard'],
+\   'javascript': ['eslint'],
 \   'ruby': ['standardrb'],
 \}
 let g:ale_fixers = {
 \   'elixir': ['mix_format'],
-\   'javascript': ['standard'],
+\   'javascript': ['eslint'],
 \   'ruby': ['standardrb'],
 \}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 0
-let g:ale_javascript_standard_use_global = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
