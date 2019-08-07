@@ -40,32 +40,29 @@ OSX Setup
       - Edit `[name].local` so 0.0.0.0 can be accessed from phones on the network at `http://[name].local`
 - Add `~/` and `Mackintosh HD` directories to Finder favorites
 
-Dropbox Setup
--------------
-- Open Dropbox and log in
+iCloud Setup
+------------
+- In `Preferences` > `iCloud` > `iCloud Drive Options` uncheck `Optimize Mac Storage`
 
 1Password Setup
 ---------------
-- Sync `~/Dropbox/AppData/1Password/Jimmy's 1Password/1Password.agilekeychain` with `Primary` vault.
-- Double click `~/Dropbox/AppData/1Password/Lauren's 1Password/1Password.agilekeychain` to add `Lauren's Vault`.
-- Remove `Lauren's Vault` from `All Vaults`.
-- Find `1Password` in the `Primary` vault and open the `License.onepassword-license` attachment.
+- Log in using 1Password account
 
 iTerm Setup
 -----------
-- In iTerm2 `Preferences` > `General` set `Load preferences from a custom folder or URL` to `~/Dropbox/AppData/iTerm2`
+- In iTerm2 `Preferences` > `General` set `Load preferences from a custom folder or URL` to `iCloud/iTerm2`
 - Check `Save changes to folder when iTerm2 quits`
 - Run `base16_tomorrow`
 
 Alfred Setup
 ------------
 - In 1Password, find `Alfred` in the `Primary` vault and use the license key to activate the Alfred Powerpack.
-- In the `Advanced` tab click `Set sync folder...` and choose `~/Dropbox/AppData/Alfred`.
+- In the `Advanced` tab click `Set sync folder...` and choose `iCloud/Alfred`.
 
 Dash Setup
 ----------
 - In 1Password, find `Dash` in the `Primary` vault and open the `license.dash-license` attachment.
-- In the Dash `Preferences` click `Set Up Syncing` > `Set Sync Folder` and choose `~/Dropbox/AppData/Dash`.
+- In the Dash `Preferences` click `Set Up Syncing` > `Set Sync Folder` and choose `iCloud/Dash`.
 
 Chrome Setup
 ------------
