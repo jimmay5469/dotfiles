@@ -32,6 +32,11 @@ if [ ! "$(brew ls --versions the_silver_searcher)" ]; then
   brew install the_silver_searcher
 fi
 
+if [ ! "$(brew ls --versions direnv)" ]; then
+  echo "Installing direnv"
+  brew install direnv
+fi
+
 if [ ! "$(brew ls --versions tmux)" ]; then
   echo "Installing tmux"
   brew install tmux
