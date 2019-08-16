@@ -11,4 +11,3 @@ if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
 fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export NODEJS_CHECK_SIGNATURES="no"
