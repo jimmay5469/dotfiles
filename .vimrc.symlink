@@ -200,9 +200,9 @@ if $TERM_PROGRAM == "iTerm.app" && filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-hi Search ctermfg=242 ctermbg=222
-hi ALEError ctermbg=Red ctermfg=0
-hi ALEWarning ctermbg=Yellow ctermfg=0
+hi Search ctermfg=0 ctermbg=39
+hi ALEError ctermbg=217
+hi ALEWarning ctermbg=229
 
 "italic comments
 hi Comment cterm=italic
