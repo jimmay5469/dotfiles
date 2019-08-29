@@ -33,8 +33,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'chriskempson/base16-vim'
 Plug 'ap/vim-css-color'
 Plug 'luochen1990/rainbow'
-Plug 'sjl/vitality.vim' "needed for diminactive focus setting
-Plug 'blueyed/vim-diminactive'
 
 "Git
 Plug 'tpope/vim-fugitive'
@@ -75,8 +73,16 @@ set number
 set tabstop=2
 set shiftwidth=2
 
-"Highlight search
+"Turn on highlights
+set cursorline
 set hlsearch
+
+"CursorLine only on active pane
+augroup CursorLineHighlight
+  au!
+  au WinEnter * set cursorline
+  au WinLeave * set nocursorline
+augroup end
 
 ":e autocomplete settings
 set wildmenu
@@ -192,9 +198,6 @@ set tabline=%!Tabline()
 " Style
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Diminactive settings
-let g:diminactive_enable_focus = 1
-
 "Theme
 let g:rainbow_active = 1
 let g:rainbow_conf = {
@@ -207,9 +210,15 @@ if $TERM_PROGRAM == "iTerm.app" && filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
+hi CursorLine ctermbg=none
+hi CursorLineNr ctermfg=0 ctermbg=236
 hi Search ctermfg=0 ctermbg=39
 hi ALEError ctermbg=217
+hi ALEErrorSign ctermfg=15 ctermbg=217
+hi ALEErrorSignLineNr ctermfg=none ctermbg=none
 hi ALEWarning ctermbg=229
+hi ALEWarningSign ctermfg=15 ctermbg=229
+hi ALEWarningSignLineNr ctermfg=none ctermbg=none
 
 "Italic comments
 hi Comment cterm=italic
