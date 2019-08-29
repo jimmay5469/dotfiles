@@ -30,9 +30,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 
 "Theme
-"Plug 'romainl/Apprentice'
 Plug 'chriskempson/base16-vim'
 Plug 'ap/vim-css-color'
+Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "needed for diminactive focus setting
 Plug 'blueyed/vim-diminactive'
 
@@ -62,27 +62,27 @@ call plug#end()
 " Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"fix copy paste error in osx sierra
+"Fix copy paste error in osx sierra
 set clipboard=unnamed
 
-"enable mouse click/scroll
+"Enable mouse click/scroll
 set mouse=a
 
-"line numbers
+"Line numbers
 set number
 
-"tabs
+"Tabs
 set tabstop=2
 set shiftwidth=2
 
-"highlight search
+"Highlight search
 set hlsearch
 
 ":e autocomplete settings
 set wildmenu
 set wildmode=longest:list,full
 
-"don't create swap files
+"Don't create swap files
 set nobackup
 set nowritebackup
 set noswapfile
@@ -93,17 +93,17 @@ set wildignore+=*tmp/*,*node_modules/*,*bower_components/*,*.git/*,*.pyc,*lib/py
 "EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-"better autochdir
+"Better autochdir
 let g:rooter_silent_chdir = 1
 
-"folding
+"Folding
 set foldmethod=indent
 set foldlevelstart=99
 
-"navigation
+"Navigation
 let g:EasyMotion_smartcase = 1
 
-"automatically reload changed files
+"Automatically reload changed files
 augroup reload
   au!
   au FocusGained * :checktime
@@ -111,24 +111,24 @@ augroup end
 let g:signify_update_on_bufenter = 1
 let g:signify_update_on_focusgained = 1
 
-"autocomplete
+"Autocomplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 let g:user_emmet_settings = {
 \  'javascript' : {
-\      'extends' : 'jsx',
+\    'extends' : 'jsx',
 \  },
 \}
 
-" auto format on save
+"Auto format on save
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'ruby': ['standardrb'],
+\  'javascript': ['eslint'],
+\  'ruby': ['standardrb'],
 \}
 let g:ale_fixers = {
-\   'elixir': ['mix_format'],
-\   'javascript': ['eslint'],
-\   'ruby': ['standardrb'],
+\  'elixir': ['mix_format'],
+\  'javascript': ['eslint'],
+\  'ruby': ['standardrb'],
 \}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
@@ -180,7 +180,7 @@ function! Tabline()
 
   let s .= '%#TabLineFill#'
 
-  " right-align the CWD
+  "Right-align the CWD
   let s .= '%=%#TabLineSel#[%{ShortCWD()}]'
 
   return s
@@ -192,19 +192,26 @@ set tabline=%!Tabline()
 " Style
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"diminactive settings
+"Diminactive settings
 let g:diminactive_enable_focus = 1
+
+"Theme
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\  'ctermfgs': ['blue', 'yellow', 'cyan', 'magenta']
+\}
 
 "Syntax highlighting
 if $TERM_PROGRAM == "iTerm.app" && filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
 hi Search ctermfg=0 ctermbg=39
 hi ALEError ctermbg=217
 hi ALEWarning ctermbg=229
 
-"italic comments
+"Italic comments
 hi Comment cterm=italic
 
 
@@ -214,19 +221,19 @@ hi Comment cterm=italic
 let mapleader = "\<SPACE>"
 
 let g:spacemacs#plugins = [
-  \ 'easymotion/vim-easymotion',
-  \ 'junegunn/fzf.vim',
-  \ 'tpope/vim-fugitive',
-\ ]
+\  'easymotion/vim-easymotion',
+\  'junegunn/fzf.vim',
+\  'tpope/vim-fugitive',
+\]
 let g:spacemacs#excludes = [
-  \ '^br',
-  \ '^cp',
-  \ '^fed',
-  \ '^ff',
-  \ '^fs',
-  \ '^pp',
-  \ '^taf',
-\ ]
+\  '^br',
+\  '^cp',
+\  '^fed',
+\  '^ff',
+\  '^fs',
+\  '^pp',
+\  '^taf',
+\]
 
 nnoremap <LEADER>br :checktime<CR>:e<CR>
 nnoremap <LEADER>cp :let @+= ShortFilepath()<CR>
@@ -254,12 +261,12 @@ endif
 
 "F1 to see syntax highlight under cursor
 nm <silent> <F1> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-    \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
-    \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
-    \ . ">"<CR>
+\  . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
+\  . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
+\  . ">"<CR>
 
-" Highlight all instances of word under cursor, when idle.
-" Useful when studying strange source code.
+"Highlight all instances of word under cursor, when idle.
+"Useful when studying strange source code.
 nnoremap <LEADER>* :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 function! AutoHighlightToggle()
   let @/ = ''
