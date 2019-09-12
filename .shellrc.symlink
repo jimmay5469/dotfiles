@@ -10,4 +10,6 @@ if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
   [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 fi
 
+alias gbclean="git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
