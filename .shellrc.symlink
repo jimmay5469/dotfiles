@@ -12,4 +12,6 @@ fi
 
 alias gbclean="git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
 
+export CDPATH=.:~/repos:~/repos/chegg
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
