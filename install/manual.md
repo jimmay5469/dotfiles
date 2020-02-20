@@ -6,6 +6,8 @@ App store installs:
 - Monosnap
 - Bear
 - Space Gremlin
+- Amphetamine
+- RetroClip
 
 OSX Setup
 ---------
