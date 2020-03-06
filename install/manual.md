@@ -8,6 +8,7 @@ App store installs:
 - Space Gremlin
 - Amphetamine
 - RetroClip
+- GIF Brewery
 
 OSX Setup
 ---------
