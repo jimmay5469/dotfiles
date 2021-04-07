@@ -213,10 +213,10 @@ endif
 hi CursorLine ctermbg=none
 hi CursorLineNr ctermfg=0 ctermbg=236
 hi Search ctermfg=0 ctermbg=39
-hi ALEError ctermbg=217
+hi ALEError ctermfg=0 ctermbg=217
 hi ALEErrorSign ctermfg=15 ctermbg=217
 hi ALEErrorSignLineNr ctermfg=none ctermbg=none
-hi ALEWarning ctermbg=229
+hi ALEWarning ctermfg=15 ctermbg=229
 hi ALEWarningSign ctermfg=15 ctermbg=229
 hi ALEWarningSignLineNr ctermfg=none ctermbg=none
 
