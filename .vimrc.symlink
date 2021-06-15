@@ -247,6 +247,12 @@ nnoremap <DOWN> <C-E>
 nnoremap <silent> <LEADER> :<C-U>LeaderGuide '<SPACE>'<CR>
 vnoremap <silent> <LEADER> :<C-U>LeaderGuideVisual '<SPACE>'<CR>
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 "Reload vim-spacemacs if it is local
 if !empty(glob("~/repos/vim-spacemacs"))
   let g:spacemacs#excludes = add(g:spacemacs#excludes, '^feR')
