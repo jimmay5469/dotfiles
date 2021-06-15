@@ -201,12 +201,17 @@ if $TERM_PROGRAM == "iTerm.app" && filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-hi CursorLine ctermbg=none
-hi CursorLineNr ctermfg=0 ctermbg=236
-hi Search ctermfg=0 ctermbg=39
+function! s:base16_customize() abort
+  call Base16hi("CursorLine", "", "", "", "none", "", "")
+  call Base16hi("CursorLineNr", "", "", "0", "236", "", "")
+  call Base16hi("Search", "", "", "0", "39", "", "")
+  call Base16hi("Comment", "", "", "", "", "italic", "")
+endfunction
 
-"Italic comments
-hi Comment cterm=italic
+augroup on_change_colorschema
+  au!
+  au ColorScheme * call s:base16_customize()
+augroup END
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
