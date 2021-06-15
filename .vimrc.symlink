@@ -51,7 +51,6 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -120,25 +119,17 @@ let g:signify_update_on_focusgained = 1
 "Autocomplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+let g:coc_global_extensions = [
+\  'coc-json',
+\  'coc-tsserver',
+\  'coc-eslint',
+\  'coc-styled-components',
+\]
 let g:user_emmet_settings = {
 \  'javascript' : {
 \    'extends' : 'jsx',
 \  },
 \}
-
-"Auto format on save
-let g:ale_linters = {
-\  'javascript': ['eslint'],
-\  'ruby': ['standardrb'],
-\}
-let g:ale_fixers = {
-\  'elixir': ['mix_format'],
-\  'javascript': ['eslint'],
-\  'ruby': ['standardrb'],
-\}
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_text_changed = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -213,12 +204,6 @@ endif
 hi CursorLine ctermbg=none
 hi CursorLineNr ctermfg=0 ctermbg=236
 hi Search ctermfg=0 ctermbg=39
-hi ALEError ctermfg=0 ctermbg=217
-hi ALEErrorSign ctermfg=15 ctermbg=217
-hi ALEErrorSignLineNr ctermfg=none ctermbg=none
-hi ALEWarning ctermfg=15 ctermbg=229
-hi ALEWarningSign ctermfg=15 ctermbg=229
-hi ALEWarningSignLineNr ctermfg=none ctermbg=none
 
 "Italic comments
 hi Comment cterm=italic
