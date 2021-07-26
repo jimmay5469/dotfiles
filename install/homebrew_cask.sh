@@ -6,37 +6,42 @@ echo "------------------------------"
 
 echo "Installing homebrew casks"
 
-if [ ! "$(brew cask ls | grep 1password)" ]; then
+if [ ! "$(brew ls | grep 1password)" ]; then
   echo "Installing 1password"
-  brew cask install 1password
+  brew install homebrew/cask/1password
 fi
 
-if [ ! "$(brew cask ls | grep alfred)" ]; then
+if [ ! "$(brew ls | grep alfred)" ]; then
   echo "Installing alfred"
-  brew cask install alfred
+  brew install homebrew/cask/alfred
 fi
 
-if [ ! "$(brew cask ls | grep dash)" ]; then
+if [ ! "$(brew ls | grep dash)" ]; then
   echo "Installing dash"
-  brew cask install dash
+  brew install homebrew/cask/dash
 fi
 
-if [ ! "$(brew cask ls | grep google-chrome)" ]; then
-  echo "Installing google-chrome"
-  brew cask install google-chrome
-fi
-
-if [ ! "$(brew cask ls | grep google-backup-and-sync)" ]; then
+if [ ! "$(brew ls | grep google-backup-and-sync)" ]; then
   echo "Installing google-backup-and-sync"
-  brew cask install google-backup-and-sync
+  brew install homebrew/cask/google-backup-and-sync
 fi
 
-if [ ! "$(brew cask ls | grep hammerspoon)" ]; then
+if [ ! "$(brew ls | grep google-chrome)" ]; then
+  echo "Installing google-chrome"
+  brew install homebrew/cask/google-chrome
+fi
+
+if [ ! "$(brew ls | grep hammerspoon)" ]; then
   echo "Installing hammerspoon"
-  brew cask install hammerspoon
+  brew install homebrew/cask/hammerspoon
 fi
 
-if [ ! "$(brew cask ls | grep iterm2)" ]; then
+if [ ! "$(brew ls | grep iterm2)" ]; then
   echo "Installing iterm2"
-  brew cask install iterm2
+  brew install homebrew/cask/iterm2
+fi
+
+if [ ! "$(brew ls | grep visual-studio-code)" ]; then
+  echo "Installing iterm2"
+  brew install homebrew/cask/visual-studio-code
 fi

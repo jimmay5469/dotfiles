@@ -6,7 +6,7 @@ echo "------------------------------"
 
 echo "Installing homebrew cask fonts"
 
-if [ ! "$(brew cask ls | grep font-fira-code)" ]; then
+if [ ! "$(brew ls | grep font-fira-code)" ]; then
   echo "Installing font-hack"
-  brew cask install caskroom/fonts/font-fira-code
+  brew install homebrew/cask-fonts/font-fira-code
 fi

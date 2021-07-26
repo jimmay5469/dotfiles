@@ -3,12 +3,13 @@ Manual Installation Steps
 
 App store installs:
 -------------------
-- Monosnap
-- Bear
-- Space Gremlin
-- Amphetamine
-- RetroClip
+- Monosnap (old)
+- Bear (old)
+- Space Gremlin (old)
+- Amphetamine (old)
+- RetroClip (old)
 - GIF Brewery
+- IA Writer
 
 OSX Setup
 ---------
@@ -18,14 +19,14 @@ OSX Setup
   - Disable swipe between pages
   - Enable 3 finger lookup
 - Keyboard
-  - `Caps Lock` -> `Escape` (for all keyboards)
+  - `Caps Lock` -> `Control` (for all keyboards)
   - `Shortcuts` -> `Spotlight` -> Uncheck `Show Spotlight search` shortcut
 - Displays
   - `Night Shift` > `Custom` : `9:30 PM - 6:00 AM` (match iPhone)
 - Bluetooth
   - Show bluetooth in menu bar
 - Dock
-  - Position on screen: left
+  - Position on screen: right
   - Automatically hide and show the Dock
   - Make it small
   - Remove everythign from it except Finder and Settings
@@ -77,7 +78,7 @@ GitHub Setup
 - GitHub SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
 - Run `ssh-add -K ~/.ssh/id_rsa`
 
-Google Photos Uploader
+Google Backup and Sync
 ----------------------
 - Log in
 - Choose originals in preferences
