@@ -6,7 +6,7 @@ echo "------------------------------"
 
 if test ! $(which asdf); then
   echo "Installing asdf"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.3.0
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
 
   source $HOME/.shellrc
 fi
@@ -52,8 +52,12 @@ if [ ! "$(asdf plugin-list | grep yarn)" ]; then
   asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git
 fi
 
+cd ~/
+
 echo "Installing asdf package global versions"
 asdf install
 
 echo "Enabling python for neovim"
 pip install --user neovim
+
+cd ~/repos/dotfiles
