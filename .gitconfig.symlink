@@ -19,3 +19,5 @@
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
 [pager]
 	branch = false
+[pull]
+	rebase = false
