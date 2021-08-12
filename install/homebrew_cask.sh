@@ -21,11 +21,6 @@ if [ ! "$(brew ls | grep dash)" ]; then
   brew install homebrew/cask/dash
 fi
 
-if [ ! "$(brew ls | grep google-backup-and-sync)" ]; then
-  echo "Installing google-backup-and-sync"
-  brew install homebrew/cask/google-backup-and-sync
-fi
-
 if [ ! "$(brew ls | grep google-chrome)" ]; then
   echo "Installing google-chrome"
   brew install homebrew/cask/google-chrome
