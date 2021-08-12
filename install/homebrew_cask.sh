@@ -42,6 +42,6 @@ if [ ! "$(brew ls | grep iterm2)" ]; then
 fi
 
 if [ ! "$(brew ls | grep visual-studio-code)" ]; then
-  echo "Installing iterm2"
+  echo "Installing visual-studio-code"
   brew install homebrew/cask/visual-studio-code
 fi
