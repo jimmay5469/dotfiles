@@ -22,7 +22,7 @@ OSX Setup
   - `Caps Lock` -> `Control` (for all keyboards)
   - `Shortcuts` -> `Spotlight` -> Uncheck `Show Spotlight search` shortcut
 - Displays
-  - `Night Shift` > `Custom` : `9:30 PM - 6:00 AM` (match iPhone)
+  - `Night Shift` > `Custom` : `8:30 PM - 5:00 AM` (match iPhone)
 - Bluetooth
   - Show bluetooth in menu bar
 - Dock
