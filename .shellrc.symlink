@@ -12,7 +12,7 @@ fi
 
 alias gbclean="git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
 
-export CDPATH=.:~/repos:~/repos/kanekto
+export CDPATH="$CDPATH:$HOME/repos"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
