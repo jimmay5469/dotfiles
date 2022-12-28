@@ -310,3 +310,17 @@ bind("s", function()
 
   win:setFrame(winFrame)
 end)
+
+local mute_menu = hs.menubar.new()
+local mute_text = "❌ Muted ❌"
+local unmute_text = "✅ Unmuted ✅"
+mute_menu:setTitle(unmute_text)
+hs.hotkey.bind({"ctrl", "alt"}, "F10", function()
+  if mute_menu:title() == mute_text then
+    hs.eventtap.keyStroke({"ctrl", "alt"}, "F19")
+    mute_menu:setTitle(unmute_text)
+  else
+    hs.eventtap.keyStroke({"ctrl", "alt"}, "F18")
+    mute_menu:setTitle(mute_text)
+  end
+end)
