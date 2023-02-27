@@ -311,16 +311,40 @@ bind("s", function()
   win:setFrame(winFrame)
 end)
 
+--- Muting
 local mute_menu = hs.menubar.new()
-local mute_text = "❌ Muted ❌"
-local unmute_text = "✅ Unmuted ✅"
-mute_menu:setTitle(unmute_text)
-hs.hotkey.bind({"ctrl", "alt"}, "F10", function()
-  if mute_menu:title() == mute_text then
-    hs.eventtap.keyStroke({"ctrl", "alt"}, "F19")
-    mute_menu:setTitle(unmute_text)
+local pushedToMuteOrUnmute = false;
+
+function displayMuteState()
+  if hs.audiodevice.defaultInputDevice():muted() then
+    mute_menu:setTitle("❌ Muted ❌")
   else
-    hs.eventtap.keyStroke({"ctrl", "alt"}, "F18")
-    mute_menu:setTitle(mute_text)
+    mute_menu:setTitle("✅ Unmuted ✅")
   end
-end)
+end
+function toggleMute()
+  local mic = hs.audiodevice.defaultInputDevice()
+  if mic:muted() then
+    mic:setInputMuted(false)
+  else
+    mic:setInputMuted(true)
+  end
+  displayMuteState()
+end
+function pushToMuteOrUnmute(event)
+  if event:getFlags():containExactly({ 'ctrl' }) then
+    pushedToMuteOrUnmute = true
+    toggleMute()
+  elseif pushedToMuteOrUnmute then
+    pushedToMuteOrUnmute = false
+    toggleMute()
+  end
+end
+
+displayMuteState()
+hs.audiodevice.watcher.setCallback(displayMuteState)
+hs.audiodevice.watcher.start()
+mute_menu:setClickCallback(toggleMute)
+hs.hotkey.bind({"ctrl", "alt"}, "F10", toggleMute)
+pushToMuteOrUnmuteEventWatcher = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, pushToMuteOrUnmute)
+pushToMuteOrUnmuteEventWatcher:start()
