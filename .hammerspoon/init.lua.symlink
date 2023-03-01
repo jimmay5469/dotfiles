@@ -331,10 +331,16 @@ function toggleMute()
   end
   displayMuteState()
 end
-function pushToMuteOrUnmute(event)
-  if event:getFlags():containExactly({ 'ctrl' }) then
+function pushToMuteOrUnmute()
+  if hs.eventtap.checkKeyboardModifiers(true)._raw == 262144 then
     pushedToMuteOrUnmute = true
     toggleMute()
+  end
+end
+pushToMuteOrUnmuteTimer = hs.timer.delayed.new(0.1, pushToMuteOrUnmute)
+function delayedPushToMuteOrUnmute(event)
+  if event:getFlags():containExactly({ 'ctrl' }) then
+    pushToMuteOrUnmuteTimer:start()
   elseif pushedToMuteOrUnmute then
     pushedToMuteOrUnmute = false
     toggleMute()
@@ -346,5 +352,5 @@ hs.audiodevice.watcher.setCallback(displayMuteState)
 hs.audiodevice.watcher.start()
 mute_menu:setClickCallback(toggleMute)
 hs.hotkey.bind({"ctrl", "alt"}, "F10", toggleMute)
-pushToMuteOrUnmuteEventWatcher = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, pushToMuteOrUnmute)
+pushToMuteOrUnmuteEventWatcher = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, delayedPushToMuteOrUnmute)
 pushToMuteOrUnmuteEventWatcher:start()
