@@ -326,6 +326,15 @@ function displayMuteState()
   else
     mute_menu:setTitle("✅ Unmuted ✅")
   end
+
+  local zoom = hs.application.get("zoom.us")
+  if zoom ~= nil then
+    if hs.audiodevice.defaultInputDevice():muted() then
+      zoom:selectMenuItem('Mute Audio')
+    else
+      zoom:selectMenuItem('Unmute Audio')
+    end
+  end
 end
 
 function toggleMute()
@@ -343,6 +352,7 @@ enablePushToToggleMuteThrottle = hs.timer.delayed.new(enablePushToToggleMuteDela
 end)
 
 function pushToToggleMute(event)
+  enablePushToToggleMuteThrottle:stop()
   if event:getFlags():containExactly({ 'ctrl' }) then
     enablePushToToggleMuteThrottle:start()
   elseif pushToToggleMuteEnabled then
