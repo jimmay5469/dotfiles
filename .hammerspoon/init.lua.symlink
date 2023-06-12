@@ -317,8 +317,6 @@ end)
 --------------
 
 local mute_menu = hs.menubar.new()
-local pushToToggleMuteEnabled = false;
-local enablePushToToggleMuteDelay = 0.1
 
 function displayMuteState()
   if hs.audiodevice.defaultInputDevice():muted() then
@@ -343,24 +341,6 @@ function toggleMute()
   displayMuteState()
 end
 
-enablePushToToggleMuteThrottle = hs.timer.delayed.new(enablePushToToggleMuteDelay, function ()
-  local isOnlyCtrlPressed = hs.eventtap.checkKeyboardModifiers(true)._raw == 262144
-  if isOnlyCtrlPressed then
-    pushToToggleMuteEnabled = true
-    toggleMute()
-  end
-end)
-
-function pushToToggleMute(event)
-  enablePushToToggleMuteThrottle:stop()
-  if event:getFlags():containExactly({ 'ctrl' }) then
-    enablePushToToggleMuteThrottle:start()
-  elseif pushToToggleMuteEnabled then
-    pushToToggleMuteEnabled = false
-    toggleMute()
-  end
-end
-
 --- Show mute state on launch
 displayMuteState()
 
@@ -371,7 +351,3 @@ hs.audiodevice.watcher.start()
 --- Toggle using keyboard shortcut or menubar click
 mute_menu:setClickCallback(toggleMute)
 hs.hotkey.bind({"ctrl", "alt"}, "F10", toggleMute)
-
---- Hold down ctrl to quick toggle, release to toggle back
-pushToToggleMuteEventWatcher = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, pushToToggleMute)
-pushToToggleMuteEventWatcher:start()
