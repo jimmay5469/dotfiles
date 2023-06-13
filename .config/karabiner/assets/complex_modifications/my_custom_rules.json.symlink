@@ -46,6 +46,29 @@
           ]
         }
       ]
+    },
+    {
+      "description": "right_option press toggle mic",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "right_option"
+          },
+          "to": [
+              {
+                  "key_code": "right_option",
+                  "lazy": true
+              }
+          ],
+          "to_if_alone": [
+              {
+                  "key_code": "f10",
+                  "modifiers": ["left_control", "left_option"]
+              }
+          ]
+        }
+      ]
     }
   ]
 }
