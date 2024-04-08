@@ -8,7 +8,7 @@ App store installs:
 - Space Gremlin (old)
 - Amphetamine (old)
 - RetroClip (old)
-- GIF Brewery
+- GIF Brewery (old)
 - IA Writer
 
 OSX Setup
@@ -76,4 +76,4 @@ Chrome Setup
 GitHub Setup
 ------------
 - GitHub SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
-- Run `ssh-add -K ~/.ssh/id_rsa`
+- Run `ssh-add -K ~/.ssh/id_ed25519`
