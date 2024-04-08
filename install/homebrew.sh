@@ -6,7 +6,7 @@ echo "------------------------------"
 
 if test ! $(which brew); then
   echo "Installing homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 
@@ -39,7 +39,7 @@ fi
 
 if [ ! "$(brew ls --versions neovim)" ]; then
   echo "Installing neovim"
-  brew install neovim/neovim/neovim
+  brew install neovim
 fi
 
 if [ ! "$(brew ls --versions reattach-to-user-namespace)" ]; then

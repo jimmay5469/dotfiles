@@ -6,8 +6,10 @@ ssh-add -A &> /dev/null
 [ -d "$HOME/.asdf" ] && . $HOME/.asdf/completions/asdf.bash
 
 if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
-  BASE16_SHELL=$HOME/.config/base16-shell/
-  [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+  BASE16_SHELL="$HOME/.config/base16-shell/"
+  [ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+      source "$BASE16_SHELL/profile_helper.sh"
 fi
 
 alias gbclean="git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
