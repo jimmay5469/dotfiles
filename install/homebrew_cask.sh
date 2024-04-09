@@ -36,6 +36,11 @@ if [ ! "$(brew ls | grep iterm2)" ]; then
   brew install homebrew/cask/iterm2
 fi
 
+if [ ! "$(brew ls | grep karabiner-elements)" ]; then
+  echo "Installing karabiner-elements"
+  brew install homebrew/cask/karabiner-elements
+fi
+
 if [ ! "$(brew ls | grep visual-studio-code)" ]; then
   echo "Installing visual-studio-code"
   brew install homebrew/cask/visual-studio-code
