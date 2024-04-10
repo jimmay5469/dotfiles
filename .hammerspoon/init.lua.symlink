@@ -317,12 +317,22 @@ end)
 --------------
 
 local mute_menu = hs.menubar.new()
+local mute_image = hs.canvas.new({h=22, w=35}):appendElements(
+    {type="rectangle", fillColor={ red=1.0 }, roundedRectRadii={xRadius=5.0, yRadius=5.0}},
+    {type="image", image=hs.image.imageFromName("NSTouchBarAudioInputMuteTemplate"), imageAlpha=1.0, frame={x="5%", y="5%", h="90%", w="90%"}}
+  ):imageFromCanvas()
+local unmute_image = hs.canvas.new({h=22, w=35}):appendElements(
+    {type="rectangle", fillColor={ green=1.0 }, roundedRectRadii={xRadius=5.0, yRadius=5.0}},
+    {type="image", image=hs.image.imageFromName("NSTouchBarAudioInputTemplate"), imageAlpha=1.0, frame={x="5%", y="5%", h="90%", w="90%"}}
+  ):imageFromCanvas()
 
 function displayMuteState()
   if hs.audiodevice.defaultInputDevice():muted() then
-    mute_menu:setTitle("❌ Muted ❌")
+    mute_menu:setIcon(mute_image, false)
+    mute_menu:setTooltip("Muted")
   else
-    mute_menu:setTitle("✅ Unmuted ✅")
+    mute_menu:setIcon(unmute_image, false)
+    mute_menu:setTooltip("Unmuted")
   end
 
   local zoom = hs.application.get("zoom.us")
