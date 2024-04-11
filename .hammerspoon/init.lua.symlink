@@ -346,8 +346,11 @@ function displayMuteState()
 end
 
 function toggleMute()
-  local mic = hs.audiodevice.defaultInputDevice()
-  mic:setInputMuted(not mic:muted())
+  local default_mic = hs.audiodevice.defaultInputDevice()
+  local new_state = not default_mic:muted()
+  for i,mic in ipairs(hs.audiodevice.allInputDevices()) do
+    mic:setInputMuted(new_state)
+  end
   displayMuteState()
 end
 
