@@ -316,6 +316,7 @@ end)
 --- Muting ---
 --------------
 
+local muted = hs.audiodevice.defaultInputDevice():muted()
 local mute_menu = hs.menubar.new()
 local mute_image = hs.canvas.new({h=22, w=35}):appendElements(
     {type="rectangle", action="fill", fillColor={ red=1.0 }, roundedRectRadii={xRadius=5.0, yRadius=5.0}},
@@ -326,8 +327,12 @@ local unmute_image = hs.canvas.new({h=22, w=35}):appendElements(
     {type="image", image=hs.image.imageFromName("NSTouchBarAudioInputTemplate"), imageAlpha=1.0, frame={x="5%", y="5%", h="90%", w="90%"}}
   ):imageFromCanvas()
 
-function displayMuteState()
-  if hs.audiodevice.defaultInputDevice():muted() then
+function syncMute()
+  for i,mic in ipairs(hs.audiodevice.allInputDevices()) do
+    mic:setInputMuted(muted)
+  end
+
+  if muted then
     mute_menu:setIcon(mute_image, false)
     mute_menu:setTooltip("Muted")
   else
@@ -337,7 +342,7 @@ function displayMuteState()
 
   local zoom = hs.application.get("zoom.us")
   if zoom ~= nil then
-    if hs.audiodevice.defaultInputDevice():muted() then
+    if muted then
       zoom:selectMenuItem('Mute Audio')
     else
       zoom:selectMenuItem('Unmute Audio')
@@ -346,19 +351,15 @@ function displayMuteState()
 end
 
 function toggleMute()
-  local default_mic = hs.audiodevice.defaultInputDevice()
-  local new_state = not default_mic:muted()
-  for i,mic in ipairs(hs.audiodevice.allInputDevices()) do
-    mic:setInputMuted(new_state)
-  end
-  displayMuteState()
+  muted = not muted
+  syncMute()
 end
 
---- Show mute state on launch
-displayMuteState()
+--- Sync mute state on launch
+syncMute()
 
 --- Update mute state when default mic changes
-hs.audiodevice.watcher.setCallback(displayMuteState)
+hs.audiodevice.watcher.setCallback(syncMute)
 hs.audiodevice.watcher.start()
 
 --- Toggle using keyboard shortcut or menubar click
