@@ -318,11 +318,11 @@ end)
 
 local mute_menu = hs.menubar.new()
 local mute_image = hs.canvas.new({h=22, w=35}):appendElements(
-    {type="rectangle", fillColor={ red=1.0 }, roundedRectRadii={xRadius=5.0, yRadius=5.0}},
+    {type="rectangle", action="fill", fillColor={ red=1.0 }, roundedRectRadii={xRadius=5.0, yRadius=5.0}},
     {type="image", image=hs.image.imageFromName("NSTouchBarAudioInputMuteTemplate"), imageAlpha=1.0, frame={x="5%", y="5%", h="90%", w="90%"}}
   ):imageFromCanvas()
 local unmute_image = hs.canvas.new({h=22, w=35}):appendElements(
-    {type="rectangle", fillColor={ green=1.0 }, roundedRectRadii={xRadius=5.0, yRadius=5.0}},
+    {type="rectangle", action="fill", fillColor={ green=1.0 }, roundedRectRadii={xRadius=5.0, yRadius=5.0}},
     {type="image", image=hs.image.imageFromName("NSTouchBarAudioInputTemplate"), imageAlpha=1.0, frame={x="5%", y="5%", h="90%", w="90%"}}
   ):imageFromCanvas()
 
