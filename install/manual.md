@@ -19,7 +19,7 @@ OSX Setup
   - Disable swipe between pages
   - Enable 3 finger lookup
 - Keyboard
-  - `Caps Lock` -> `Control` (for all keyboards)
+  - `Caps Lock` -> `Escape` (for all keyboards)
   - `Shortcuts` -> `Spotlight` -> Uncheck `Show Spotlight search` shortcut
 - Displays
   - `Night Shift` > `Custom` : `8:30 PM - 5:00 AM` (match iPhone)
