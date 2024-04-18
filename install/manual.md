@@ -58,10 +58,11 @@ iTerm Setup
 - Check `Save changes to folder when iTerm2 quits`
 - Run `base16_tomorrow`
 
-Alfred Setup
+Raycast Setup
 ------------
-- In 1Password, find `Alfred` in the `Primary` vault and use the license key to activate the Alfred Powerpack.
-- In the `Advanced` tab click `Set sync folder...` and choose `iCloud/Alfred`.
+- In the `General` tab set `Raycast Hotkey` to `Command + Space`
+- In the `Account` tab click `Log in`
+- In the `Cloud Sync` tab toggle Cloud Sync on
 
 Dash Setup
 ----------

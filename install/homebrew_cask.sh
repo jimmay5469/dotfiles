@@ -11,11 +11,6 @@ if [ ! "$(brew ls | grep 1password)" ]; then
   brew install homebrew/cask/1password
 fi
 
-if [ ! "$(brew ls | grep alfred)" ]; then
-  echo "Installing alfred"
-  brew install homebrew/cask/alfred
-fi
-
 if [ ! "$(brew ls | grep dash)" ]; then
   echo "Installing dash"
   brew install homebrew/cask/dash
@@ -39,6 +34,11 @@ fi
 if [ ! "$(brew ls | grep karabiner-elements)" ]; then
   echo "Installing karabiner-elements"
   brew install homebrew/cask/karabiner-elements
+fi
+
+if [ ! "$(brew ls | grep raycast)" ]; then
+  echo "Installing raycast"
+  brew install homebrew/cask/raycast
 fi
 
 if [ ! "$(brew ls | grep visual-studio-code)" ]; then
