@@ -37,6 +37,11 @@ if [ ! "$(brew ls --versions gpg)" ]; then
   brew install gpg
 fi
 
+if [ ! "$(brew ls --versions libyaml)" ]; then
+  echo "Installing libyaml"
+  brew install libyaml
+fi
+
 if [ ! "$(brew ls --versions neovim)" ]; then
   echo "Installing neovim"
   brew install neovim
