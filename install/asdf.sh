@@ -4,45 +4,34 @@ cd ~/repos/dotfiles
 printf "\nasdf\n"
 echo "------------------------------"
 
-if test ! $(which asdf); then
-  echo "Installing asdf"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
-
-  source $HOME/.shellrc
-fi
-
-if [ ! "$(asdf plugin-list | grep nodejs)" ]; then
+if [ ! "$(asdf plugin list | grep nodejs)" ]; then
   echo "Installing node plugin"
-  asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 fi
 
-if [ ! "$(asdf plugin-list | grep postgres)" ]; then
+if [ ! "$(asdf plugin list | grep postgres)" ]; then
   echo "Installing postgres plugin"
-  asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
+  asdf plugin add postgres https://github.com/smashedtoatoms/asdf-postgres.git
 fi
 
-if [ ! "$(asdf plugin-list | grep python)" ]; then
+if [ ! "$(asdf plugin list | grep python)" ]; then
   echo "Installing python plugin"
-  asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
+  asdf plugin add python https://github.com/tuvistavie/asdf-python.git
 fi
 
-if [ ! "$(asdf plugin-list | grep ruby)" ]; then
+if [ ! "$(asdf plugin list | grep ruby)" ]; then
   echo "Installing ruby plugin"
-  asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+  asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 fi
 
-if [ ! "$(asdf plugin-list | grep yarn)" ]; then
+if [ ! "$(asdf plugin list | grep yarn)" ]; then
   echo "Installing ruby yarn"
-  asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git
+  asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
 fi
 
 cd ~/
 
 echo "Installing asdf package global versions"
 asdf install
-
-echo "Enabling python for neovim"
-pip install --user neovim
 
 cd ~/repos/dotfiles

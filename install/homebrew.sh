@@ -12,6 +12,11 @@ fi
 
 echo "Installing homebrew packages"
 
+if [ ! "$(brew ls --versions asdf)" ]; then
+  echo "Installing asdf"
+  brew install asdf
+fi
+
 if [ ! "$(brew ls --versions coreutils)" ]; then
   echo "Installing coreutils"
   brew install coreutils
