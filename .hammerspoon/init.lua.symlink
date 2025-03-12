@@ -364,4 +364,4 @@ hs.audiodevice.watcher.start()
 
 --- Toggle using keyboard shortcut or menubar click
 mute_menu:setClickCallback(toggleMute)
-hs.hotkey.bind({"ctrl", "alt"}, "F10", toggleMute)
+hs.hotkey.bind({"ctrl", "alt"}, "F20", toggleMute)

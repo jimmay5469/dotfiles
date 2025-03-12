@@ -17,7 +17,7 @@
           ],
           "to_if_alone": [
               {
-                  "key_code": "f10",
+                  "key_code": "f20",
                   "modifiers": ["left_control", "left_option"]
               }
           ]
@@ -40,7 +40,7 @@
           ],
           "to_if_alone": [
               {
-                  "key_code": "f10",
+                  "key_code": "f20",
                   "modifiers": ["left_control", "left_option"]
               }
           ]
@@ -63,7 +63,7 @@
           ],
           "to_if_alone": [
               {
-                  "key_code": "f10",
+                  "key_code": "f20",
                   "modifiers": ["left_control", "left_option"]
               }
           ]
