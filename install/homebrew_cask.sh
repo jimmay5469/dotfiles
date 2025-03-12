@@ -11,11 +11,6 @@ if [ ! "$(brew ls | grep 1password)" ]; then
   brew install homebrew/cask/1password
 fi
 
-if [ ! "$(brew ls | grep dash)" ]; then
-  echo "Installing dash"
-  brew install homebrew/cask/dash
-fi
-
 if [ ! "$(brew ls | grep google-chrome)" ]; then
   echo "Installing google-chrome"
   brew install homebrew/cask/google-chrome

@@ -1,8 +1,7 @@
-Manual Installation Steps
-=========================
+# Manual Installation Steps
 
-App store installs:
--------------------
+## App store installs:
+
 - Monosnap (old)
 - Bear (old)
 - Space Gremlin (old)
@@ -11,9 +10,9 @@ App store installs:
 - GIF Brewery (old)
 - IA Writer
 
-OSX Setup
----------
-- Accessability Settings
+## OSX Setup
+
+- Accessibility Settings
   - Enable 3 finger drag
 - Trackpad
   - Disable swipe between pages
@@ -29,9 +28,9 @@ OSX Setup
   - Position on screen: right
   - Automatically hide and show the Dock
   - Make it small
-  - Remove everythign from it except Finder and Settings
-- Mission Control 
-  - Disable spaces rearangement in settings mission control 
+  - Remove everything from it except Finder and Settings
+- Mission Control
+  - Disable spaces rearrangement in settings mission control
 - Internet accounts
   - Log into all
   - Sync contacts and calendars
@@ -44,37 +43,32 @@ OSX Setup
       - Edit `[name].local` so 0.0.0.0 can be accessed from phones on the network at `http://[name].local`
 - Add `~/` and `Mackintosh HD` directories to Finder favorites
 
-iCloud Setup
-------------
+## iCloud Setup
+
 - In `Preferences` > `iCloud` > `iCloud Drive Options` uncheck `Optimize Mac Storage`
 
-1Password Setup
----------------
+## 1Password Setup
+
 - Log in using 1Password account
 
-iTerm Setup
------------
+## iTerm Setup
+
 - In iTerm2 `Preferences` > `General` set `Load preferences from a custom folder or URL` to `iCloud/iTerm2`
 - Check `Save changes to folder when iTerm2 quits`
 - Run `base16_tomorrow`
 
-Raycast Setup
-------------
+## Raycast Setup
+
 - In the `General` tab set `Raycast Hotkey` to `Command + Space`
 - In the `Account` tab click `Log in`
 - In the `Cloud Sync` tab toggle Cloud Sync on
 
-Dash Setup
-----------
-- In 1Password, find `Dash` in the `Primary` vault and open the `license.dash-license` attachment.
-- In the Dash `Preferences` click `Set Up Syncing` > `Set Sync Folder` and choose `iCloud/Dash`.
+## Chrome Setup
 
-Chrome Setup
-------------
 - Install 1password extension
 - Login
 
-GitHub Setup
-------------
+## GitHub Setup
+
 - GitHub SSH key ([Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) and [Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/))
 - Run `ssh-add -K ~/.ssh/id_ed25519`
