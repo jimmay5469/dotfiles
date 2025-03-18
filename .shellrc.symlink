@@ -10,6 +10,7 @@ if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
 fi
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 export CDPATH="$CDPATH:$HOME/repos"
 
