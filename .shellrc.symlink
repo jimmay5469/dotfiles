@@ -18,4 +18,27 @@ alias gbclean="git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xa
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+myscripts () {
+  local myscript="./.myscripts/$1.sh"
+  if [ ! -f $myscript ]; then
+    echo "Creating $myscript" &&
+    mkdir -p ./.myscripts &&
+    echo "#!/bin/bash\n\necho 'Hello World!'" > $myscript &&
+    chmod +x $myscript
+  fi
+  echo "Running $myscript"
+  $myscript
+}
+_myscripts_completion () {
+  local cur=${COMP_WORDS[COMP_CWORD]}
+  if [ -d ./.myscripts ]; then
+    local scripts=$(ls ./.myscripts/*.sh 2>/dev/null | sed 's|.*/\(.*\)\.sh|\1|')
+    COMPREPLY=($(compgen -W "$scripts" -- "$cur"))
+  fi
+}
+complete -F _myscripts_completion myscripts
+
+alias start="myscripts start"
+alias stop="myscripts stop"
+
 source $HOME/.shellrc.custom 2> /dev/null

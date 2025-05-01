@@ -4,3 +4,6 @@
 # VS Code
 .vscode
 .elixir_ls
+
+# My custom project scripts
+.myscripts
