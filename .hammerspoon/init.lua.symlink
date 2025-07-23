@@ -312,12 +312,16 @@ bind("s", function()
 end)
 
 
---------------
---- Muting ---
---------------
+--------------------------
+--- Muting w/ MuteDeck ---
+--------------------------
 
-local muted = hs.audiodevice.defaultInputDevice():muted()
+local muted = false
+local syncSeconds = 1
+local syncTimer = nil
+
 local mute_menu = hs.menubar.new()
+
 local mute_image = hs.canvas.new({h=24, w=34}):appendElements(
     {type="rectangle", action="fill", fillColor={ red=1.0 }, roundedRectRadii={xRadius=4.0, yRadius=4.0}},
     {type="image", image=hs.image.imageFromName("NSTouchBarAudioInputMuteTemplate"), imageAlpha=1.0, frame={x="5%", y="5%", h="90%", w="90%"}}
@@ -327,11 +331,7 @@ local unmute_image = hs.canvas.new({h=24, w=34}):appendElements(
     {type="image", image=hs.image.imageFromName("NSTouchBarAudioInputTemplate"), imageAlpha=1.0, frame={x="5%", y="5%", h="90%", w="90%"}}
   ):imageFromCanvas()
 
-function syncMute()
-  for i,mic in ipairs(hs.audiodevice.allInputDevices()) do
-    mic:setInputMuted(muted)
-  end
-
+function updateMenuIcon()
   if muted then
     mute_menu:setIcon(mute_image, false)
     mute_menu:setTooltip("Muted")
@@ -339,29 +339,38 @@ function syncMute()
     mute_menu:setIcon(unmute_image, false)
     mute_menu:setTooltip("Unmuted")
   end
+end
+updateMenuIcon()
 
-  local zoom = hs.application.get("zoom.us")
-  if zoom ~= nil then
-    if muted then
-      zoom:selectMenuItem('Mute Audio')
-    else
-      zoom:selectMenuItem('Unmute Audio')
+--- Sync loop for mute state
+function sync()
+  hs.http.asyncGet("http://localhost:3491/v1/status", {}, function(status, body, headers)
+    if status ~= 200 then
+      muted = false
+      updateMenuIcon()
+      return
     end
+
+    muted = hs.json.decode(body).mute == "active"
+    updateMenuIcon()
+
+    syncTimer = hs.timer.doAfter(syncSeconds, sync)
+  end)
+end
+syncTimer = hs.timer.doAfter(syncSeconds, sync)
+
+--- Toggle MuteDeck on menu icon click
+mute_menu:setClickCallback(function()
+  -- pause sync loop
+  if syncTimer then
+    syncTimer:stop()
   end
-end
 
-function toggleMute()
   muted = not muted
-  syncMute()
-end
+  updateMenuIcon()
 
---- Sync mute state on launch
-syncMute()
-
---- Update mute state when default mic changes
-hs.audiodevice.watcher.setCallback(syncMute)
-hs.audiodevice.watcher.start()
-
---- Toggle using keyboard shortcut or menubar click
-mute_menu:setClickCallback(toggleMute)
-hs.hotkey.bind({"ctrl", "alt"}, "F20", toggleMute)
+  hs.http.asyncPost("http://localhost:3491/v1/mute?state=toggle", "", {}, function(status, body, headers)
+    -- resume sync loop
+    syncTimer = hs.timer.doAfter(syncSeconds, sync)
+  end)
+end)
