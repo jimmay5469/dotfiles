@@ -19,6 +19,11 @@ alias gbclean="git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xa
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 myscripts () {
+  if [ -z "$1" ]; then
+    echo "Usage: myscripts <script_name> [args...]"
+    return 1
+  fi
+
   local myscript="./.myscripts/$1.sh"
   if [ ! -f $myscript ]; then
     echo "Creating $myscript" &&
@@ -27,7 +32,7 @@ myscripts () {
     chmod +x $myscript
   fi
   echo "Running $myscript"
-  $myscript
+  $myscript ${@:2}
 }
 _myscripts_completion () {
   local cur=${COMP_WORDS[COMP_CWORD]}
