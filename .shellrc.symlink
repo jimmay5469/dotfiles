@@ -53,4 +53,6 @@ npm() { _use_pnpm_instead npm; }
 npx() { _use_pnpm_instead npx; }
 yarn() { _use_pnpm_instead yarn; }
 
+alias pn="pnpm"
+
 source $HOME/.shellrc.custom 2> /dev/null
